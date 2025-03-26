@@ -1,0 +1,107 @@
+<!DOCTYPE html>
+<html lang="es">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <link rel="stylesheet" href="/css/estudiante.css">
+    <title>Perfil - Smart Fit</title>
+</head>
+<body>
+    <header>
+        <div class="logo-container">
+            <div class="logo">
+                <a href="/menu.html"><img src="/icons/logoFausto.png" alt="Logo Fausto Herrera"></a>
+            </div>
+            <div class="text">
+                <span class="title">FAUSTO HERRERA</span>
+                <span class="subtitle">SISTEMA ACADÉMICO</span>
+            </div>
+        </div>
+        <nav>
+            <ul>
+                <li><a href="/menu.html">Académica</a></li>
+                <li><a href="#">Web</a></li>
+                <li><a href="#">Operaciones</a></li>
+                <li><a href="#">Administración</a></li>
+                <li><a href="#">Christopher Briceño Arias</a></li>
+                <li><a href="#" class="logout">X</a></li>
+            </ul>
+        </nav>
+    </header>
+    
+    <main class="container">
+        <section class="info-card">
+            <h2>Información General</h2>
+            
+            <div class="containerEstudiante">
+                <div class="top-section">
+                    <div class="student-info">
+                        <h3>Datos del Estudiante</h3>
+                        <p><strong>Matrícula:</strong> 1010</p>
+                        <p><strong>Nombre:</strong> Christopher Briceno Arias</p>
+                        <p><strong>Identificación:</strong> 118760495</p>
+                        <p><strong>Fecha de Nacimiento:</strong> 04/06/2003</p>
+                        <p><strong>Edad:</strong> 20 años</p>
+                        <p><strong>Grado:</strong> 7</p>
+                        <p><strong>Sexo:</strong> Masculino</p>
+                        <p><strong>Nacionalidad:</strong> Costarricense</p>
+                        <p><strong>Medicamentos:</strong> No</p>
+                        <p><strong>Enfermedades:</strong> Ninguna</p>
+                        <p><strong>Adecuación Curricular:</strong> No</p>
+                        <p><strong>Dirección:</strong> San Antonio</p>
+                        <p><strong>Provincia:</strong> San José</p>
+                        <p><strong>Cantón:</strong> Vázquez de Coronado</p>
+                        <p><strong>Distrito:</strong> San Antonio</p>
+                    </div>
+                    
+                    <div class="profile-pic">
+                        <img src="/images/luffy.PNG" alt="Foto de perfil">
+                    </div>
+                </div>
+
+                <div class="section">
+                    <h3>Datos del Padre/Encargado <button class="toggle-button" onclick="toggleSection('parent-details')">Mostrar</button></h3>
+                    <div id="parent-details" class="details">
+                        <p><strong>Nombre de la Madre:</strong> Marielos</p>
+                        <p><strong>Identificación:</strong> 123456789</p>
+                        <p><strong>Teléfono:</strong> +506 86659333</p>
+                        <p><strong>Lugar de Trabajo:</strong> Empresa X</p>
+                        <p><strong>Nombre del Padre:</strong> Juan Pérez</p>
+                        <p><strong>Identificación:</strong> 987654321</p>
+                        <p><strong>Teléfono:</strong> +506 62918922</p>
+                        <p><strong>Lugar de Trabajo:</strong> Empresa Y</p>
+                    </div>
+                </div>
+        
+                <div class="section">
+                    <h3>Otros Datos <button class="toggle-button" onclick="toggleSection('other-details')">Mostrar</button></h3>
+                    <div id="other-details" class="details">
+                        <p><strong>Encargado de Retirar:</strong> María Gómez</p>
+                        <p><strong>¿Puede retirarse solo?:</strong> No</p>
+                        <p><strong>Contacto de Emergencia:</strong> Carlos Ramírez</p>
+                        <p><strong>Teléfono de Emergencia:</strong> +506 88887777</p>
+                        <p><strong>¿Hermanos en la escuela?:</strong> Sí - Ana Pérez (Grado 5)</p>
+                        <p><strong>¿Autorización para fotos?:</strong> Sí</p>
+                        <p><strong>¿Posee póliza?:</strong> No</p>
+                    </div>
+                </div>
+            </div>
+        </section>
+    </main>
+
+    <script>
+        function toggleSection(id) {
+            var section = document.getElementById(id);
+            var button = section.previousElementSibling.querySelector("button");
+            
+            if (section.style.display === "none" || section.style.display === "") {
+                section.style.display = "block";
+                button.textContent = "Ocultar";
+            } else {
+                section.style.display = "none";
+                button.textContent = "Mostrar";
+            }
+        }
+    </script>
+</body>
+</html>

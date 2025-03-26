@@ -1,0 +1,310 @@
+body {
+    font-family: 'Poppins', sans-serif;
+    margin: 0;
+    padding: 0;
+    font-size: 15px;
+    background-color: #f4f4f4;
+    padding-top: 80px; 
+}
+/* Logo nav */
+.logo-container {
+    display: grid;
+    grid-template-columns: auto auto;
+    grid-template-rows: auto auto;
+    align-items: center;
+    gap: 5px;
+}
+.logo img {
+    width: 80px;
+    height: 80px;
+    grid-row: span 2; 
+}
+.text {
+    display: flex;
+    flex-direction: column;
+}
+.title {
+    font-size: 18px;
+    font-weight: bold;
+    color: #8ea50d;
+}
+.subtitle {
+    font-size: 14px;
+    margin-trim: 10PX;
+    color: #D5DE83;
+    padding-bottom: 10PX;
+}
+
+/* End Logo nav */
+
+/* Header */
+/* Estilo del Header */
+header {
+    display: flex;
+    justify-content: space-between;
+    align-items: center;
+    background-color: #222;
+    padding: 15px 30px;
+    color: white;
+    position: fixed; 
+    width: 100%; 
+    top: 0;
+    left: 0;
+    z-index: 1000; 
+}
+
+/* Contenedor del logo */
+.logo-container {
+    display: flex;
+    align-items: center;
+}
+
+/* Logo */
+.logo img {
+    width: 70px;
+    height: 70px;
+    margin-right: 15px;
+}
+
+/* Texto del Logo */
+.text {
+    display: flex;
+    flex-direction: column;
+    text-align: left;
+}
+
+.text .title {
+    font-size: 18px;
+    font-weight: bold;
+}
+
+.text .subtitle {
+    font-size: 14px;
+    color: #D5DE83;
+    margin-top: 3px;
+}
+
+/* Estilo de la Navegación */
+nav ul {
+    display: flex;
+    flex-wrap: wrap; 
+    list-style: none;
+    padding: auto;
+    margin-right: 30px;
+    
+}
+
+nav ul li {
+    margin: 0 10px;
+    text-decoration: none;
+}
+
+nav ul li a {
+    text-decoration: none;
+    color: white;
+    font-size: 16px;
+    font-weight: bold;
+    /* padding: 10px 15px; */
+    transition: 0.3s;
+    border-radius: 5px;
+    white-space: nowrap;
+    
+}
+
+
+nav ul li a {
+    transition: all 0.3s ease;
+    padding: 10px ;
+    border-radius: 30px; 
+}
+
+/* Hover */
+nav ul li a:hover {
+    background-color: #7BA249;
+    color: #444A1A; 
+    font-size: 1.1rem; 
+    transform: scale(1.05);
+}
+
+
+nav ul li a.logout {
+    background-color: #d32f2f;
+    padding: 10px 20px;
+    border-radius: 30px;
+}
+
+nav ul li a.logout:hover {
+    background-color: #b71c1c;
+    color: white;
+    font-size: 1.1rem; 
+    transform: scale(1.05); 
+}
+
+/* Responsivo */
+@media (max-width: 768px) {
+    header {
+        flex-direction: column;
+        align-items: center;
+        padding: 10px;
+    }
+
+    nav ul {
+        flex-direction: column;
+        align-items: center;
+    }
+
+    nav ul li {
+        margin-bottom: 10px;
+    }
+}
+
+
+
+
+
+/* End Header */
+.search-section {
+    display: flex;
+    justify-content: space-between;
+    padding: 20px;
+    gap: 20px;
+}
+.search-box {
+    background: white;
+    padding: 15px;
+    border-radius: 5px;
+    box-shadow: 0 0 10px rgba(0, 0, 0, 0.1);
+    flex: 1;
+}
+input[type="text"] {
+    width: calc(100% - 80px);
+    padding: 8px;
+    margin-top: 5px;
+    border: 1px solid #ccc;
+    border-radius: 4px;
+}
+button {
+    padding: 8px 15px;
+    background-color: #8ea50d;
+    color: rgb(255, 255, 255);
+    border: none;
+    cursor: pointer;
+    margin-left: 5px;
+    margin-top: 10px;
+}
+
+/* Table */
+table {
+    width: 100%;
+    border-collapse: collapse;
+    background: white;
+    margin-top: 20px;
+}
+th, td {
+    padding: 10px;
+    border: 1px solid #ddd;
+    text-align: left;
+}
+th {
+    background: #b3ed6d;
+    color: rgb(0, 0, 0);
+}
+/* End Table */
+
+/* TH */
+.users {
+    width: 100%;
+    max-width: 1200px;
+    margin: 20px auto;
+    
+}
+
+.users h2 {
+    font-size: 22px;
+    margin-bottom: 10px;
+}
+
+table {
+    width: 100%;
+    border-collapse: collapse;
+    background: #fff;
+    box-shadow: 0px 2px 5px rgba(0, 0, 0, 0.1);
+}
+
+thead {
+    background: #f8f9fa;
+}
+
+th, td {
+    padding: 10px;
+    text-align: left;
+    border-bottom: 1px solid #ddd;
+}
+
+th {
+    font-weight: bold;
+    color: #333;
+}
+
+td {
+    font-size: 14px;
+    color: #555;
+}
+td a{
+    color: blue;
+    text-decoration: none;
+}
+
+tbody tr:hover {
+    background: #f1f1f1;
+}
+
+/* Ajuste para los colores de estado */
+td:contains("Activo") {
+    color: green;
+    font-weight: bold;
+}
+td a{
+    color: bluie;
+}
+
+td:contains("Bloqueado") {
+    color: red;
+    font-weight: bold;
+}
+
+td:contains("Cancelado") {
+    color: gray;
+    font-weight: bold;
+}
+
+
+td {
+    position: relative;
+}
+
+/* imagen display */
+.popup-imagen {
+    display: none; 
+    position: absolute;
+    background-color: rgba(0, 0, 0, 0.7);
+    padding: 10px;
+    border-radius: 10px;
+    z-index: 10;
+    width: 200px;
+    text-align: center;
+    left: 50%; 
+    transform: translateX(-50%); 
+    top: -220px;
+}
+
+.popup-imagen img {
+    width: 100%;
+    border-radius: 5px;
+}
+
+.ver-foto:hover + .popup-imagen {
+    display: block;
+}
+
+
