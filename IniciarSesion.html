@@ -1,0 +1,65 @@
+<!DOCTYPE html>
+<html lang="es">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Iniciar Sesión</title>
+    <link rel="stylesheet" href="css/iniciarSesion.css">
+    <link rel="stylesheet" href="css/menu.css">
+    <link rel="icon" href="icons/logoFausto.png">
+</head>
+<body>
+    <header>
+        <div class="logo-container">
+            <div class="logo">
+                <a href="menu.html"><img src="icons/logoFausto.png" alt="Logo Fausto Herrera"></a>
+            </div>
+            <div class="text">
+                <span class="title">FAUSTO HERRERA</span>
+                <span class="subtitle">SISTEMA ACADÉMICO</span>
+            </div>
+        </div>
+        <nav>
+            <ul>
+                <li><a href="menu.html">Académica</a></li>
+                <li>
+                    <a href="#">Web</a>
+                    <ul>
+                        <li><a href="IniciarSesion.html">Iniciar Sesion</a></li>
+                        <li><a href="RegistrarUsuario.html">Registrar Usuario</a></li>
+                        <li><a href="RestablecerContrasenia.html">Restablecer Contraseña</a></li>
+                    </ul>
+                </li>
+                <li><a href="#">Operaciones</a></li>
+                <li><a href="#">Administración</a></li>
+                <li><a href="#">Christopher Briceño Arias</a></li>
+                <li><a href="#" class="logout">X</a></li>
+            </ul>
+        </nav>
+    </header>
+
+    <main class="login-container">
+        <section class="login-card">
+            <h2>Iniciar Sesión</h2>
+            <form action="menu.html" method="POST">
+                <div class="input-group">
+                    <label for="username">Usuario:</label>
+                    <input type="text" id="username" name="username" required placeholder="Ingrese su usuario">
+                </div>
+                <div class="input-group">
+                    <label for="password">Contraseña:</label>
+                    <input type="password" id="password" name="password" required placeholder="Ingrese su contraseña">
+                </div>
+                <button type="submit" class="login-btn">Iniciar Sesión</button>
+                <div class="forgot-password">
+                    <a href="RegistrarUsuario.html">¿Olvidaste tu contraseña?</a>
+                </div>
+            </form>
+        </section>
+    </main>
+
+    <script>
+        // Aquí puedes agregar cualquier script necesario, por ejemplo, para validación de formulario
+    </script>
+</body>
+</html>

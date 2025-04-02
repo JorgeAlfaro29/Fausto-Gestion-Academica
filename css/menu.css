@@ -307,4 +307,42 @@ td {
     display: block;
 }
 
+/*Parte del submenu*/
+ul {
+    list-style: none;
+    padding: 0;
+}
+
+ul li {
+    position: relative;
+}
+
+ul li ul {
+    display: none; /* Ocultamos el submenú por defecto */
+    position: absolute;
+    top: 120%; /* Aumentamos el valor para que esté un poco más abajo */
+    left: 0;
+    background-color: #f9f9f9;
+    padding: 10px 0;
+    min-width: 150px;
+}
+
+ul li:hover > ul {
+    display: block; /* Mostramos el submenú cuando pasamos el ratón sobre el li */
+}
+
+ul li ul li {
+    padding: 8px 20px;
+}
+
+ul li ul li a {
+    color: #000;
+    text-decoration: none;
+}
+
+ul li ul li a:hover {
+    background-color: #ddd;
+}
+
+
 

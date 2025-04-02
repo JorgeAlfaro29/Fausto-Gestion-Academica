@@ -1,0 +1,75 @@
+<!DOCTYPE html>
+<html lang="es">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Restablecer Contraseña</title>
+    <link rel="stylesheet" href="css/iniciarSesion.css">
+    <link rel="stylesheet" href="css/menu.css">
+    <link rel="icon" href="icons/logoFausto.png">
+</head>
+<body>
+    <header>
+        <div class="logo-container">
+            <div class="logo">
+                <a href="menu.html"><img src="icons/logoFausto.png" alt="Logo Fausto Herrera"></a>
+            </div>
+            <div class="text">
+                <span class="title">FAUSTO HERRERA</span>
+                <span class="subtitle">SISTEMA ACADÉMICO</span>
+            </div>
+        </div>
+        <nav>
+            <ul>
+                <li><a href="menu.html">Académica</a></li>
+                <li>
+                    <a href="#">Web</a>
+                    <ul>
+                        <li><a href="IniciarSesion.html">Iniciar Sesion</a></li>
+                        <li><a href="pages/Web/Registrarse.html">Registrar Usuario</a></li>
+                        <li><a href="pages/Web/RestablecerContraseña.html">Restablecer Contraseña</a></li>
+                    </ul>
+                </li>
+                <li><a href="#">Operaciones</a></li>
+                <li><a href="#">Administración</a></li>
+                <li><a href="#">Christopher Briceño Arias</a></li>
+                <li><a href="#" class="logout">X</a></li>
+            </ul>
+        </nav>
+    </header>
+
+    <main class="login-container">
+        <section class="login-card">
+            <h2>Restablecer Contraseña</h2>
+            <form action="menu.html" method="POST">
+                <div class="input-group">
+                    <label for="email">Correo Electrónico:</label>
+                    <input type="email" id="email" name="email" required placeholder="Ingrese su correo electrónico">
+                </div>
+                <div class="input-group">
+                    <label for="new-password">Nueva Contraseña:</label>
+                    <input type="password" id="new-password" name="new-password" required placeholder="Ingrese su nueva contraseña">
+                </div>
+                <div class="input-group">
+                    <label for="confirm-new-password">Confirmar Nueva Contraseña:</label>
+                    <input type="password" id="confirm-new-password" name="confirm-new-password" required placeholder="Confirme su nueva contraseña">
+                </div>
+                <button type="submit" class="login-btn">Restablecer Contraseña</button>
+            </form>
+        </section>
+    </main>
+
+    <script>
+        // Validación de las contraseñas para asegurarse de que coincidan
+        const form = document.querySelector("form");
+        form.addEventListener("submit", function(event) {
+            const newPassword = document.getElementById("new-password").value;
+            const confirmNewPassword = document.getElementById("confirm-new-password").value;
+            if (newPassword !== confirmNewPassword) {
+                event.preventDefault();
+                alert("Las contraseñas no coinciden.");
+            }
+        });
+    </script>
+</body>
+</html>
