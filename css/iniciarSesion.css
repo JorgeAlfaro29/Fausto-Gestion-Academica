@@ -1,3 +1,30 @@
 * {
     font-family: 'Poppins', sans-serif;
 }
+
+/* Estilo personalizado para el hover en la barra de navegación */
+.nav-link {
+    color: white;
+}
+
+.nav-link:hover {
+    background-color: #8ea50d;
+    color: white;
+}
+
+.nav-item:hover .nav-link {
+    background-color: #8ea50d;
+    color: white;
+}
+
+/* Asegúrate de que los botones 'Ver Foto' también tengan un estilo similar */
+.btn-warning:hover {
+    background-color: #8ea50d;
+    color: white;
+}
+
+.nav-link:hover, .dropdown-item:hover {
+    background-color: #8ea50d;
+    color: white !important;
+    border-radius: 5px;
+}
