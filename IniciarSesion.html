@@ -4,62 +4,69 @@
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
     <title>Iniciar Sesión</title>
+    <link rel="stylesheet" href="https://cdn.jsdelivr.net/npm/bootstrap@5.3.0/dist/css/bootstrap.min.css">
+    <link href="https://fonts.googleapis.com/css2?family=Poppins:wght@300;400;500;600&display=swap" rel="stylesheet">
     <link rel="stylesheet" href="css/iniciarSesion.css">
-    <link rel="stylesheet" href="css/menu.css">
+
     <link rel="icon" href="icons/logoFausto.png">
+    <style>
+        .nav-link:hover, .dropdown-item:hover {
+            background-color: #8ea50d;
+            color: white !important;
+            border-radius: 5px;
+        }
+    </style>
 </head>
 <body>
-    <header>
-        <div class="logo-container">
-            <div class="logo">
-                <a href="menu.html"><img src="icons/logoFausto.png" alt="Logo Fausto Herrera"></a>
+    <header class="py-3 fixed-top" style="background-color: black; color: white;">
+        <div class="container d-flex justify-content-start align-items-center">
+            <div class="d-flex align-items-center me-auto">
+                <a href="menu.html" class="me-2"><img src="icons/logoFausto.png" alt="Logo Fausto Herrera" width="80" height="80"></a>
+                <div>
+                    <h1 class="h5 m-0" style="color: #8ea50d;">FAUSTO HERRERA</h1>
+                    <span style="color: #D5DE83;">SISTEMA ACADÉMICO</span>
+                </div>
             </div>
-            <div class="text">
-                <span class="title">FAUSTO HERRERA</span>
-                <span class="subtitle">SISTEMA ACADÉMICO</span>
-            </div>
+            <nav>
+                <ul class="nav">
+                    <li class="nav-item"><a class="nav-link" href="menu.html" style="color: white;">Académica</a></li>
+                    <li class="nav-item dropdown">
+                        <a class="nav-link dropdown-toggle" href="#" role="button" data-bs-toggle="dropdown" style="color: white;">Web</a>
+                        <ul class="dropdown-menu">
+                            <li><a class="dropdown-item" href="IniciarSesion.html">Iniciar Sesión</a></li>
+                            <li><a class="dropdown-item" href="RegistrarUsuario.html">Registrar Usuario</a></li>
+                            <li><a class="dropdown-item" href="RestablecerContrasenia.html">Restablecer Contraseña</a></li>
+                        </ul>
+                    </li>
+                    <li class="nav-item"><a class="nav-link" href="#" style="color: white;">Operaciones</a></li>
+                    <li class="nav-item"><a class="nav-link" href="#" style="color: white;">Administración</a></li>
+                    <li class="nav-item"><a class="nav-link" href="#" style="color: white;">Christopher Briceño Arias</a></li>
+                    <li class="nav-item"><a class="nav-link bg-danger text-white rounded-pill px-3" href="#">X</a></li>
+                </ul>
+            </nav>
         </div>
-        <nav>
-            <ul>
-                <li><a href="menu.html">Académica</a></li>
-                <li>
-                    <a href="#">Web</a>
-                    <ul>
-                        <li><a href="IniciarSesion.html">Iniciar Sesion</a></li>
-                        <li><a href="RegistrarUsuario.html">Registrar Usuario</a></li>
-                        <li><a href="RestablecerContrasenia.html">Restablecer Contraseña</a></li>
-                    </ul>
-                </li>
-                <li><a href="#">Operaciones</a></li>
-                <li><a href="#">Administración</a></li>
-                <li><a href="#">Christopher Briceño Arias</a></li>
-                <li><a href="#" class="logout">X</a></li>
-            </ul>
-        </nav>
     </header>
 
-    <main class="login-container">
-        <section class="login-card">
-            <h2>Iniciar Sesión</h2>
+    <main class="d-flex justify-content-center align-items-center min-vh-100" style="background-color: #f4f4f4;">
+        <section class="card p-4 shadow w-100" style="max-width: 400px; background-color: white;">
+            <h2 class="text-center" style="color: #333;">Iniciar Sesión</h2>
             <form action="menu.html" method="POST">
-                <div class="input-group">
-                    <label for="username">Usuario:</label>
-                    <input type="text" id="username" name="username" required placeholder="Ingrese su usuario">
+                <div class="mb-3">
+                    <label for="username" class="form-label" style="color: #333;">Usuario:</label>
+                    <input type="text" class="form-control" id="username" name="username" required placeholder="Ingrese su usuario">
                 </div>
-                <div class="input-group">
-                    <label for="password">Contraseña:</label>
-                    <input type="password" id="password" name="password" required placeholder="Ingrese su contraseña">
+                <div class="mb-3">
+                    <label for="password" class="form-label" style="color: #333;">Contraseña:</label>
+                    <input type="password" class="form-control" id="password" name="password" required placeholder="Ingrese su contraseña">
                 </div>
-                <button type="submit" class="login-btn">Iniciar Sesión</button>
-                <div class="forgot-password">
-                    <a href="RegistrarUsuario.html">¿Olvidaste tu contraseña?</a>
+                <button type="submit" class="btn w-100" style="background-color: #8ea50d; color: white;">Iniciar Sesión</button>
+                <div class="text-center mt-3">
+                    <a href="RegistrarUsuario.html" style="color: #8ea50d;">¿Olvidaste tu contraseña?</a>
                 </div>
             </form>
         </section>
     </main>
 
-    <script>
-        // Aquí puedes agregar cualquier script necesario, por ejemplo, para validación de formulario
-    </script>
+    <script src="https://cdn.jsdelivr.net/npm/bootstrap@5.3.0/dist/js/bootstrap.bundle.min.js"></script>
 </body>
 </html>
