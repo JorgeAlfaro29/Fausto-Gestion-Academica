@@ -1,3 +1,9 @@
 * {
     font-family: 'Poppins', sans-serif;
 }
+
+.nav-link:hover, .dropdown-item:hover {
+    background-color: #8ea50d;
+    color: white !important;
+    border-radius: 5px;
+}
