@@ -1,0 +1,231 @@
+<!DOCTYPE html>
+<html lang="es">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Editar Matrícula</title>
+    <link rel="stylesheet" href="https://cdn.jsdelivr.net/npm/bootstrap@5.3.0/dist/css/bootstrap.min.css">
+    <link href="https://fonts.googleapis.com/css2?family=Poppins:wght@300;400;500;600&display=swap" rel="stylesheet">
+    <link rel="stylesheet" href="css/iniciarSesion.css">
+    <link rel="icon" href="icons/logoFausto.png">
+</head>
+<body>
+    <!-- Header -->
+    <header class="py-3 fixed-top" style="background-color: black; color: white;">
+        <div class="container d-flex justify-content-start align-items-center">
+            <div class="d-flex align-items-center me-auto">
+                <a href="menu.html" class="me-2"><img src="icons/logoFausto.png" alt="Logo Fausto Herrera" width="80" height="80"></a>
+                <div>
+                    <h1 class="h5 m-0" style="color: #8ea50d;">FAUSTO HERRERA</h1>
+                    <span style="color: #D5DE83;">SISTEMA ACADÉMICO</span>
+                </div>
+            </div>
+            <nav>
+                <ul class="nav">
+                    <li class="nav-item"><a class="nav-link" href="menu.html" style="color: white;">Académica</a></li>
+                    <li class="nav-item"><a class="nav-link" href="#" style="color: white;">Operaciones</a></li>
+                    <li class="nav-item dropdown">
+                        <a class="nav-link dropdown-toggle" href="#" role="button" data-bs-toggle="dropdown" style="color: white;">Administrativo</a>
+                        <ul class="dropdown-menu">
+                            <li><a class="dropdown-item" href="listarMatricula.html">Matricula</a></li>
+                        </ul>
+                    </li>
+                    <li class="nav-item"><a class="nav-link" href="#" style="color: white;">Christopher Briceño Arias</a></li>
+                    <li class="nav-item"><a class="nav-link bg-danger text-white rounded-pill px-3" href="#">X</a></li>
+                </ul>
+            </nav>
+        </div>
+    </header>
+
+    <!-- Formulario de Edición de Matrícula -->
+    <main class="d-flex justify-content-center align-items-start min-vh-100" style="background-color: #f4f4f4; padding-top: 130px;">
+        <section class="card p-4 shadow w-100" style="max-width: 700px; background-color: white;">
+            <h2 class="text-center mb-4" style="color: #333;">Editar Matrícula</h2>
+            <form action="listarMatricula.html" method="POST">
+                <!-- Información del Estudiante -->
+                <h5 class="mb-3">Información del Estudiante</h5>
+                <div class="mb-3">
+                    <label for="nombreEstudiante" class="form-label">Nombre del Estudiante:</label>
+                    <input type="text" class="form-control" id="nombreEstudiante" name="nombreEstudiante" value="Juan Pérez" required>
+                </div>
+                <div class="mb-3">
+                    <label for="identificacionEstudiante" class="form-label">Identificación:</label>
+                    <input type="text" class="form-control" id="identificacionEstudiante" name="identificacionEstudiante" value="12345678" required>
+                </div>
+                <div class="mb-3">
+                    <label for="fechaNacimiento" class="form-label">Fecha de Nacimiento:</label>
+                    <input type="date" class="form-control" id="fechaNacimiento" name="fechaNacimiento" value="2010-05-15" required>
+                </div>
+                <div class="mb-3">
+                    <label for="edad" class="form-label">Edad:</label>
+                    <input type="number" class="form-control" id="edad" name="edad" value="15" required>
+                </div>
+                <div class="mb-3">
+                    <label for="grado" class="form-label">Grado:</label>
+                    <input type="number" class="form-control" id="grado" name="grado" value="9" required>
+                </div>
+                <div class="mb-3">
+                    <label for="sexo" class="form-label">Sexo:</label>
+                    <select class="form-select" id="sexo" name="sexo" required>
+                        <option value="Masculino" selected>Masculino</option>
+                        <option value="Femenino">Femenino</option>
+                        <option value="Otro">Otro</option>
+                    </select>
+                </div>
+                <div class="mb-3">
+                    <label for="nacionalidad" class="form-label">Nacionalidad:</label>
+                    <input type="text" class="form-control" id="nacionalidad" name="nacionalidad" value="Costarricense" required>
+                </div>
+                <div class="mb-3">
+                    <label for="medicamento" class="form-label">¿Toma algún medicamento?</label>
+                    <select class="form-select" id="medicamento" name="medicamento" required>
+                        <option value="Sí" selected>Sí</option>
+                        <option value="No">No</option>
+                    </select>
+                </div>
+                <div class="mb-3">
+                    <label for="enfermedad" class="form-label">¿Presenta alguna enfermedad?</label>
+                    <input type="text" class="form-control" id="enfermedad" name="enfermedad" value="Ninguna">
+                </div>
+                <div class="mb-3">
+                    <label for="adecuacion" class="form-label">¿Posee adecuación curricular?</label>
+                    <select class="form-select" id="adecuacion" name="adecuacion" required>
+                        <option value="Sí" selected>Sí</option>
+                        <option value="No">No</option>
+                    </select>
+                </div>
+                <div class="mb-3">
+                    <label for="direccion" class="form-label">Dirección:</label>
+                    <input type="text" class="form-control" id="direccion" name="direccion" value="123 Calle Ficticia" required>
+                </div>
+                <div class="mb-3">
+                    <label for="provincia" class="form-label">Provincia:</label>
+                    <input type="text" class="form-control" id="provincia" name="provincia" value="San José" required>
+                </div>
+                <div class="mb-3">
+                    <label for="canton" class="form-label">Cantón:</label>
+                    <input type="text" class="form-control" id="canton" name="canton" value="Central" required>
+                </div>
+                <div class="mb-3">
+                    <label for="distrito" class="form-label">Distrito:</label>
+                    <input type="text" class="form-control" id="distrito" name="distrito" value="Zapote" required>
+                </div>
+
+                <!-- Información del Padre/Encargado -->
+                <h5 class="mb-3 mt-4">Información del Padre/Encargado</h5>
+                <div class="mb-3">
+                    <label for="madreNombre" class="form-label">Nombre de la Madre:</label>
+                    <input type="text" class="form-control" id="madreNombre" name="madreNombre" value="Ana Pérez">
+                </div>
+                <div class="mb-3">
+                    <label for="madreId" class="form-label">Identificación:</label>
+                    <input type="text" class="form-control" id="madreId" name="madreId" value="87654321">
+                </div>
+                <div class="mb-3">
+                    <label for="madreTel" class="form-label">Teléfono:</label>
+                    <input type="text" class="form-control" id="madreTel" name="madreTel" value="12345678">
+                </div>
+                <div class="mb-3">
+                    <label for="madreTrabajo" class="form-label">Lugar de Trabajo:</label>
+                    <input type="text" class="form-control" id="madreTrabajo" name="madreTrabajo" value="Oficina XYZ">
+                </div>
+                <div class="mb-3">
+                    <label for="padreNombre" class="form-label">Nombre del Padre:</label>
+                    <input type="text" class="form-control" id="padreNombre" name="padreNombre" value="Carlos Pérez">
+                </div>
+                <div class="mb-3">
+                    <label for="padreId" class="form-label">Identificación:</label>
+                    <input type="text" class="form-control" id="padreId" name="padreId" value="87654322">
+                </div>
+                <div class="mb-3">
+                    <label for="padreTel" class="form-label">Teléfono:</label>
+                    <input type="text" class="form-control" id="padreTel" name="padreTel" value="23456789">
+                </div>
+                <div class="mb-3">
+                    <label for="padreTrabajo" class="form-label">Lugar de Trabajo:</label>
+                    <input type="text" class="form-control" id="padreTrabajo" name="padreTrabajo" value="Empresa ABC">
+                </div>
+                <div class="mb-3">
+                    <label for="encargadoNombre" class="form-label">Nombre del Encargado:</label>
+                    <input type="text" class="form-control" id="encargadoNombre" name="encargadoNombre" value="Pedro Pérez">
+                </div>
+                <div class="mb-3">
+                    <label for="encargadoId" class="form-label">Identificación:</label>
+                    <input type="text" class="form-control" id="encargadoId" name="encargadoId" value="87654323">
+                </div>
+                <div class="mb-3">
+                    <label for="encargadoTel" class="form-label">Teléfono:</label>
+                    <input type="text" class="form-control" id="encargadoTel" name="encargadoTel" value="34567890">
+                </div>
+                <div class="mb-3">
+                    <label for="encargadoTrabajo" class="form-label">Lugar de Trabajo:</label>
+                    <input type="text" class="form-control" id="encargadoTrabajo" name="encargadoTrabajo" value="Instituto DEF">
+                </div>
+
+                <!-- Otros Datos -->
+                <h5 class="mb-3 mt-4">Otros Datos</h5>
+                <div class="mb-3">
+                    <label for="encargadoRetiro" class="form-label">Encargado que retira al estudiante:</label>
+                    <input type="text" class="form-control" id="encargadoRetiro" name="encargadoRetiro" value="Carlos Pérez">
+                </div>
+                <div class="mb-3">
+                    <label for="retiroSolo" class="form-label">¿Puede retirarse solo?</label>
+                    <select class="form-select" id="retiroSolo" name="retiroSolo">
+                        <option value="Sí" selected>Sí</option>
+                        <option value="No">No</option>
+                    </select>
+                </div>
+                <div class="mb-3">
+                    <label for="emergenciaNombre" class="form-label">En caso de emergencia llamar a:</label>
+                    <input type="text" class="form-control" id="emergenciaNombre" name="emergenciaNombre" value="Pedro Pérez">
+                </div>
+                <div class="mb-3">
+                    <label for="emergenciaTel" class="form-label">Teléfono:</label>
+                    <input type="text" class="form-control" id="emergenciaTel" name="emergenciaTel" value="45678901">
+                </div>
+                <div class="mb-3">
+                    <label for="hermanos" class="form-label">¿Posee otros hermanos en el centro educativo?</label>
+                    <select class="form-select" id="hermanos" name="hermanos">
+                        <option value="Sí" selected>Sí</option>
+                        <option value="No">No</option>
+                    </select>
+                </div>
+                <div class="mb-3">
+                    <label for="hermanosNombres" class="form-label">Nombres y grados de los hermanos:</label>
+                    <input type="text" class="form-control" id="hermanosNombres" name="hermanosNombres" value="Carlos Pérez (Grado 5), María Pérez (Grado 3)">
+                </div>
+                <div class="mb-3">
+                    <label for="autorizacionFotos" class="form-label">¿Se autoriza la toma de fotos en actividades?</label>
+                    <select class="form-select" id="autorizacionFotos" name="autorizacionFotos">
+                        <option value="Sí" selected>Sí</option>
+                        <option value="No">No</option>
+                    </select>
+                </div>
+                <div class="mb-3">
+                    <label for="poliza" class="form-label">¿El estudiante posee póliza?</label>
+                    <select class="form-select" id="poliza" name="poliza">
+                        <option value="Sí" selected>Sí</option>
+                        <option value="No">No</option>
+                    </select>
+                </div>
+
+                <!-- Documentos -->
+                <h5 class="mb-3 mt-4">Documentos Requeridos</h5>
+                <div class="mb-3">
+                    <label for="documentos" class="form-label">Documentos Presentados:</label>
+                    <input type="file" class="form-control" id="documentos" name="documentos" multiple>
+                </div>
+
+                <!-- Botones -->
+                <div class="d-flex justify-content-between">
+                    <button type="submit" class="btn px-4 py-2" style="background-color: #8ea50d; color: white;">Actualizar Matrícula</button>
+                    <a href="listarMatricula.html" class="btn btn-danger">Cancelar</a>
+                </div>
+            </form>
+        </section>
+    </main>
+
+    <!-- Bootstrap JS -->
+    <script src="https://cdn.jsdelivr.net/npm/bootstrap@5.3.0/dist/js/bootstrap.bundle.min.js"></script>
+</body>
+</html>

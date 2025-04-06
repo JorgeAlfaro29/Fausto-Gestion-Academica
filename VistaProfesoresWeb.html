@@ -1,0 +1,125 @@
+<!DOCTYPE html>
+<html lang="es">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Profesores - Sistema Académico</title>
+    <link rel="stylesheet" href="https://cdn.jsdelivr.net/npm/bootstrap@5.3.0/dist/css/bootstrap.min.css">
+    <link href="https://fonts.googleapis.com/css2?family=Poppins:wght@300;400;500;600&display=swap" rel="stylesheet">
+    <link rel="icon" href="icons/logoFausto.png">
+    <link rel="stylesheet" href="css/menu.css">
+</head>
+<body class="bg-light" style="padding-top: 50px;">
+
+    <!-- Header -->
+    <header class="py-3 fixed-top" style="background-color: black; color: white;">
+        <div class="container d-flex justify-content-start align-items-center">
+            <div class="d-flex align-items-center me-auto">
+                <a href="menu.html" class="me-2"><img src="icons/logoFausto.png" alt="Logo Fausto Herrera" width="80" height="80"></a>
+                <div>
+                    <h1 class="h5 m-0" style="color: #8ea50d;">FAUSTO HERRERA</h1>
+                    <span style="color: #D5DE83;">SISTEMA ACADÉMICO</span>
+                </div>
+            </div>
+            <nav>
+                <ul class="nav">
+                    <li class="nav-item"><a class="nav-link" href="menu.html" style="color: white;">Académica</a></li>
+                    <li class="nav-item dropdown">
+                        <a class="nav-link dropdown-toggle" href="#" role="button" data-bs-toggle="dropdown" style="color: white;">Web</a>
+                        <ul class="dropdown-menu">
+                            <li><a class="dropdown-item" href="IniciarSesion.html">Iniciar Sesión</a></li>
+                            <li><a class="dropdown-item" href="RegistrarUsuario.html">Registrar Usuario</a></li>
+                            <li><a class="dropdown-item" href="RestablecerContrasenia.html">Restablecer Contraseña</a></li>
+                            <li><a class="dropdown-item" href="VistaProfesoresWeb.html">Vista Profesores</a></li>
+                        </ul>
+                    </li>
+                    <li class="nav-item"><a class="nav-link" href="#" style="color: white;">Operaciones</a></li>
+                    <li class="nav-item dropdown">
+                        <a class="nav-link dropdown-toggle" href="#" role="button" data-bs-toggle="dropdown" style="color: white;">Administrativo</a>
+                        <ul class="dropdown-menu">
+                            <li><a class="dropdown-item" href="listarMatricula.html">Matricula</a></li>
+                        </ul>
+                    </li>
+                    <li class="nav-item"><a class="nav-link" href="#" style="color: white;">Christopher Briceño Arias</a></li>
+                    <li class="nav-item"><a class="nav-link bg-danger text-white rounded-pill px-3" href="#">X</a></li>
+                </ul>
+            </nav>
+        </div>
+    </header>
+
+    <!-- Main Content -->
+    <main class="container mt-5 pt-1">
+    <!-- Buscar Profesores -->
+    <section class="row mb-4 mt-5"> 
+    <div class="col-md-6 mb-3">
+        <div class="card p-3 shadow-sm">
+            <label for="searchUser" class="form-label" style="color: #333;">Buscar Profesor por Materia/Nombre/Nivel Educativo</label>
+            <input type="text" id="searchUser" class="form-control" placeholder="Ingrese el término de búsqueda">
+            <button class="btn w-100" style="background-color: #8ea50d; color: white;">Buscar</button>
+        </div>
+    </div>
+    
+    
+        <section class="card p-4 shadow-sm bg-white">
+            <h2 class="text-center mb-4" style="color: #333;">Lista de Profesores</h2>
+            <div class="row">
+                <div class="col-md-4 mb-3" id="profesor1">
+                    <div class="card p-5 text-center">
+                        <img src="images/profesor1.jpg" class="img-fluid rounded-circle mx-auto" width="100" height="100" alt="Profesor 1">
+                        <h5 class="mt-3">Juan Pérez</h5>
+                        <p><strong>Materia:</strong> Matemáticas</p>
+                        <p><strong>Experiencia:</strong> 5 años en la enseñanza.</p>
+                        <button class="btn" style="background-color: #8ea50d; color: white;" data-bs-toggle="modal" data-bs-target="#modalProfesor1">Ver más</button>
+                    </div>
+                </div>
+                <div class="col-md-4 mb-3" id="profesor2">
+                    <div class="card p-5 text-center">
+                        <img src="images/profesor2.jpg" class="img-fluid rounded-circle mx-auto" width="100" height="100" alt="Profesor 2">
+                        <h5 class="mt-3">María González</h5>
+                        <p><strong>Materia:</strong> Ciencias</p>
+                        <p><strong>Experiencia:</strong> 10 años en la enseñanza.</p>
+                        <button class="btn" style="background-color: #8ea50d; color: white;" data-bs-toggle="modal" data-bs-target="#modalProfesor2">Ver más</button>
+                    </div>
+                </div>
+            </div>
+        </section>
+    </main>
+
+    <!-- Modales de Profesores -->
+    <div class="modal fade" id="modalProfesor1" tabindex="-1" aria-hidden="true">
+        <div class="modal-dialog">
+            <div class="modal-content">
+                <div class="modal-header">
+                    <h5 class="modal-title">Juan Pérez</h5>
+                    <button type="button" class="btn-close" data-bs-dismiss="modal"></button>
+                </div>
+                <div class="modal-body text-center">
+                    <img src="images/profesor1.jpg" class="img-fluid rounded-circle mb-3" width="150" height="150" alt="Profesor 1">
+                    <p><strong>Materia:</strong> Matemáticas</p>
+                    <p><strong>Descripción:</strong> Especializado en álgebra y cálculo con un enfoque práctico.</p>
+                    <p><strong>Experiencia:</strong> 10 años en la enseñanza.</p>
+                </div>
+            </div>
+        </div>
+    </div>
+    
+    <div class="modal fade" id="modalProfesor2" tabindex="-1" aria-hidden="true">
+        <div class="modal-dialog">
+            <div class="modal-content">
+                <div class="modal-header">
+                    <h5 class="modal-title">María González</h5>
+                    <button type="button" class="btn-close" data-bs-dismiss="modal"></button>
+                </div>
+                <div class="modal-body text-center">
+                    <img src="images/profesor2.jpg" class="img-fluid rounded-circle mb-3" width="150" height="150" alt="Profesor 2">
+                    <p><strong>Materia:</strong> Ciencias</p>
+                    <p><strong>Descripción:</strong> Apasionada por la biología y la química con métodos interactivos.</p>
+                    <p><strong>Experiencia:</strong> 5 años en la enseñanza.</p>
+                </div>
+            </div>
+        </div>
+    </div>
+
+    <script src="https://cdn.jsdelivr.net/npm/bootstrap@5.3.0/dist/js/bootstrap.bundle.min.js"></script>
+</body>
+</html>

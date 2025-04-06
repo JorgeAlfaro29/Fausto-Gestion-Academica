@@ -8,6 +8,7 @@
     <link href="https://fonts.googleapis.com/css2?family=Poppins:wght@300;400;500;600&display=swap" rel="stylesheet">
     <link rel="stylesheet" href="css/iniciarSesion.css">
     <link rel="icon" href="icons/logoFausto.png">
+
 </head>
 <body>
     <header class="py-3 fixed-top" style="background-color: black; color: white;">
@@ -28,10 +29,16 @@
                             <li><a class="dropdown-item" href="IniciarSesion.html">Iniciar Sesión</a></li>
                             <li><a class="dropdown-item" href="RegistrarUsuario.html">Registrar Usuario</a></li>
                             <li><a class="dropdown-item" href="RestablecerContrasenia.html">Restablecer Contraseña</a></li>
+                            <li><a class="dropdown-item" href="VistaProfesoresWeb.html">Vista Profesores</a></li>
                         </ul>
                     </li>
                     <li class="nav-item"><a class="nav-link" href="#" style="color: white;">Operaciones</a></li>
-                    <li class="nav-item"><a class="nav-link" href="#" style="color: white;">Administración</a></li>
+                    <li class="nav-item dropdown">
+                        <a class="nav-link dropdown-toggle" href="#" role="button" data-bs-toggle="dropdown" style="color: white;">Administrativo</a>
+                        <ul class="dropdown-menu">
+                            <li><a class="dropdown-item" href="listarMatricula.html">Matricula</a></li>
+                        </ul>
+                    </li>
                     <li class="nav-item"><a class="nav-link" href="#" style="color: white;">Christopher Briceño Arias</a></li>
                     <li class="nav-item"><a class="nav-link bg-danger text-white rounded-pill px-3" href="#">X</a></li>
                 </ul>
@@ -39,25 +46,63 @@
         </div>
     </header>
 
-    <main class="d-flex justify-content-center align-items-center min-vh-100" style="background-color: #f4f4f4;">
-        <section class="card p-4 shadow w-100" style="max-width: 400px; background-color: white;">
-            <h2 class="text-center" style="color: #333;">Registrar Usuario</h2>
+    <main class="d-flex justify-content-center align-items-start min-vh-100" style="background-color: #f4f4f4; padding-top: 130px;">
+        <section class="card p-4 shadow w-100" style="max-width: 600px; background-color: white;">
+            <h2 class="text-center mb-4" style="color: #333;">Registrar Usuario</h2>
             <form action="menu.html" method="POST">
                 <div class="mb-3">
-                    <label for="username" class="form-label" style="color: #333;">Usuario:</label>
-                    <input type="text" class="form-control" id="username" name="username" required placeholder="Ingrese su usuario">
+                    <label for="nombre" class="form-label">Nombre:</label>
+                    <input type="text" class="form-control" id="nombre" name="nombre" required>
                 </div>
                 <div class="mb-3">
-                    <label for="email" class="form-label" style="color: #333;">Correo Electrónico:</label>
-                    <input type="email" class="form-control" id="email" name="email" required placeholder="Ingrese su correo electrónico">
+                    <label for="segundoNombre" class="form-label">Segundo Nombre:</label>
+                    <input type="text" class="form-control" id="segundoNombre" name="segundoNombre">
                 </div>
                 <div class="mb-3">
-                    <label for="password" class="form-label" style="color: #333;">Contraseña:</label>
-                    <input type="password" class="form-control" id="password" name="password" required placeholder="Ingrese su contraseña">
+                    <label for="primerApellido" class="form-label">Primer Apellido:</label>
+                    <input type="text" class="form-control" id="primerApellido" name="primerApellido" required>
                 </div>
                 <div class="mb-3">
-                    <label for="confirm-password" class="form-label" style="color: #333;">Confirmar Contraseña:</label>
-                    <input type="password" class="form-control" id="confirm-password" name="confirm-password" required placeholder="Confirmar contraseña">
+                    <label for="segundoApellido" class="form-label">Segundo Apellido:</label>
+                    <input type="text" class="form-control" id="segundoApellido" name="segundoApellido" required>
+                </div>
+                <div class="mb-3">
+                    <label for="identificacion" class="form-label">Identificación:</label>
+                    <input type="text" class="form-control" id="identificacion" name="identificacion" required>
+                </div>
+                <div class="mb-3">
+                    <label for="telefono" class="form-label">Número Telefónico:</label>
+                    <input type="text" class="form-control" id="telefono" name="telefono" required>
+                </div>
+                <div class="mb-3">
+                    <label for="email" class="form-label">Correo Electrónico:</label>
+                    <input type="email" class="form-control" id="email" name="email" required>
+                </div>
+                <div class="mb-3">
+                    <label for="direccion" class="form-label">Dirección:</label>
+                    <input type="text" class="form-control" id="direccion" name="direccion" required>
+                </div>
+                <div class="mb-3">
+                    <label for="rol" class="form-label">Puesto/Rol:</label>
+                    <select class="form-select" id="rol" name="rol" required>
+                        <option value="">Seleccione un rol</option>
+                        <option value="administrador">Administrador</option>
+                        <option value="profesor">Profesor</option>
+                        <option value="estudiante">Estudiante</option>
+                        <!-- Puedes agregar más opciones aquí -->
+                    </select>
+                </div>
+                <div class="mb-3">
+                    <label for="username" class="form-label">Usuario:</label>
+                    <input type="text" class="form-control" id="username" name="username" required>
+                </div>
+                <div class="mb-3">
+                    <label for="password" class="form-label">Contraseña:</label>
+                    <input type="password" class="form-control" id="password" name="password" required>
+                </div>
+                <div class="mb-3">
+                    <label for="confirm-password" class="form-label">Confirmar Contraseña:</label>
+                    <input type="password" class="form-control" id="confirm-password" name="confirm-password" required>
                 </div>
                 <button type="submit" class="btn w-100 py-2" style="background-color: #8ea50d; color: white;">Registrar</button>
             </form>
