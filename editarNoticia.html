@@ -1,0 +1,131 @@
+<!DOCTYPE html>
+<html lang="es">
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <title>Actualizar Noticia</title>
+  <link rel="stylesheet" href="https://cdn.jsdelivr.net/npm/bootstrap@5.3.0/dist/css/bootstrap.min.css">
+  <link href="https://fonts.googleapis.com/css2?family=Poppins:wght@300;400;500;600&display=swap" rel="stylesheet">
+  <link rel="stylesheet" href="css/iniciarSesion.css">
+  <link rel="icon" href="icons/logoFausto.png">
+</head>
+<body>
+  <!-- Header y Navbar -->
+  <header class="py-3 fixed-top" style="background-color: black; color: white;">
+    <div class="container d-flex justify-content-start align-items-center">
+      <div class="d-flex align-items-center me-auto">
+        <a href="menu.html" class="me-2"><img src="icons/logoFausto.png" alt="Logo Fausto Herrera" width="80" height="80"></a>
+        <div>
+          <h1 class="h5 m-0" style="color: #8ea50d;">FAUSTO HERRERA</h1>
+          <span style="color: #D5DE83;">SISTEMA ACADÉMICO</span>
+        </div>
+      </div>
+      <nav>
+        <ul class="nav">
+            <li class="nav-item dropdown">
+                <a class="nav-link dropdown-toggle" href="#" role="button" data-bs-toggle="dropdown" style="color: white;">Academico</a>
+                <ul class="dropdown-menu">
+                    <li><a class="dropdown-item" href="listarMatricula.html">Matricula</a></li>
+                    <li><a class="dropdown-item" href="listarCalificaciones.html">Calificaciones</a></li>
+
+                </ul>
+            </li>
+            <li class="nav-item dropdown">
+                <a class="nav-link dropdown-toggle" href="#" role="button" data-bs-toggle="dropdown">Web</a>
+                <ul class="dropdown-menu">
+                    <li><a class="dropdown-item" href="IniciarSesion.html">Iniciar Sesión</a></li>
+                    <li><a class="dropdown-item" href="RegistrarUsuario.html">Registrar Usuario</a></li>
+                    <li><a class="dropdown-item" href="RestablecerContrasenia.html">Restablecer Contraseña</a></li>
+                    <li><a class="dropdown-item" href="VistaProfesoresWeb.html">Vista Profesores</a></li>
+                </ul>
+            </li>
+            <li class="nav-item"><a class="nav-link" href="#">Operaciones</a></li>
+            <li class="nav-item dropdown">
+                <a class="nav-link dropdown-toggle" href="#" role="button" data-bs-toggle="dropdown" style="color: white;">Administrativo</a>
+                <ul class="dropdown-menu">
+                    <li><a class="dropdown-item" href="listarNoticias.html">Noticias</a></li>
+                    <li><a class="dropdown-item" href="noticiasClientes.html">Noticias Clientes</a></li>
+                    <li><a class="dropdown-item" href="listarVentas.html">Ventas</a></li>
+                </ul>
+            </li>
+            <li class="nav-item"><a class="nav-link" href="#">Christopher Briceño Arias</a></li>
+            <li class="nav-item"><a class="nav-link bg-danger text-white rounded-pill px-3" href="#">X</a></li>
+        </ul>
+    </nav>
+    </div>
+  </header>
+
+  <!-- Main Content -->
+  <main class="d-flex justify-content-center align-items-start min-vh-100" style="background-color: #f4f4f4; padding-top: 130px;">
+    <section class="card p-4 shadow w-100" style="max-width: 800px; background-color: white;">
+      <h2 class="text-center mb-4" style="color: #333;">Actualizar Noticia</h2>
+      
+      <!-- Formulario de Actualización -->
+      <form id="updateNewsForm" action="listarNoticias.html" method="POST" onsubmit="return redirectToList();">
+        <div class="row">
+          <!-- ID de la noticia (auto-generado) -->
+          <div class="col-md-6 mb-3">
+            <label class="form-label">ID de la Noticia:</label>
+            <input type="text" class="form-control" name="idNoticia" value="1" readonly>
+          </div>
+
+          <!-- Título de la noticia -->
+          <div class="col-md-12 mb-3">
+            <label class="form-label">Título de la Noticia:</label>
+            <input type="text" class="form-control" name="titulo" value="Vacunacion" required>
+          </div>
+
+          <!-- Descripción de la noticia -->
+          <div class="col-md-12 mb-3">
+            <label class="form-label">Descripción de la Noticia:</label>
+            <textarea class="form-control" name="descripcion" rows="4" required>Vacunacion contra la influenza el lunes a las 10am.</textarea>
+          </div>
+
+          <!-- Imagen de la noticia -->
+          <div class="col-md-12 mb-3">
+            <label class="form-label">Imagen alusiva:</label>
+            <input type="file" class="form-control" name="imagen">
+            <small>Deje este campo vacío si no desea cambiar la imagen.</small>
+          </div>
+
+          <!-- Autor -->
+          <div class="col-md-6 mb-3">
+            <label class="form-label">Autor:</label>
+            <input type="text" class="form-control" name="autor" value="Juan Pérez" required>
+          </div>
+
+          <!-- Fecha de registro (solo lectura) -->
+          <div class="col-md-6 mb-3">
+            <label class="form-label">Fecha de Registro:</label>
+            <input type="text" class="form-control" name="fechaRegistro" value="2025-04-06 10:00" readonly>
+          </div>
+
+          <!-- Fecha de modificación -->
+          <div class="col-md-6 mb-3">
+            <label class="form-label">Fecha de Modificación:</label>
+            <input type="text" class="form-control" name="fechaModificacion" value="" readonly>
+          </div>
+        </div>
+
+        <!-- Botones de Acción -->
+        <div class="d-flex justify-content-between mt-4">
+          <button type="submit" class="btn px-4 py-2" style="background-color: #8ea50d; color: white;">Guardar Noticia</button>
+          <a href="listarNoticias.html" class="btn btn-secondary px-4 py-2">Cancelar</a>
+        </div>
+      </form>
+    </section>
+  </main>
+
+  <script src="https://cdn.jsdelivr.net/npm/bootstrap@5.3.0/dist/js/bootstrap.bundle.min.js"></script>
+  
+  <!-- Script para redirigir después de guardar -->
+  <script>
+    function redirectToList() {
+      // Aquí puedes realizar la lógica de validación o guardar los datos si es necesario.
+      // Después de guardar, redirige a la lista de noticias.
+      window.location.href = 'listarNoticias.html';  // Redirige a la vista de listado de noticias.
+      return false; // Prevenir que el formulario se envíe de la manera tradicional.
+    }
+  </script>
+</body>
+</html>

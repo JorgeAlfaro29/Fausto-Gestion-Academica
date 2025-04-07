@@ -2,6 +2,7 @@
     font-family: 'Poppins', sans-serif;
 }
 
+
 /* Estilo personalizado para el hover en la barra de navegación */
 .nav-link {
     color: white;
@@ -22,6 +23,7 @@
     background-color: #8ea50d;
     color: white;
 }
+
 
 .nav-link:hover, .dropdown-item:hover {
     background-color: #8ea50d;

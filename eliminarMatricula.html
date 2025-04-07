@@ -3,13 +3,14 @@
 <head>
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
-    <title>Registrar Usuario</title>
+    <title>Eliminar Matrícula</title>
     <link rel="stylesheet" href="https://cdn.jsdelivr.net/npm/bootstrap@5.3.0/dist/css/bootstrap.min.css">
     <link href="https://fonts.googleapis.com/css2?family=Poppins:wght@300;400;500;600&display=swap" rel="stylesheet">
     <link rel="icon" href="icons/logoFausto.png">
     <link rel="stylesheet" href="css/menu.css">
+
 </head>
-<body class="bg-light">
+<body>
     <header class="py-3 fixed-top" style="background-color: black; color: white;">
         <div class="container d-flex justify-content-start align-items-center">
             <div class="d-flex align-items-center me-auto">
@@ -34,7 +35,7 @@
                         <ul class="dropdown-menu">
                             <li><a class="dropdown-item" href="IniciarSesion.html">Iniciar Sesión</a></li>
                             <li><a class="dropdown-item" href="RegistrarUsuario.html">Registrar Usuario</a></li>
-                            <li><a class="dropdown-item" href="opcionesConstrasenia.html">Restablecer Contraseña</a></li>
+                            <li><a class="dropdown-item" href="RestablecerContrasenia.html">Restablecer Contraseña</a></li>
                             <li><a class="dropdown-item" href="VistaProfesoresWeb.html">Vista Profesores</a></li>
                         </ul>
                     </li>
@@ -54,72 +55,41 @@
         </div>
     </header>
 
-    <!-- Main Content -->
-    <main class="container mt-5 pt-5">
-       <!-- Sección de búsqueda -->
-    <section class="row mb-6 mt-5"> <!-- Aquí añadí mt-5 para mover más abajo -->
-        <div class="col-md-6 mb-4">
-            <div class="card p-4 shadow-sm">
-                <label for="searchUser" class="form-label" style="color: #333;">Nombre/Código/Correo electrónico</label>
-                <input type="text" id="searchUser" class="form-control" placeholder="Ingrese el término de búsqueda">
-                <button class="btn w-100" style="background-color: #8ea50d; color: white;">Buscar</button>
-            </div>
-        </div>
-        <div class="col-md-6 mb-5">
-            <div class="card p-4 shadow-sm">
-                <label for="searchCurp" class="form-label" style="color: #333;">Búsqueda Identificación</label>
-                <input type="text" id="searchCurp" class="form-control" placeholder="Ingrese el término de búsqueda">
-                <button class="btn w-100" style="background-color: #8ea50d; color: white;">Buscar</button>
-            </div>
-        </div>
-    </section>
+    <main class="d-flex justify-content-center align-items-start min-vh-100" style="background-color: #f4f4f4; padding-top: 130px;">
+        <section class="card p-4 shadow w-100" style="max-width: 600px; background-color: white;">
+            <h2 class="text-center mb-4" style="color: #333;">Eliminar Matrícula</h2>
 
-        <!-- Tabla de estudiantes -->
-        <section>
-            <h2 class="mb-3" style="color: #333;">Estudiantes</h2>
-            <table class="table table-bordered table-striped">
-                <thead style="background-color: #8ea50d; color: white;">
-                    <tr>
-                        <th>Nombre</th>
-                        <th>Grado</th>
-                        <th>Status</th>
-                        <th>Horario</th>
-                        <th>Foto</th>
-                    </tr>
-                </thead>
-                <tbody>
-                    <tr>
-                        <td><a href="estudiante.html" style="color: #333;">Christopher Briceño Arias</a></td>
-                        <td>7</td>
-                        <td class="text-success font-weight-bold">Activo</td>
-                        <td><a href="#" class="btn btn-info btn-sm">Ver horario</a></td>
-                        <td>
-                            <!-- Botón para abrir el modal de foto -->
-                            <button class="btn btn-warning btn-sm" data-bs-toggle="modal" data-bs-target="#photoModal">Ver foto</button>
-                        </td>
-                    </tr>
-                    <!-- Puedes añadir más filas según sea necesario -->
-                </tbody>
-            </table>
+            <!-- Datos del estudiante (estos se rellenan con los datos del estudiante a eliminar) -->
+            <div class="mb-3">
+                <label class="form-label">Nombre del Estudiante:</label>
+                <input type="text" class="form-control" value="Juan Pérez" disabled>
+            </div>
+            <div class="mb-3">
+                <label class="form-label">Identificación:</label>
+                <input type="text" class="form-control" value="123456789" disabled>
+            </div>
+            <div class="mb-3">
+                <label class="form-label">Grado:</label>
+                <input type="text" class="form-control" value="8vo" disabled>
+            </div>
+            <!-- Puedes agregar más datos si lo deseas -->
+            
+            <!-- Mensaje de confirmación -->
+            <div class="alert alert-warning mt-3">
+                <strong>Advertencia:</strong> El estudiante será eliminado. ¿Desea confirmar la eliminación de la matrícula?
+            </div>
+
+            <!-- Botones de Confirmar o Cancelar -->
+            <div class="d-flex justify-content-between mt-4">
+                <!-- Botón para confirmar la eliminación -->
+                <a href="listarMatricula.html" class="btn btn-danger px-4 py-2">Sí, Eliminar</a>
+                
+                <!-- Botón para cancelar la eliminación y volver al menú -->
+                <a href="listarMatricula.html" class="btn btn-secondary px-4 py-2">No, Cancelar</a>
+            </div>
         </section>
     </main>
 
-    <!-- Modal para la foto del estudiante -->
-    <div class="modal fade" id="photoModal" tabindex="-1" aria-labelledby="photoModalLabel" aria-hidden="true">
-        <div class="modal-dialog">
-            <div class="modal-content">
-                <div class="modal-header">
-                    <h5 class="modal-title" id="photoModalLabel">Foto Estudiante</h5>
-                    <button type="button" class="btn-close" data-bs-dismiss="modal" aria-label="Cerrar"></button>
-                </div>
-                <div class="modal-body">
-                    <img src="images/luffy.PNG" alt="Foto Estudiante" class="img-fluid">
-                </div>
-            </div>
-        </div>
-    </div>
-
-    <!-- Scripts -->
     <script src="https://cdn.jsdelivr.net/npm/bootstrap@5.3.0/dist/js/bootstrap.bundle.min.js"></script>
 </body>
 </html>
