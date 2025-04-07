@@ -26,7 +26,6 @@
                 <ul class="dropdown-menu">
                     <li><a class="dropdown-item" href="listarMatricula.html">Matricula</a></li>
                     <li><a class="dropdown-item" href="listarCalificaciones.html">Calificaciones</a></li>
-
                 </ul>
             </li>
             <li class="nav-item dropdown">
@@ -54,21 +53,21 @@
     </div>
   </header>
 
-  <main class="d-flex justify-content-center align-items-start min-vh-100" style="background-color: #f4f4f4; padding-top: 130px;">
+  <main class="d-flex justify-content-center align-items-center min-vh-100" style="background-color: #f4f4f4;">
     <section class="card p-4 shadow w-100" style="max-width: 400px; background-color: white;">
       <h2 class="text-center mb-4" style="color: #333;">Iniciar Sesión</h2>
-      <form action="menu.html" method="POST" id="loginForm">
+      <form id="loginForm">
         <div class="mb-3">
-          <label for="username" class="form-label">Usuario:</label>
-          <input type="text" class="form-control" id="username" name="username" />
+          <label for="email" class="form-label">Correo:</label>
+          <input type="email" class="form-control" id="email" name="email" required />
         </div>
         <div class="mb-3">
           <label for="password" class="form-label">Contraseña:</label>
-          <input type="password" class="form-control" id="password" name="password" />
+          <input type="password" class="form-control" id="password" name="password" required />
         </div>
         <button type="submit" class="btn w-100 py-2" style="background-color: #8ea50d; color: white;">Iniciar Sesión</button>
         <div class="text-center mt-3">
-          <a href="RegistrarUsuario.html" style="color: #8ea50d;">¿Olvidaste tu contraseña?</a>
+          <a href="RestablecerContrasenia.html" style="color: #8ea50d;">¿Olvidaste tu contraseña?</a>
         </div>
       </form>
     </section>
@@ -76,16 +75,21 @@
 
   <script>
     document.getElementById("loginForm").addEventListener("submit", function (event) {
-      const usuario = document.getElementById("username").value.trim();
-      const contrasena = document.getElementById("password").value.trim();
+      event.preventDefault();  // Evita que el formulario se envíe inmediatamente
 
-      if (usuario === "" || contrasena === "") {
-        event.preventDefault();
+      const email = document.getElementById("email").value.trim();
+      const password = document.getElementById("password").value.trim();
+
+      // Verificar que los campos no estén vacíos
+      if (email === "" || password === "") {
         alert("Por favor, complete todos los campos para iniciar sesión.");
+      } else {
+        // Si los campos están completos, redirigir a menu.html
+        window.location.href = "menu.html";
       }
     });
   </script>
-  
+
   <script src="https://cdn.jsdelivr.net/npm/bootstrap@5.3.0/dist/js/bootstrap.bundle.min.js"></script>
 </body>
 </html>
