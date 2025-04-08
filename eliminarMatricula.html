@@ -3,22 +3,12 @@
 <head>
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
-    <title>Restablecer Contraseña</title>
+    <title>Eliminar Matrícula</title>
     <link rel="stylesheet" href="https://cdn.jsdelivr.net/npm/bootstrap@5.3.0/dist/css/bootstrap.min.css">
     <link href="https://fonts.googleapis.com/css2?family=Poppins:wght@300;400;500;600&display=swap" rel="stylesheet">
     <link rel="icon" href="icons/logoFausto.png">
-    <link rel="stylesheet" href="css/iniciarSesion.css">
-    <style>
-        .button-container {
-            display: flex;
-            gap: 11px;
-            justify-content: space-between;
-        }
+    <link rel="stylesheet" href="css/menu.css">
 
-        .button-container .btn {
-            flex: 1;
-        }
-    </style>
 </head>
 <body>
     <header class="py-3 fixed-top" style="background-color: black; color: white;">
@@ -65,48 +55,41 @@
         </div>
     </header>
 
-    <main class="d-flex justify-content-center align-items-center min-vh-100" style="background-color: #f4f4f4;">
-        <section class="card p-4 shadow w-100" style="max-width: 400px; background-color: white;">
-            <h2 class="text-center" style="color: #333;">Restablecer Contraseña</h2>
-            <form id="formCambioContraseña" action="menu.html" method="POST">
-                <div class="mb-3">
-                    <label for="email" class="form-label" style="color: #333;">Correo Electrónico:</label>
-                    <input type="email" class="form-control" id="email" name="email" required placeholder="Ingrese su correo electrónico">
-                </div>
-                <div class="mb-3">
-                    <label for="new-password" class="form-label" style="color: #333;">Nueva Contraseña:</label>
-                    <input type="password" class="form-control" id="new-password" name="new-password" required placeholder="Ingrese su nueva contraseña">
-                </div>
-                <div class="mb-3">
-                    <label for="confirm-new-password" class="form-label" style="color: #333;">Confirmar Nueva Contraseña:</label>
-                    <input type="password" class="form-control" id="confirm-new-password" name="confirm-new-password" required placeholder="Confirme su nueva contraseña">
-                </div>
+    <main class="d-flex justify-content-center align-items-start min-vh-100" style="background-color: #f4f4f4; padding-top: 130px;">
+        <section class="card p-4 shadow w-100" style="max-width: 600px; background-color: white;">
+            <h2 class="text-center mb-4" style="color: #333;">Eliminar Matrícula</h2>
 
-                <!-- Contenedor para los botones -->
-                <div class="button-container">
-                    <button type="submit" class="btn btn-custom" style="background-color: #8ea50d; color: white;">Restablecer Contraseña</button>
-                    <a href="opcionesConstrasenia.html" class="btn btn-secondary">Cancelar</a>
-                </div>
-            </form>
+            <!-- Datos del estudiante (estos se rellenan con los datos del estudiante a eliminar) -->
+            <div class="mb-3">
+                <label class="form-label">Nombre del Estudiante:</label>
+                <input type="text" class="form-control" value="Juan Pérez" disabled>
+            </div>
+            <div class="mb-3">
+                <label class="form-label">Identificación:</label>
+                <input type="text" class="form-control" value="123456789" disabled>
+            </div>
+            <div class="mb-3">
+                <label class="form-label">Grado:</label>
+                <input type="text" class="form-control" value="8vo" disabled>
+            </div>
+            <!-- Puedes agregar más datos si lo deseas -->
+            
+            <!-- Mensaje de confirmación -->
+            <div class="alert alert-warning mt-3">
+                <strong>Advertencia:</strong> El estudiante será eliminado. ¿Desea confirmar la eliminación de la matrícula?
+            </div>
+
+            <!-- Botones de Confirmar o Cancelar -->
+            <div class="d-flex justify-content-between mt-4">
+                <!-- Botón para confirmar la eliminación -->
+                <a href="listarMatricula.html" class="btn btn-danger px-4 py-2">Sí, Eliminar</a>
+                
+                <!-- Botón para cancelar la eliminación y volver al menú -->
+                <a href="listarMatricula.html" class="btn btn-secondary px-4 py-2">No, Cancelar</a>
+            </div>
         </section>
     </main>
 
     <script src="https://cdn.jsdelivr.net/npm/bootstrap@5.3.0/dist/js/bootstrap.bundle.min.js"></script>
-    <script>
-        document.querySelector("#formCambioContraseña").addEventListener("submit", function(event) {
-            event.preventDefault(); // Evita que el formulario recargue la página
-
-            const nuevaContraseña = document.getElementById("new-password").value;
-            const confirmarContraseña = document.getElementById("confirm-new-password").value;
-
-            // Si las contraseñas no coinciden, se previene el envío y se muestra un mensaje
-            if (nuevaContraseña !== confirmarContraseña) {
-                alert("Las contraseñas no coinciden. Por favor, inténtalo de nuevo.");
-            } else {
-                // Si las contraseñas coinciden, redirige al menú
-                window.location.href = "IniciarSesion.html";
-            }
-        });
-    </script>
 </body>
 </html>

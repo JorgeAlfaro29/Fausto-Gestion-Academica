@@ -1,19 +1,20 @@
 <!DOCTYPE html>
 <html lang="es">
 <head>
-  <meta charset="UTF-8" />
-  <meta name="viewport" content="width=device-width, initial-scale=1.0"/>
-  <title>Iniciar Sesión</title>
-  <link rel="stylesheet" href="https://cdn.jsdelivr.net/npm/bootstrap@5.3.0/dist/css/bootstrap.min.css"/>
-  <link href="https://fonts.googleapis.com/css2?family=Poppins:wght@300;400;500;600&display=swap" rel="stylesheet"/>
-  <link rel="stylesheet" href="css/iniciarSesion.css"/>
-  <link rel="icon" href="icons/logoFausto.png" />
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <title>Crear Noticia</title>
+  <link rel="stylesheet" href="https://cdn.jsdelivr.net/npm/bootstrap@5.3.0/dist/css/bootstrap.min.css">
+  <link href="https://fonts.googleapis.com/css2?family=Poppins:wght@300;400;500;600&display=swap" rel="stylesheet">
+  <link rel="stylesheet" href="css/iniciarSesion.css">
+  <link rel="icon" href="css">
 </head>
 <body>
+  <!-- Header y Navbar -->
   <header class="py-3 fixed-top" style="background-color: black; color: white;">
     <div class="container d-flex justify-content-start align-items-center">
       <div class="d-flex align-items-center me-auto">
-        <a href="menu.html" class="me-2"><img src="icons/logoFausto.png" alt="Logo Fausto Herrera" width="80" height="80"/></a>
+        <a href="menu.html" class="me-2"><img src="icons/logoFausto.png" alt="Logo Fausto Herrera" width="80" height="80"></a>
         <div>
           <h1 class="h5 m-0" style="color: #8ea50d;">FAUSTO HERRERA</h1>
           <span style="color: #D5DE83;">SISTEMA ACADÉMICO</span>
@@ -54,42 +55,45 @@
     </div>
   </header>
 
-  <main class="d-flex justify-content-center align-items-center min-vh-100" style="background-color: #f4f4f4;">
-    <section class="card p-4 shadow w-100" style="max-width: 400px; background-color: white;">
-      <h2 class="text-center mb-4" style="color: #333;">Iniciar Sesión</h2>
-      <form id="loginForm">
-        <div class="mb-3">
-          <label for="email" class="form-label">Correo:</label>
-          <input type="email" class="form-control" id="email" name="email" required />
+  <!-- Main Content -->
+  <main class="d-flex justify-content-center align-items-start min-vh-100" style="background-color: #f4f4f4; padding-top: 130px;">
+    <section class="card p-4 shadow w-100" style="max-width: 800px; background-color: white;">
+      <h2 class="text-center mb-4" style="color: #333;">Crear Noticia</h2>
+      <form action="listarNoticias.html" method="POST" enctype="multipart/form-data">
+        <div class="row">
+          <div class="col-md-6 mb-3">
+            <label class="form-label">Título de la Noticia:</label>
+            <input type="text" class="form-control" name="titulo" required>
+          </div>
+          <div class="col-md-6 mb-3">
+            <label class="form-label">Autor:</label>
+            <input type="text" class="form-control" name="autor" required>
+          </div>
+          <div class="col-md-12 mb-3">
+            <label class="form-label">Descripción de la Noticia:</label>
+            <textarea class="form-control" name="descripcion" rows="4" required></textarea>
+          </div>
+          <div class="col-md-12 mb-3">
+            <label class="form-label">Imagen Alusiva:</label>
+            <input type="file" class="form-control" name="imagen" accept="image/*" required>
+          </div>
+          <div class="col-md-6 mb-3">
+            <label class="form-label">Fecha de Registro:</label>
+            <input type="datetime-local" class="form-control" name="fechaRegistro"  required>
+          </div>
+          <div class="col-md-6 mb-3">
+            <label class="form-label">Fecha de Modificación:</label>
+            <input type="datetime-local" class="form-control" name="fechaModificacion" required>
+          </div>
         </div>
-        <div class="mb-3">
-          <label for="password" class="form-label">Contraseña:</label>
-          <input type="password" class="form-control" id="password" name="password" required />
-        </div>
-        <button type="submit" class="btn w-100 py-2" style="background-color: #8ea50d; color: white;">Iniciar Sesión</button>
-        <div class="text-center mt-3">
-          <a href="RestablecerContrasenia.html" style="color: #8ea50d;">¿Olvidaste tu contraseña?</a>
+
+        <div class="d-flex justify-content-between mt-4">
+          <button type="submit" class="btn px-4 py-2" style="background-color: #8ea50d; color: white;">Guardar Noticia</button>
+          <a href="listarNoticias.html" class="btn btn-secondary px-4 py-2">Cancelar</a>
         </div>
       </form>
     </section>
   </main>
-
-  <script>
-    document.getElementById("loginForm").addEventListener("submit", function (event) {
-      event.preventDefault();  // Evita que el formulario se envíe inmediatamente
-
-      const email = document.getElementById("email").value.trim();
-      const password = document.getElementById("password").value.trim();
-
-      // Verificar que los campos no estén vacíos
-      if (email === "" || password === "") {
-        alert("Por favor, complete todos los campos para iniciar sesión.");
-      } else {
-        // Si los campos están completos, redirigir a menu.html
-        window.location.href = "menu.html";
-      }
-    });
-  </script>
 
   <script src="https://cdn.jsdelivr.net/npm/bootstrap@5.3.0/dist/js/bootstrap.bundle.min.js"></script>
 </body>

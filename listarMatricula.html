@@ -3,20 +3,15 @@
 <head>
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
-    <title>Restablecer Contraseña</title>
+    <title>Lista de Matrículas</title>
     <link rel="stylesheet" href="https://cdn.jsdelivr.net/npm/bootstrap@5.3.0/dist/css/bootstrap.min.css">
     <link href="https://fonts.googleapis.com/css2?family=Poppins:wght@300;400;500;600&display=swap" rel="stylesheet">
-    <link rel="icon" href="icons/logoFausto.png">
     <link rel="stylesheet" href="css/iniciarSesion.css">
+    <link rel="icon" href="icons/logoFausto.png">
     <style>
-        .button-container {
-            display: flex;
-            gap: 11px;
-            justify-content: space-between;
-        }
-
-        .button-container .btn {
-            flex: 1;
+        /* Asegúrate de que el encabezado no cubra el contenido */
+        body {
+            padding-top: 120px; /* Ajusta este valor si es necesario */
         }
     </style>
 </head>
@@ -65,48 +60,66 @@
         </div>
     </header>
 
-    <main class="d-flex justify-content-center align-items-center min-vh-100" style="background-color: #f4f4f4;">
-        <section class="card p-4 shadow w-100" style="max-width: 400px; background-color: white;">
-            <h2 class="text-center" style="color: #333;">Restablecer Contraseña</h2>
-            <form id="formCambioContraseña" action="menu.html" method="POST">
-                <div class="mb-3">
-                    <label for="email" class="form-label" style="color: #333;">Correo Electrónico:</label>
-                    <input type="email" class="form-control" id="email" name="email" required placeholder="Ingrese su correo electrónico">
-                </div>
-                <div class="mb-3">
-                    <label for="new-password" class="form-label" style="color: #333;">Nueva Contraseña:</label>
-                    <input type="password" class="form-control" id="new-password" name="new-password" required placeholder="Ingrese su nueva contraseña">
-                </div>
-                <div class="mb-3">
-                    <label for="confirm-new-password" class="form-label" style="color: #333;">Confirmar Nueva Contraseña:</label>
-                    <input type="password" class="form-control" id="confirm-new-password" name="confirm-new-password" required placeholder="Confirme su nueva contraseña">
-                </div>
-
-                <!-- Contenedor para los botones -->
-                <div class="button-container">
-                    <button type="submit" class="btn btn-custom" style="background-color: #8ea50d; color: white;">Restablecer Contraseña</button>
-                    <a href="opcionesConstrasenia.html" class="btn btn-secondary">Cancelar</a>
-                </div>
-            </form>
-        </section>
+    <main class="container mt-5 pt-5">
+        <div class="d-flex justify-content-between align-items-center mb-4">
+            <h2 class="text-dark">Lista de Matrículas</h2>
+            <a href="matricula.html" class="btn" style="background-color: #8ea50d; color: white;">+ Nueva Matrícula</a>
+        </div>
+        <div class="table-responsive">
+            <table class="table table-bordered table-hover shadow">
+                <thead class="table-dark">
+                    <tr>
+                        <th>#</th>
+                        <th>Nombre Estudiante</th>
+                        <th>Identificación</th>
+                        <th>Grado</th>
+                        <th>Edad</th>
+                        <th>Sexo</th>
+                        <th>Nacionalidad</th>
+                        <th>Encargado</th>
+                        <th>Tel. Encargado</th>
+                        <th>Acciones</th>
+                    </tr>
+                </thead>
+                <tbody>
+                    <tr>
+                        <td>1</td>
+                        <td>María Pérez Ramírez</td>
+                        <td>208030123</td>
+                        <td>5</td>
+                        <td>10</td>
+                        <td>Femenino</td>
+                        <td>Costarricense</td>
+                        <td>Ana Ramírez</td>
+                        <td>8888-8888</td>
+                        <td>
+                            <a href="EditarMatricula.html" class="btn btn-sm btn-warning">Editar</a>
+                            <a href="eliminarMatricula.html" class="btn btn-sm btn-danger">Eliminar</a>
+                        </td>
+                    </tr>
+                    <tr>
+                        <td>2</td>
+                        <td>Carlos Jiménez López</td>
+                        <td>307050456</td>
+                        <td>3</td>
+                        <td>8</td>
+                        <td>Masculino</td>
+                        <td>Costarricense</td>
+                        <td>Jorge Jiménez</td>
+                        <td>8999-7777</td>
+                        <td>
+                            <a href="editarMatricula.html" class="btn btn-sm btn-warning">Editar</a>
+                            <a href="eliminarMatricula.html" class="btn btn-sm btn-danger">Eliminar</a>
+                        </td>
+                    </tr>
+                </tbody>
+            </table>
+        </div>
+        <div class="text-center mt-4">
+            <a href="menu.html" class="btn btn-secondary">Volver al Menú</a>
+        </div>
     </main>
 
     <script src="https://cdn.jsdelivr.net/npm/bootstrap@5.3.0/dist/js/bootstrap.bundle.min.js"></script>
-    <script>
-        document.querySelector("#formCambioContraseña").addEventListener("submit", function(event) {
-            event.preventDefault(); // Evita que el formulario recargue la página
-
-            const nuevaContraseña = document.getElementById("new-password").value;
-            const confirmarContraseña = document.getElementById("confirm-new-password").value;
-
-            // Si las contraseñas no coinciden, se previene el envío y se muestra un mensaje
-            if (nuevaContraseña !== confirmarContraseña) {
-                alert("Las contraseñas no coinciden. Por favor, inténtalo de nuevo.");
-            } else {
-                // Si las contraseñas coinciden, redirige al menú
-                window.location.href = "IniciarSesion.html";
-            }
-        });
-    </script>
 </body>
 </html>
