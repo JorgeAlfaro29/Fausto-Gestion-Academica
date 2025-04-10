@@ -76,13 +76,21 @@
       </div>
       <nav>
         <ul class="nav">
-            <li class="nav-item"><a class="nav-link" href="menu.html">Académica</a></li>
+            <li class="nav-item dropdown">
+                <a class="nav-link dropdown-toggle" href="#" role="button" data-bs-toggle="dropdown" style="color: white;">Academico</a>
+                <ul class="dropdown-menu">
+                    <li><a class="dropdown-item" href="listarMatricula.html">Matricula</a></li>
+                    <li><a class="dropdown-item" href="listarCalificaciones.html">Calificaciones</a></li>
+
+                </ul>
+            </li>
             <li class="nav-item dropdown">
                 <a class="nav-link dropdown-toggle" href="#" role="button" data-bs-toggle="dropdown">Web</a>
                 <ul class="dropdown-menu">
                     <li><a class="dropdown-item" href="IniciarSesion.html">Iniciar Sesión</a></li>
                     <li><a class="dropdown-item" href="RegistrarUsuario.html">Registrar Usuario</a></li>
-                    <li><a class="dropdown-item" href="RestablecerContrasenia.html">Restablecer Contraseña</a></li>
+                    <li><a class="dropdown-item" href="opcionesConstrasenia.html">Restablecer Contraseña</a></li>
+                    <li><a class="dropdown-item" href="VistaProfesoresWeb.html">Vista Profesores</a></li>
                     <li><a class="dropdown-item" href="Calendario.html">Calendario</a></li>
                 </ul>
             </li>
@@ -91,13 +99,20 @@
               <li><a class="dropdown-item" href="Documentos.html">Documentos</a></li>
               <li><a class="dropdown-item" href="Gestion_Personal.html">Gestión del Personal</a></li>
             </ul>
-            <a class="nav-link dropdown-toggle" href="#" role="button" data-bs-toggle="dropdown">Administración</a>
-            <ul class="dropdown-menu">
-              <li><a class="dropdown-item" href="Registro_Marcas.html">Registro de Marcas</a></li>
+            <li class="nav-item dropdown">
+                <a class="nav-link dropdown-toggle" href="#" role="button" data-bs-toggle="dropdown" style="color: white;">Administrativo</a>
+                <ul class="dropdown-menu">
+                    <li><a class="dropdown-item" href="listarNoticias.html">Noticias</a></li>
+                    <li><a class="dropdown-item" href="noticiasClientes.html">Noticias Clientes</a></li>
+                    <li><a class="dropdown-item" href="listarVentas.html">Ventas</a></li>
+                    <li><a class="dropdown-item" href="Registro_Marcas.html">Registro de Marcas</a></li>
               <li><a class="dropdown-item" href="Control_Marcas.html">Control de Marcas</a></li>
               <li><a class="dropdown-item" href="Solicitud_Vacaciones.html">Solicitud de Vacaciones</a></li>
               <li><a class="dropdown-item" href="Control_Vacaciones.html">Control de Vacaciones</a></li>
-            </ul>
+                </ul>
+            </li>
+            <li class="nav-item"><a class="nav-link" href="#">Christopher Briceño Arias</a></li>
+            <li class="nav-item"><a class="nav-link bg-danger text-white rounded-pill px-3" href="#">X</a></li>
         </ul>
     </nav>
     </div>
