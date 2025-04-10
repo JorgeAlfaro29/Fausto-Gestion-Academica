@@ -1,23 +1,37 @@
 <!DOCTYPE html>
 <html lang="es">
 <head>
-  <meta charset="UTF-8">
-  <meta name="viewport" content="width=device-width, initial-scale=1.0">
-  <title>Listado de Calificaciones</title>
-  <link rel="stylesheet" href="https://cdn.jsdelivr.net/npm/bootstrap@5.3.0/dist/css/bootstrap.min.css">
-  <link href="https://fonts.googleapis.com/css2?family=Poppins:wght@300;400;500;600&display=swap" rel="stylesheet">
-  <link rel="stylesheet" href="css/iniciarSesion.css">
-  <link rel="icon" href="icons/logoFausto.png">
+  <meta charset="UTF-8"/>
+  <meta name="viewport" content="width=device-width, initial-scale=1.0"/>
+  <title>Listado de Prematrículas</title>
+  <link rel="stylesheet" href="https://cdn.jsdelivr.net/npm/bootstrap@5.3.0/dist/css/bootstrap.min.css"/>
+  <link href="https://fonts.googleapis.com/css2?family=Poppins:wght@300;400;500;600&display=swap" rel="stylesheet"/>
   <style>
-    /* Ajustamos el formulario para hacerlo más ancho */
-    .form-container {
-      max-width: 1200px;
-      margin: 0 auto;
+    body {
+      font-family: 'Poppins', sans-serif;
+      background-color: #f8f9fa;
     }
-
+    .table-container {
+      background-color: #fff;
+      padding: 2rem;
+      border-radius: 1rem;
+      box-shadow: 0 0 10px rgba(0,0,0,0.1);
+      overflow-x: auto;
+    }
+    @media (max-width: 576px) {
+      h2 {
+        font-size: 1.5rem;
+      }
+      .table {
+        font-size: 0.9rem;
+      }
+    }
   </style>
 </head>
+
 <body>
+
+  <!-- Navbar -->
   <header class="py-3 fixed-top" style="background-color: black; color: white;">
     <div class="container d-flex justify-content-start align-items-center">
         <div class="d-flex align-items-center me-auto">
@@ -76,93 +90,89 @@
     </div>
 </header>
 
-  <main class="d-flex justify-content-center align-items-start min-vh-100" style="background-color: #f4f4f4; padding-top: 130px;">
-    <section class="card p-4 shadow w-100 form-container" style="background-color: white;">
-      <h2 class="text-center mb-4" style="color: #333;">Listado de Calificaciones</h2>
-      <form action="listarCalificaciones.html" method="GET" class="mb-4">
-        <div class="row">
-          <div class="col-md-6">
-            <label for="grado" class="form-label">Seleccionar Grado:</label>
-            <select class="form-select" id="grado" name="grado" required>
-              <option value="">Seleccione un grado</option>
-              <option value="1">1° Grado</option>
-              <option value="2">2° Grado</option>
-              <option value="3">3° Grado</option>
-              <option value="4">4° Grado</option>
-              <option value="5">5° Grado</option>
-              <option value="6">6° Grado</option>
-            </select>
-            <label for="grado" class="form-label">Seleccionar Materia:</label>
-            <select class="form-select" id="grado" name="grado" required>
-              <option value="">Seleccione una Materia</option>
-              <option value="1">Matematicas</option>
-              <option value="2">Ciencias</option>
-              <option value="3">Estudios Sociales</option>
-              <option value="4">Español</option>
-            </select>
-          </div>
-          <div class="col-md-6 d-flex align-items-end">
-            <button type="submit" class="btn w-100" style="background-color: #8ea50d; color: white;">Filtrar</button>
-          </div>
-        </div>
-      </form>
-      <table class="table table-bordered table-hover">
-        <thead>
-          <tr>
-            <th>Nombre</th>
-            <th>Identificación</th>
-            <th>Examen #1</th>
-            <th>Examen #2</th>
-            <th>Proyecto</th>
-            <th>Tarea 1</th>
-            <th>Tarea 2</th>
-            <th>Cotidiano</th>
-            <th>Nota Final</th> <!-- Nueva columna -->
-            <th>Acciones</th>
-          </tr>
-        </thead>
-        <tbody>
-          <tr>
-            <td>Juan Pérez</td>
-            <td>123456789</td>
-            <td>15</td>
-            <td>20</td>
-            <td>40</td>
-            <td>5</td>
-            <td>5</td>
-            <td>15</td>
-            <td>100</td> <!-- Nota Final calculada -->
-            <td>
-              <a href="editarCalificaciones.html" class="btn btn-sm btn-warning">Editar</a>
-              <a href="detallesCalificaciones.html" class="btn btn-info btn-sm">Detalles</a>
-              <a href="calificaciones.html" class="btn btn-sm btn-success">Calificar</a>
-              
-            </td>
-          </tr>
-          <tr>
-            <td>Ana Gómez</td>
-            <td>987654321</td>
-            <td>10</td>
-            <td>13</td>
-            <td>30</td>
-            <td>5</td>
-            <td>4</td>
-            <td>0</td>
-            <td>62</td> <!-- Nota Final calculada -->
-            <td>
-                <a href="editarCalificaciones.html" class="btn btn-sm btn-warning">Editar</a>
-                <a href="detallesCalificaciones.html" class="btn btn-info btn-sm">Detalles</a>
-                <a href="calificaciones.html" class="btn btn-sm btn-success">Calificar</a>
-            </td>
-          </tr>
-        </tbody>
-      </table>
-      <div class="d-flex justify-content-between mt-4">
-        <a href="menu.html" class="btn btn-secondary px-4 py-2">Volver</a>
+  <main class="container py-5" style="padding-top: 120px;">
+    <h2 class="text-center mb-4">Listado de Prematrículas</h2>
+
+    <br></br>
+  
+    <!-- Botón para crear prematrícula -->
+    <div class="d-flex justify-content-end mb-3">
+      <a href="crearPrematricula.html" class="btn btn-success">Crear Prematrícula</a>
+    </div>
+  
+    <div class="table-container">
+      <div class="table-responsive">
+        <table class="table table-striped table-hover align-middle text-center">
+          <thead class="table-dark">
+            <tr>
+              <th>#</th>
+              <th>Nombre</th>
+              <th>Apellidos</th>
+              <th>Identificación</th>
+              <th>Teléfono</th>
+              <th>Correo</th>
+              <th>Dirección</th>
+              <th>Puesto</th>
+              <th>Acciones</th>
+            </tr>
+          </thead>
+          <tbody id="tablaPrematriculas">
+            <!-- Aquí se llenarán los datos dinámicamente -->
+          </tbody>
+        </table>
       </div>
-    </section>
+    </div>
   </main>
 
+  <script>
+    // Datos simulados (puedes reemplazarlos con datos reales desde el backend)
+    const prematriculas = [
+      {
+        nombre: "Carlos",
+        apellido1: "Ramírez",
+        apellido2: "López",
+        id: "123456789",
+        telefono: "8888-9999",
+        correo: "carlos@example.com",
+        direccion: "San José, Costa Rica",
+        puesto: "Padre"
+      },
+      {
+        nombre: "Ana",
+        apellido1: "Mora",
+        apellido2: "Gómez",
+        id: "987654321",
+        telefono: "7777-8888",
+        correo: "ana@example.com",
+        direccion: "Alajuela, Costa Rica",
+        puesto: "Madre"
+      }
+    ];
+
+    const tabla = document.getElementById("tablaPrematriculas");
+
+    prematriculas.forEach((est, index) => {
+      const fila = `
+        <tr>
+          <td>${index + 1}</td>
+          <td>${est.nombre}</td>
+          <td>${est.apellido1} ${est.apellido2}</td>
+          <td>${est.id}</td>
+          <td>${est.telefono}</td>
+          <td>${est.correo}</td>
+          <td>${est.direccion}</td>
+          <td>${est.puesto}</td>
+          <td>
+            <a href="editarPrematricula.html?id=${est.id}" class="btn btn-sm btn-warning me-1">Editar</a>
+            <a href="eliminarPrematricula.html?id=${est.id}" class="btn btn-sm btn-danger">Eliminar</a>
+          </td>
+        </tr>
+      `;
+      tabla.innerHTML += fila;
+    });
+  </script>
+
   <script src="https://cdn.jsdelivr.net/npm/bootstrap@5.3.0/dist/js/bootstrap.bundle.min.js"></script>
+
 </body>
 </html>

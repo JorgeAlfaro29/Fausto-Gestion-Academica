@@ -1,79 +1,72 @@
 <!DOCTYPE html>
 <html lang="es">
 <head>
-  <meta charset="UTF-8">
-  <meta name="viewport" content="width=device-width, initial-scale=1.0">
-  <title>Noticias Clientes</title>
-  <link rel="stylesheet" href="https://cdn.jsdelivr.net/npm/bootstrap@5.3.0/dist/css/bootstrap.min.css">
-  <link href="https://fonts.googleapis.com/css2?family=Poppins:wght@300;400;500;600&display=swap" rel="stylesheet">
-  <link rel="icon" href="icons/logoFausto.png">
-  <link rel="stylesheet" href="css/menu.css">
-
-  <style>
-    .btn-ver-noticia {
-      background-color: #8ea50d;
-      color: #ffffff;
-    }
-    .btn-ver-noticia:hover {
-      background-color: #8ea50d; /* Un tono un poco más oscuro para el hover */
-      color: #ffffff;
-    }
-  </style>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>SISTEMA ACADÉMICO</title>
+    <link rel="stylesheet" href="https://cdn.jsdelivr.net/npm/bootstrap@5.3.0/dist/css/bootstrap.min.css">
+    <link href="https://fonts.googleapis.com/css2?family=Poppins:wght@300;400;500;600&display=swap" rel="stylesheet">
+    <link rel="icon" href="icons/logoFausto.png">
+    <link rel="stylesheet" href="css/menu.css">
 </head>
-<body>
-  <!-- Header y Navbar -->
-  <header class="py-3 fixed-top" style="background-color: black; color: white;">
-    <div class="container d-flex justify-content-start align-items-center">
-      <div class="d-flex align-items-center me-auto">
-        <a href="menu.html" class="me-2"><img src="icons/logoFausto.png" alt="Logo Fausto Herrera" width="80" height="80"></a>
-        <div>
-          <h1 class="h5 m-0" style="color: #8ea50d;">FAUSTO HERRERA</h1>
-          <span style="color: #D5DE83;">SISTEMA ACADÉMICO</span>
-        </div>
-      </div>
-      <nav>
-        <ul class="nav">
-            <li class="nav-item dropdown">
-                <a class="nav-link dropdown-toggle" href="#" role="button" data-bs-toggle="dropdown" style="color: white;">Academico</a>
-                <ul class="dropdown-menu">
-                    <li><a class="dropdown-item" href="listarMatricula.html">Matricula</a></li>
-                    <li><a class="dropdown-item" href="listarCalificaciones.html">Calificaciones</a></li>
+<body class="bg-light">
+    <header class="py-3 fixed-top" style="background-color: black; color: white;">
+        <div class="container d-flex justify-content-start align-items-center">
+            <div class="d-flex align-items-center me-auto">
+                <a href="menu.html" class="me-2"><img src="icons/logoFausto.png" alt="Logo Fausto Herrera" width="80" height="80"></a>
+                <div>
+                    <h1 class="h5 m-0" style="color: #8ea50d;">FAUSTO HERRERA</h1>
+                    <span style="color: #D5DE83;">SISTEMA ACADÉMICO</span>
+                </div>
+            </div>
+            <nav>
+                <ul class="nav">
+                    <li class="nav-item dropdown">
+                        <a class="nav-link dropdown-toggle" href="#" role="button" data-bs-toggle="dropdown" style="color: white;">Academico</a>
+                        <ul class="dropdown-menu">
+                            <li><a class="dropdown-item" href="listarMatricula.html">Matricula</a></li>
+                            <li><a class="dropdown-item" href="listarCalificaciones.html">Calificaciones</a></li>
 
+                        </ul>
+                    </li>
+                    <li class="nav-item dropdown">
+                        <a class="nav-link dropdown-toggle" href="#" role="button" data-bs-toggle="dropdown">Web</a>
+                        <ul class="dropdown-menu">
+                            <li><a class="dropdown-item" href="IniciarSesion.html">Iniciar Sesión</a></li>
+                            <li><a class="dropdown-item" href="RegistrarUsuario.html">Registrar Usuario</a></li>
+                            <li><a class="dropdown-item" href="opcionesConstrasenia.html">Restablecer Contraseña</a></li>
+                            <li><a class="dropdown-item" href="VistaProfesoresWeb.html">Vista Profesores</a></li>
+                            <li><a class="dropdown-item" href="Calendario.html">Calendario</a></li>
+                            <li><a class="dropdown-item" href="ListarPreMatricula.html">Prematricula</a></li>
+                        </ul>
+                    </li>
+                    <a class="nav-link dropdown-toggle" href="#" role="button" data-bs-toggle="dropdown">Operaciones</a>
+                    <ul class="dropdown-menu">
+                      <li><a class="dropdown-item" href="Documentos.html">Documentos</a></li>
+                      <li><a class="dropdown-item" href="Gestion_Personal.html">Gestión del Personal</a></li>
+                      <li><a class="dropdown-item" href="ListarPermisos.html">Gestión de Permisos</a></li>
+                    </ul>
+                    <li class="nav-item dropdown">
+                        <a class="nav-link dropdown-toggle" href="#" role="button" data-bs-toggle="dropdown" style="color: white;">Administrativo</a>
+                        <ul class="dropdown-menu">
+                            <li><a class="dropdown-item" href="listarNoticias.html">Noticias</a></li>
+                            <li><a class="dropdown-item" href="noticiasClientes.html">Noticias Clientes</a></li>
+                            <li><a class="dropdown-item" href="listarVentas.html">Ventas</a></li>
+                            <li><a class="dropdown-item" href="Registro_Marcas.html">Registro de Marcas</a></li>
+                      <li><a class="dropdown-item" href="Control_Marcas.html">Control de Marcas</a></li>
+                      <li><a class="dropdown-item" href="Solicitud_Vacaciones.html">Solicitud de Vacaciones</a></li>
+                      <li><a class="dropdown-item" href="Control_Vacaciones.html">Control de Vacaciones</a></li>
+                      <li><a class="dropdown-item" href="ListarActivos.html">Activos</a></li>
+                      <li><a class="dropdown-item" href="ListarInsumos.html">Insumos</a></li>
+                      <li><a class="dropdown-item" href="ListarTicketsM.html">Mantenimiento</a></li>
+                        </ul>
+                    </li>
+                    <li class="nav-item"><a class="nav-link" href="#">Christopher Briceño Arias</a></li>
+                    <li class="nav-item"><a class="nav-link bg-danger text-white rounded-pill px-3" href="#">X</a></li>
                 </ul>
-            </li>
-            <li class="nav-item dropdown">
-                <a class="nav-link dropdown-toggle" href="#" role="button" data-bs-toggle="dropdown">Web</a>
-                <ul class="dropdown-menu">
-                    <li><a class="dropdown-item" href="IniciarSesion.html">Iniciar Sesión</a></li>
-                    <li><a class="dropdown-item" href="RegistrarUsuario.html">Registrar Usuario</a></li>
-                    <li><a class="dropdown-item" href="opcionesConstrasenia.html">Restablecer Contraseña</a></li>
-                    <li><a class="dropdown-item" href="VistaProfesoresWeb.html">Vista Profesores</a></li>
-                    <li><a class="dropdown-item" href="Calendario.html">Calendario</a></li>
-                </ul>
-            </li>
-            <a class="nav-link dropdown-toggle" href="#" role="button" data-bs-toggle="dropdown">Operaciones</a>
-            <ul class="dropdown-menu">
-              <li><a class="dropdown-item" href="Documentos.html">Documentos</a></li>
-              <li><a class="dropdown-item" href="Gestion_Personal.html">Gestión del Personal</a></li>
-            </ul>
-            <li class="nav-item dropdown">
-                <a class="nav-link dropdown-toggle" href="#" role="button" data-bs-toggle="dropdown" style="color: white;">Administrativo</a>
-                <ul class="dropdown-menu">
-                    <li><a class="dropdown-item" href="listarNoticias.html">Noticias</a></li>
-                    <li><a class="dropdown-item" href="noticiasClientes.html">Noticias Clientes</a></li>
-                    <li><a class="dropdown-item" href="listarVentas.html">Ventas</a></li>
-                    <li><a class="dropdown-item" href="Registro_Marcas.html">Registro de Marcas</a></li>
-              <li><a class="dropdown-item" href="Control_Marcas.html">Control de Marcas</a></li>
-              <li><a class="dropdown-item" href="Solicitud_Vacaciones.html">Solicitud de Vacaciones</a></li>
-              <li><a class="dropdown-item" href="Control_Vacaciones.html">Control de Vacaciones</a></li>
-                </ul>
-            </li>
-            <li class="nav-item"><a class="nav-link" href="#">Christopher Briceño Arias</a></li>
-            <li class="nav-item"><a class="nav-link bg-danger text-white rounded-pill px-3" href="#">X</a></li>
-        </ul>
-    </nav>
-    </div>
-  </header>
+            </nav>
+        </div>
+    </header>
 
   <!-- Main Content -->
   <main class="d-flex justify-content-center align-items-start min-vh-100" style="background-color: #f4f4f4; padding-top: 130px;">

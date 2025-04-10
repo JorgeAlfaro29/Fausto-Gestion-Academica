@@ -1,0 +1,210 @@
+<!DOCTYPE html>
+<html lang="es">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>SISTEMA ACADÉMICO</title>
+    <link rel="stylesheet" href="https://cdn.jsdelivr.net/npm/bootstrap@5.3.0/dist/css/bootstrap.min.css">
+    <link href="https://fonts.googleapis.com/css2?family=Poppins:wght@300;400;500;600&display=swap" rel="stylesheet">
+    <link rel="icon" href="icons/logoFausto.png">
+    <link rel="stylesheet" href="css/menu.css">
+</head>
+<body class="bg-light">
+    <header class="py-3 fixed-top" style="background-color: black; color: white;">
+        <div class="container d-flex justify-content-start align-items-center">
+            <div class="d-flex align-items-center me-auto">
+                <a href="menu.html" class="me-2"><img src="icons/logoFausto.png" alt="Logo Fausto Herrera" width="80" height="80"></a>
+                <div>
+                    <h1 class="h5 m-0" style="color: #8ea50d;">FAUSTO HERRERA</h1>
+                    <span style="color: #D5DE83;">SISTEMA ACADÉMICO</span>
+                </div>
+            </div>
+            <nav>
+                <ul class="nav">
+                    <li class="nav-item dropdown">
+                        <a class="nav-link dropdown-toggle" href="#" role="button" data-bs-toggle="dropdown" style="color: white;">Academico</a>
+                        <ul class="dropdown-menu">
+                            <li><a class="dropdown-item" href="listarMatricula.html">Matricula</a></li>
+                            <li><a class="dropdown-item" href="listarCalificaciones.html">Calificaciones</a></li>
+
+                        </ul>
+                    </li>
+                    <li class="nav-item dropdown">
+                        <a class="nav-link dropdown-toggle" href="#" role="button" data-bs-toggle="dropdown">Web</a>
+                        <ul class="dropdown-menu">
+                            <li><a class="dropdown-item" href="IniciarSesion.html">Iniciar Sesión</a></li>
+                            <li><a class="dropdown-item" href="RegistrarUsuario.html">Registrar Usuario</a></li>
+                            <li><a class="dropdown-item" href="opcionesConstrasenia.html">Restablecer Contraseña</a></li>
+                            <li><a class="dropdown-item" href="VistaProfesoresWeb.html">Vista Profesores</a></li>
+                            <li><a class="dropdown-item" href="Calendario.html">Calendario</a></li>
+                            <li><a class="dropdown-item" href="ListarPreMatricula.html">Prematricula</a></li>
+                        </ul>
+                    </li>
+                    <a class="nav-link dropdown-toggle" href="#" role="button" data-bs-toggle="dropdown">Operaciones</a>
+                    <ul class="dropdown-menu">
+                      <li><a class="dropdown-item" href="Documentos.html">Documentos</a></li>
+                      <li><a class="dropdown-item" href="Gestion_Personal.html">Gestión del Personal</a></li>
+                      <li><a class="dropdown-item" href="ListarPermisos.html">Gestión de Permisos</a></li>
+                    </ul>
+                    <li class="nav-item dropdown">
+                        <a class="nav-link dropdown-toggle" href="#" role="button" data-bs-toggle="dropdown" style="color: white;">Administrativo</a>
+                        <ul class="dropdown-menu">
+                            <li><a class="dropdown-item" href="listarNoticias.html">Noticias</a></li>
+                            <li><a class="dropdown-item" href="noticiasClientes.html">Noticias Clientes</a></li>
+                            <li><a class="dropdown-item" href="listarVentas.html">Ventas</a></li>
+                            <li><a class="dropdown-item" href="Registro_Marcas.html">Registro de Marcas</a></li>
+                      <li><a class="dropdown-item" href="Control_Marcas.html">Control de Marcas</a></li>
+                      <li><a class="dropdown-item" href="Solicitud_Vacaciones.html">Solicitud de Vacaciones</a></li>
+                      <li><a class="dropdown-item" href="Control_Vacaciones.html">Control de Vacaciones</a></li>
+                      <li><a class="dropdown-item" href="ListarActivos.html">Activos</a></li>
+                      <li><a class="dropdown-item" href="ListarInsumos.html">Insumos</a></li>
+                      <li><a class="dropdown-item" href="ListarTicketsM.html">Mantenimiento</a></li>
+                        </ul>
+                    </li>
+                    <li class="nav-item"><a class="nav-link" href="#">Christopher Briceño Arias</a></li>
+                    <li class="nav-item"><a class="nav-link bg-danger text-white rounded-pill px-3" href="#">X</a></li>
+                </ul>
+            </nav>
+        </div>
+    </header>
+
+  <br>
+  <br>
+
+  <div class="container mt-5 pt-5">
+    <h2 class="text-center">Listado de Tickets de Mantenimiento</h2>
+    
+    <!-- Botón para crear un nuevo ticket -->
+    <div class="text-end mb-3">
+      <a href="crearTicket.html" class="btn btn-success">Generar Nuevo Ticket</a>
+    </div>
+  
+    <div class="table-container mt-4">
+      <table class="table table-striped">
+        <thead>
+          <tr>
+            <th>ID Ticket</th>
+            <th>Descripción</th>
+            <th>Tipo Mantenimiento</th>
+            <th>Urgencia</th>
+            <th>Estado</th>
+            <th>Responsable</th>
+            
+            <th>Acciones</th>
+          </tr>
+        </thead>
+        <tbody>
+          <!-- Aquí se insertan los tickets de manera dinámica -->
+          <tr id="ticket-1">
+            <td>1</td>
+            <td>Fugas de agua en la planta</td>
+            <td>Correctivo</td>
+            <td>Alta</td>
+            <td id="estado-1">Pendiente</td> <!-- Cambiar este id -->
+            <td id="responsable-1">--</td>
+            
+            <td>
+              <button class="btn btn-primary btn-sm" data-bs-toggle="modal" data-bs-target="#assignModal" onclick="setTicketId(1)">Asignar Responsable</button>
+              <button class="btn btn-success btn-sm" data-bs-toggle="modal" data-bs-target="#resolveModal">Marcar como Resuelto</button>
+            </td>
+          </tr>
+          
+        </tbody>
+      </table>
+    </div>
+  
+    <!-- Modal para asignar responsable -->
+    <div class="modal fade" id="assignModal" tabindex="-1" aria-labelledby="assignModalLabel" aria-hidden="true">
+      <div class="modal-dialog">
+        <div class="modal-content">
+          <div class="modal-header">
+            <h5 class="modal-title" id="assignModalLabel">Asignar Responsable</h5>
+            <button type="button" class="btn-close" data-bs-dismiss="modal" aria-label="Close"></button>
+          </div>
+          <div class="modal-body">
+            <form action="#" method="POST">
+              <div class="mb-3">
+                <label for="responsable" class="form-label">Seleccione un Responsable</label>
+                <select id="responsable" class="form-select" required>
+                  <option value="">Seleccione...</option>
+                  <option value="Juan Pérez">Juan Pérez</option>
+                  <option value="Ana González">Ana González</option>
+                  <option value="Carlos Díaz">Carlos Díaz</option>
+                </select>
+              </div>
+              <button type="button" class="btn btn-primary" onclick="assignResponsable()">Asignar</button>
+            </form>
+          </div>
+        </div>
+      </div>
+    </div>
+  
+    <div class="modal fade" id="resolveModal" tabindex="-1" aria-labelledby="resolveModalLabel" aria-hidden="true">
+      <div class="modal-dialog">
+        <div class="modal-content">
+          <div class="modal-header">
+            <h5 class="modal-title" id="resolveModalLabel">Marcar como Resuelto</h5>
+            <button type="button" class="btn-close" data-bs-dismiss="modal" aria-label="Close"></button>
+          </div>
+          <div class="modal-body">
+            <form action="#" method="POST" enctype="multipart/form-data">
+              <div class="mb-3">
+                <label for="evidence" class="form-label">Adjuntar Evidencia</label>
+                <input type="file" id="evidence" class="form-control" required>
+              </div>
+              <div class="mb-3">
+                <label for="resolutionComment" class="form-label">Comentario de Resolución</label>
+                <textarea id="resolutionComment" class="form-control" rows="3"></textarea>
+              </div>
+              <button type="submit" class="btn btn-success" onclick="marcarResuelto(event)">Marcar como Resuelto</button>
+            </form>
+          </div>
+        </div>
+      </div>
+    </div>
+    
+    <script>
+      let currentTicketId = null;
+    
+      function setTicketId(ticketId) {
+        currentTicketId = ticketId;
+      }
+    
+      function assignResponsable() {
+        const responsableName = document.getElementById("responsable").value;
+        if (currentTicketId !== null && responsableName) {
+          document.getElementById(`responsable-${currentTicketId}`).textContent = responsableName;
+          document.getElementById(`estado-${currentTicketId}`).textContent = "En progreso";
+          const modal = bootstrap.Modal.getInstance(document.getElementById('assignModal'));
+          modal.hide();
+        } else {
+          alert("Por favor seleccione un responsable.");
+        }
+      }
+    
+      function marcarResuelto(event) {
+        event.preventDefault();
+        const fileInput = document.getElementById('evidence');
+        const comment = document.getElementById('resolutionComment').value;
+    
+        if (!fileInput.files.length) {
+          alert("Debe adjuntar evidencia.");
+          return;
+        }
+    
+        if (currentTicketId !== null) {
+          // Cambiar estado a "Resuelto"
+          document.getElementById(`estado-${currentTicketId}`).textContent = "Resuelto";
+    
+          // Modal off
+          const modal = bootstrap.Modal.getInstance(document.getElementById('resolveModal'));
+          modal.hide();
+    
+          alert("Ticket marcado como resuelto.");
+        } else {
+          alert("No se ha seleccionado un ticket.");
+        }
+      }
+    </script>
+    
+    <script src="https://cdn.jsdelivr.net/npm/bootstrap@5.3.0/dist/js/bootstrap.bundle.min.js"></script>

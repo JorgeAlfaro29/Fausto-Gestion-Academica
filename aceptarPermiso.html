@@ -1,0 +1,176 @@
+<!DOCTYPE html>
+<html lang="es">
+<head>
+  <meta charset="UTF-8"/>
+  <meta name="viewport" content="width=device-width, initial-scale=1.0"/>
+  <title>Aceptar Permiso</title>
+  <link rel="stylesheet" href="https://cdn.jsdelivr.net/npm/bootstrap@5.3.0/dist/css/bootstrap.min.css"/>
+  <script>
+    // Datos simulados de los permisos
+    const permisos = [
+      { id: 1, titulo: 'Vacaciones', fechaInicio: '2025-05-01', fechaRegreso: '2025-05-15', status: 'En revisión' },
+      { id: 2, titulo: 'Permiso Personal', fechaInicio: '2025-06-10', fechaRegreso: '2025-06-11', status: 'En revisión' },
+    ];
+
+    document.addEventListener('DOMContentLoaded', function () {
+      const tabla = document.getElementById("tablaPermisos");
+      permisos.forEach((permiso) => {
+        const fila = `
+          <tr>
+            <td>${permiso.titulo}</td>
+            <td>${permiso.fechaInicio}</td>
+            <td>${permiso.fechaRegreso}</td>
+            <td>${permiso.status}</td>
+            <td>
+              <!-- Botón para aceptar permiso -->
+              <button class="btn btn-success btn-sm" onclick="aceptarPermiso(${permiso.id})">Aceptar</button>
+            </td>
+          </tr>
+        `;
+        tabla.innerHTML += fila;
+      });
+    });
+
+    // Función para aceptar el permiso
+    function aceptarPermiso(id) {
+      // Aquí actualizamos el estado del permiso a "Aceptado"
+      const permiso = permisos.find(permiso => permiso.id === id);
+      if (permiso) {
+        permiso.status = 'Aceptado';
+        alert(`Permiso '${permiso.titulo}' aceptado con éxito.`);
+        // Reactualizar la tabla con el nuevo estado
+        actualizarTabla();
+      }
+    }
+
+    // Actualiza la tabla después de cambiar el estado
+    function actualizarTabla() {
+      const tabla = document.getElementById("tablaPermisos");
+      tabla.innerHTML = ''; // Limpiar la tabla
+      permisos.forEach((permiso) => {
+        const fila = `
+          <tr>
+            <td>${permiso.titulo}</td>
+            <td>${permiso.fechaInicio}</td>
+            <td>${permiso.fechaRegreso}</td>
+            <td>${permiso.status}</td>
+            <td>
+              <button class="btn btn-success btn-sm" onclick="aceptarPermiso(${permiso.id})" ${permiso.status === 'Aceptado' ? 'disabled' : ''}>Aceptar</button>
+            </td>
+          </tr>
+        `;
+        tabla.innerHTML += fila;
+      });
+    }
+  </script>
+</head>
+<body>
+    <body>
+        <style>
+            body {
+              font-family: 'Poppins', sans-serif;
+              background-color: #f8f9fa;
+            }
+            .table-container {
+              background-color: #fff;
+              padding: 2rem;
+              border-radius: 1rem;
+              box-shadow: 0 0 10px rgba(0,0,0,0.1);
+              overflow-x: auto;
+            }
+            @media (max-width: 576px) {
+              h2 {
+                font-size: 1.5rem;
+              }
+              .table {
+                font-size: 0.9rem;
+              }
+            }
+          </style>
+        </head>
+        
+        <body>
+        
+          <!-- Navbar -->
+          <header class="py-3 fixed-top" style="background-color: black; color: white;">
+            <div class="container d-flex justify-content-start align-items-center">
+                <div class="d-flex align-items-center me-auto">
+                    <a href="menu.html" class="me-2"><img src="icons/logoFausto.png" alt="Logo Fausto Herrera" width="80" height="80"></a>
+                    <div>
+                        <h1 class="h5 m-0" style="color: #8ea50d;">FAUSTO HERRERA</h1>
+                        <span style="color: #D5DE83;">SISTEMA ACADÉMICO</span>
+                    </div>
+                </div>
+                <nav>
+                    <ul class="nav">
+                        <li class="nav-item dropdown">
+                            <a class="nav-link dropdown-toggle" href="#" role="button" data-bs-toggle="dropdown" style="color: white;">Academico</a>
+                            <ul class="dropdown-menu">
+                                <li><a class="dropdown-item" href="listarMatricula.html">Matricula</a></li>
+                                <li><a class="dropdown-item" href="listarCalificaciones.html">Calificaciones</a></li>
+        
+                            </ul>
+                        </li>
+                        <li class="nav-item dropdown">
+                            <a class="nav-link dropdown-toggle" href="#" role="button" data-bs-toggle="dropdown">Web</a>
+                            <ul class="dropdown-menu">
+                                <li><a class="dropdown-item" href="IniciarSesion.html">Iniciar Sesión</a></li>
+                                <li><a class="dropdown-item" href="RegistrarUsuario.html">Registrar Usuario</a></li>
+                                <li><a class="dropdown-item" href="opcionesConstrasenia.html">Restablecer Contraseña</a></li>
+                                <li><a class="dropdown-item" href="VistaProfesoresWeb.html">Vista Profesores</a></li>
+                                <li><a class="dropdown-item" href="Calendario.html">Calendario</a></li>
+                                <li><a class="dropdown-item" href="ListarPreMatricula.html">Prematricula</a></li>
+                            </ul>
+                        </li>
+                        <a class="nav-link dropdown-toggle" href="#" role="button" data-bs-toggle="dropdown">Operaciones</a>
+                        <ul class="dropdown-menu">
+                          <li><a class="dropdown-item" href="Documentos.html">Documentos</a></li>
+                          <li><a class="dropdown-item" href="Gestion_Personal.html">Gestión del Personal</a></li>
+                          <li><a class="dropdown-item" href="ListarPermisos.html">Gestión de Permisos</a></li>
+                        </ul>
+                        <li class="nav-item dropdown">
+                            <a class="nav-link dropdown-toggle" href="#" role="button" data-bs-toggle="dropdown" style="color: white;">Administrativo</a>
+                            <ul class="dropdown-menu">
+                                <li><a class="dropdown-item" href="listarNoticias.html">Noticias</a></li>
+                                <li><a class="dropdown-item" href="noticiasClientes.html">Noticias Clientes</a></li>
+                                <li><a class="dropdown-item" href="listarVentas.html">Ventas</a></li>
+                                <li><a class="dropdown-item" href="Registro_Marcas.html">Registro de Marcas</a></li>
+                          <li><a class="dropdown-item" href="Control_Marcas.html">Control de Marcas</a></li>
+                          <li><a class="dropdown-item" href="Solicitud_Vacaciones.html">Solicitud de Vacaciones</a></li>
+                          <li><a class="dropdown-item" href="Control_Vacaciones.html">Control de Vacaciones</a></li>
+                          <li><a class="dropdown-item" href="ListarActivos.html">Activos</a></li>
+                          <li><a class="dropdown-item" href="ListarInsumos.html">Insumos</a></li>
+                          <li><a class="dropdown-item" href="ListarTicketsM.html">Mantenimiento</a></li>
+                            </ul>
+                        </li>
+                        <li class="nav-item"><a class="nav-link" href="#">Christopher Briceño Arias</a></li>
+                        <li class="nav-item"><a class="nav-link bg-danger text-white rounded-pill px-3" href="#">X</a></li>
+                    </ul>
+                </nav>
+            </div>
+        </header>
+
+  <main class="container py-5" style="padding-top: 120px;">
+    <h2 class="text-center mb-4">Gestionar Permisos</h2>
+
+    <div class="table-container">
+      <div class="table-responsive">
+        <table class="table table-striped table-hover align-middle text-center">
+          <thead class="table-dark">
+            <tr>
+              <th>Título del Permiso</th>
+              <th>Fecha de Inicio</th>
+              <th>Fecha de Regreso</th>
+              <th>Status</th>
+              <th>Acciones</th>
+            </tr>
+          </thead>
+          <tbody id="tablaPermisos">
+            <!-- Aquí se llenarán los datos dinámicamente -->
+          </tbody>
+        </table>
+      </div>
+    </div>
+  </main>
+</body>
+</html>

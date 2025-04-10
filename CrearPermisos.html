@@ -1,0 +1,235 @@
+<!DOCTYPE html>
+<html lang="es">
+<head>
+  <meta charset="UTF-8"/>
+  <meta name="viewport" content="width=device-width, initial-scale=1.0"/>
+  <title>Solicitar Permiso</title>
+  <link rel="stylesheet" href="https://cdn.jsdelivr.net/npm/bootstrap@5.3.0/dist/css/bootstrap.min.css"/>
+  <script>
+    let permisos = []; // Arreglo para almacenar permisos creados
+
+    // Función para validar el formulario de solicitud de permiso
+    function validarFormulario() {
+      const titulo = document.getElementById("titulo").value;
+      const descripcion = document.getElementById("descripcion").value;
+      const fechaInicio = document.getElementById("fechaInicio").value;
+      const fechaRegreso = document.getElementById("fechaRegreso").value;
+      
+      let errores = [];
+
+      // Validaciones básicas
+      if (!titulo) errores.push("El título es obligatorio.");
+      if (!descripcion) errores.push("La descripción es obligatoria.");
+      if (!fechaInicio) errores.push("La fecha de inicio es obligatoria.");
+      if (!fechaRegreso) errores.push("La fecha de regreso es obligatoria.");
+      if (new Date(fechaInicio) > new Date(fechaRegreso)) errores.push("La fecha de inicio no puede ser posterior a la fecha de regreso.");
+
+      // Mostrar errores si existen
+      if (errores.length > 0) {
+        alert(errores.join("\n"));
+        return false;
+      }
+      return true;
+    }
+
+    // Función para crear un permiso
+    function crearPermiso() {
+      if (!validarFormulario()) return;
+      
+      const titulo = document.getElementById("titulo").value;
+      const descripcion = document.getElementById("descripcion").value;
+      const fechaInicio = document.getElementById("fechaInicio").value;
+      const fechaRegreso = document.getElementById("fechaRegreso").value;
+      
+      const permiso = {
+        id: permisos.length + 1,
+        titulo,
+        descripcion,
+        fechaInicio,
+        fechaRegreso,
+        status: 'Pendiente'
+      };
+      
+      permisos.push(permiso);
+      alert("Permiso solicitado exitosamente.");
+      cargarListaPermisos();
+      resetFormulario();
+    }
+
+    // Función para cargar la lista de permisos
+    function cargarListaPermisos() {
+      const listaPermisos = document.getElementById("listaPermisos");
+      listaPermisos.innerHTML = ''; // Limpiar la lista antes de agregar nuevos permisos
+
+      permisos.forEach((permiso) => {
+        const permisoHTML = `
+          <tr>
+            <td>${permiso.titulo}</td>
+            <td>${permiso.fechaInicio}</td>
+            <td>${permiso.fechaRegreso}</td>
+            <td>${permiso.status}</td>
+            <td>
+              <button class="btn btn-info btn-sm" onclick="verPermiso(${permiso.id})">Detalles</button>
+              <button class="btn btn-danger btn-sm" onclick="eliminarPermiso(${permiso.id})">Eliminar</button>
+            </td>
+          </tr>
+        `;
+        listaPermisos.innerHTML += permisoHTML;
+      });
+    }
+
+    // Función para ver los detalles de un permiso
+    function verPermiso(id) {
+      const permiso = permisos.find(p => p.id === id);
+      if (permiso) {
+        alert(`Detalles del permiso:\n\nTítulo: ${permiso.titulo}\nDescripción: ${permiso.descripcion}\nFecha de Inicio: ${permiso.fechaInicio}\nFecha de Regreso: ${permiso.fechaRegreso}\nEstado: ${permiso.status}`);
+      }
+    }
+
+    // Función para eliminar un permiso (solo lo desactiva)
+    function eliminarPermiso(id) {
+      const permiso = permisos.find(p => p.id === id);
+      if (permiso) {
+        permiso.status = 'Eliminado'; // Cambiar el estado a "Eliminado"
+        cargarListaPermisos();
+        alert("El permiso ha sido desactivado.");
+      }
+    }
+
+    // Función para resetear el formulario
+    function resetFormulario() {
+      document.getElementById("titulo").value = '';
+      document.getElementById("descripcion").value = '';
+      document.getElementById("fechaInicio").value = '';
+      document.getElementById("fechaRegreso").value = '';
+    }
+  </script>
+  <style>
+    body {
+      font-family: 'Poppins', sans-serif;
+      background-color: #f8f9fa;
+    }
+    .table-container {
+      background-color: #fff;
+      padding: 2rem;
+      border-radius: 1rem;
+      box-shadow: 0 0 10px rgba(0,0,0,0.1);
+      overflow-x: auto;
+    }
+    @media (max-width: 576px) {
+      h2 {
+        font-size: 1.5rem;
+      }
+      .table {
+        font-size: 0.9rem;
+      }
+    }
+  </style>
+</head>
+<header class="py-3 fixed-top" style="background-color: black; color: white;">
+  <div class="container d-flex justify-content-start align-items-center">
+      <div class="d-flex align-items-center me-auto">
+          <a href="menu.html" class="me-2"><img src="icons/logoFausto.png" alt="Logo Fausto Herrera" width="80" height="80"></a>
+          <div>
+              <h1 class="h5 m-0" style="color: #8ea50d;">FAUSTO HERRERA</h1>
+              <span style="color: #D5DE83;">SISTEMA ACADÉMICO</span>
+          </div>
+      </div>
+      <nav>
+          <ul class="nav">
+              <li class="nav-item dropdown">
+                  <a class="nav-link dropdown-toggle" href="#" role="button" data-bs-toggle="dropdown" style="color: white;">Academico</a>
+                  <ul class="dropdown-menu">
+                      <li><a class="dropdown-item" href="listarMatricula.html">Matricula</a></li>
+                      <li><a class="dropdown-item" href="listarCalificaciones.html">Calificaciones</a></li>
+
+                  </ul>
+              </li>
+              <li class="nav-item dropdown">
+                  <a class="nav-link dropdown-toggle" href="#" role="button" data-bs-toggle="dropdown">Web</a>
+                  <ul class="dropdown-menu">
+                      <li><a class="dropdown-item" href="IniciarSesion.html">Iniciar Sesión</a></li>
+                      <li><a class="dropdown-item" href="RegistrarUsuario.html">Registrar Usuario</a></li>
+                      <li><a class="dropdown-item" href="opcionesConstrasenia.html">Restablecer Contraseña</a></li>
+                      <li><a class="dropdown-item" href="VistaProfesoresWeb.html">Vista Profesores</a></li>
+                      <li><a class="dropdown-item" href="Calendario.html">Calendario</a></li>
+                      <li><a class="dropdown-item" href="ListarPreMatricula.html">Prematricula</a></li>
+                  </ul>
+              </li>
+              <a class="nav-link dropdown-toggle" href="#" role="button" data-bs-toggle="dropdown">Operaciones</a>
+              <ul class="dropdown-menu">
+                <li><a class="dropdown-item" href="Documentos.html">Documentos</a></li>
+                <li><a class="dropdown-item" href="Gestion_Personal.html">Gestión del Personal</a></li>
+                <li><a class="dropdown-item" href="ListarPermisos.html">Gestión de Permisos</a></li>
+              </ul>
+              <li class="nav-item dropdown">
+                  <a class="nav-link dropdown-toggle" href="#" role="button" data-bs-toggle="dropdown" style="color: white;">Administrativo</a>
+                  <ul class="dropdown-menu">
+                      <li><a class="dropdown-item" href="listarNoticias.html">Noticias</a></li>
+                      <li><a class="dropdown-item" href="noticiasClientes.html">Noticias Clientes</a></li>
+                      <li><a class="dropdown-item" href="listarVentas.html">Ventas</a></li>
+                      <li><a class="dropdown-item" href="Registro_Marcas.html">Registro de Marcas</a></li>
+                <li><a class="dropdown-item" href="Control_Marcas.html">Control de Marcas</a></li>
+                <li><a class="dropdown-item" href="Solicitud_Vacaciones.html">Solicitud de Vacaciones</a></li>
+                <li><a class="dropdown-item" href="Control_Vacaciones.html">Control de Vacaciones</a></li>
+                <li><a class="dropdown-item" href="ListarActivos.html">Activos</a></li>
+                <li><a class="dropdown-item" href="ListarInsumos.html">Insumos</a></li>
+                <li><a class="dropdown-item" href="ListarTicketsM.html">Mantenimiento</a></li>
+                  </ul>
+              </li>
+              <li class="nav-item"><a class="nav-link" href="#">Christopher Briceño Arias</a></li>
+              <li class="nav-item"><a class="nav-link bg-danger text-white rounded-pill px-3" href="#">X</a></li>
+          </ul>
+      </nav>
+  </div>
+</header>
+
+<br>
+<br>
+<br>
+<br>
+  <main class="container py-5" style="padding-top: 120px;">
+    <h2 class="text-center mb-4">Solicitar Permiso</h2>
+
+    <!-- Formulario para crear un permiso -->
+    <form onsubmit="event.preventDefault(); crearPermiso();">
+      <div class="mb-3">
+        <label for="titulo" class="form-label">Título del Permiso</label>
+        <input type="text" id="titulo" class="form-control" required/>
+      </div>
+      <div class="mb-3">
+        <label for="descripcion" class="form-label">Descripción / Justificación</label>
+        <textarea id="descripcion" class="form-control" rows="4" required></textarea>
+      </div>
+      <div class="mb-3">
+        <label for="fechaInicio" class="form-label">Fecha de Inicio</label>
+        <input type="date" id="fechaInicio" class="form-control" required/>
+      </div>
+      <div class="mb-3">
+        <label for="fechaRegreso" class="form-label">Fecha de Regreso</label>
+        <input type="date" id="fechaRegreso" class="form-control" required/>
+      </div>
+      <button type="submit" class="btn btn-primary">Enviar</button>
+      <button type="button" class="btn btn-secondary" onclick="resetFormulario()">Cancelar</button>
+    </form>
+
+    <h3 class="text-center mt-5">Mis Permisos</h3>
+    <div class="table-responsive">
+      <table class="table table-striped table-hover align-middle text-center">
+        <thead class="table-dark">
+          <tr>
+            <th>Título del Permiso</th>
+            <th>Fecha de Inicio</th>
+            <th>Fecha de Regreso</th>
+            <th>Status</th>
+            <th>Acciones</th>
+          </tr>
+        </thead>
+        <tbody id="listaPermisos">
+          <!-- Aquí se llenarán los datos dinámicamente -->
+        </tbody>
+      </table>
+    </div>
+  </main>
+</body>
+</html>

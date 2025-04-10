@@ -1,40 +1,29 @@
 <!DOCTYPE html>
 <html lang="es">
 <head>
-  <meta charset="UTF-8">
-  <meta name="viewport" content="width=device-width, initial-scale=1.0">
-  <title>Cambiar Contraseña</title>
-  <link rel="stylesheet" href="https://cdn.jsdelivr.net/npm/bootstrap@5.3.0/dist/css/bootstrap.min.css">
-  <link href="https://fonts.googleapis.com/css2?family=Poppins:wght@300;400;500;600&display=swap" rel="stylesheet">
-  <link rel="icon" href="icons/logoFausto.png">
-  <link rel="stylesheet" href="css/menu.css">
-
+  <meta charset="UTF-8"/>
+  <meta name="viewport" content="width=device-width, initial-scale=1.0"/>
+  <title>Editar Insumo</title>
+  <link rel="stylesheet" href="https://cdn.jsdelivr.net/npm/bootstrap@5.3.0/dist/css/bootstrap.min.css"/>
+  <script src="https://code.jquery.com/jquery-3.6.0.min.js"></script>
   <style>
-
-
-    main {
-      margin-top: 150px; /* Espacio para el navbar */
+    body {
+      font-family: 'Poppins', sans-serif;
+      background-color: #f8f9fa;
     }
-
     .form-container {
       background-color: #fff;
-      padding: 3rem;
+      padding: 2rem;
       border-radius: 1rem;
       box-shadow: 0 0 10px rgba(0,0,0,0.1);
-    }
-
-    .button-group {
-      display: flex;
-      gap: 10px;
-      justify-content: space-between;
-    }
-
-    .button-group .btn {
-      flex: 1; /* Para que los botones ocupen el mismo espacio */
+      max-width: 600px;
+      margin: 0 auto;
     }
   </style>
 </head>
+
 <body>
+  <!-- Navbar -->
   <header class="py-3 fixed-top" style="background-color: black; color: white;">
     <div class="container d-flex justify-content-start align-items-center">
         <div class="d-flex align-items-center me-auto">
@@ -93,54 +82,104 @@
     </div>
 </header>
 
-  <!-- Formulario para Cambiar Contraseña -->
-  <main class="container py-6">
-    <h2 class="text-center mb-4" style="color: #333;">Cambiar Contraseña</h2>
+  <br>
+  <br>
 
-    <!-- Formulario de cambio de contraseña -->
-    <div class="form-container mx-auto" style="max-width: 500px;">
-      <form id="formCambioContraseña">
+  <div class="container mt-5 pt-5">
+    <h2 class="text-center">Editar Insumo</h2>
+    <div class="form-container">
+      <form id="formEditarInsumo" onsubmit="return validarFormulario()">
         <div class="mb-3">
-          <label for="contraseñaActual" class="form-label">Contraseña Actual</label>
-          <input type="password" class="form-control" id="contraseñaActual" name="contraseñaActual" required>
-        </div>
-
-        <div class="mb-3">
-          <label for="nuevaContraseña" class="form-label">Nueva Contraseña</label>
-          <input type="password" class="form-control" id="nuevaContraseña" name="nuevaContraseña" required>
+          <label for="nombreInsumo" class="form-label">Nombre del Insumo</label>
+          <input type="text" id="nombreInsumo" class="form-control" required>
         </div>
 
         <div class="mb-3">
-          <label for="confirmarContraseña" class="form-label">Confirmar Nueva Contraseña</label>
-          <input type="password" class="form-control" id="confirmarContraseña" name="confirmarContraseña" required>
+          <label for="categoriaInsumo" class="form-label">Categoría</label>
+          <select id="categoriaInsumo" class="form-select" required>
+            <option value="Eléctrico">Eléctrico</option>
+            <option value="Herramientas">Herramientas</option>
+            <option value="Oficina">Oficina</option>
+            <!-- Aquí agregar más categorías -->
+          </select>
         </div>
 
-        <div class="button-group mt-4">
-          <button type="submit" class="btn btn-custom" style="background-color: #8ea50d; color: white;">Guardar Cambios</button>
-          <a href="opcionesConstrasenia.html" class="btn btn-secondary">Cancelar</a>
+        <div class="mb-3">
+          <label for="cantidadInsumo" class="form-label">Cantidad</label>
+          <input type="number" id="cantidadInsumo" class="form-control" required>
         </div>
+
+        <div class="mb-3">
+          <label for="proveedorInsumo" class="form-label">Proveedor</label>
+          <select id="proveedorInsumo" class="form-select" required>
+            <option value="Proveedor 1">Proveedor 1</option>
+            <option value="Proveedor 2">Proveedor 2</option>
+            <option value="Proveedor 3">Proveedor 3</option>
+            <!-- Agregar más proveedores -->
+          </select>
+        </div>
+
+        <!-- Botón para redirigir y validar -->
+        <a href="ListarInsumos.html" class="btn btn-warning" onclick="return validarFormulario()">Actualizar Insumo</a>
       </form>
     </div>
-  </main>
+  </div>
+
+  <script>
+    // Obtener los parámetros de la URL (ID del insumo)
+    function obtenerParametro(url, param) {
+      var urlParams = new URLSearchParams(url.search);
+      return urlParams.get(param);
+    }
+
+    $(document).ready(function() {
+      // Obtener el ID_INSUMO desde la URL
+      const idInsumo = obtenerParametro(window.location, 'id');
+      if (idInsumo) {
+        // Llamar a una función para obtener los datos del insumo por su ID (simulado aquí)
+        // Simulamos los datos con un objeto de ejemplo
+        const insumo = obtenerDatosInsumo(idInsumo);
+
+        // Rellenar el formulario con los datos del insumo
+        $('#nombreInsumo').val(insumo.nombre);
+        $('#categoriaInsumo').val(insumo.categoria);
+        $('#cantidadInsumo').val(insumo.cantidad);
+        $('#proveedorInsumo').val(insumo.proveedor);
+      } else {
+        alert('No se ha especificado un ID de insumo.');
+      }
+    });
+
+    // Simulación de la función que obtiene los datos del insumo
+    function obtenerDatosInsumo(id) {
+      // Este es un objeto de ejemplo, en la práctica, deberías hacer una consulta a la base de datos o a la API
+      const datosInsumos = [
+        { id: 1, nombre: "Foco LED", categoria: "Eléctrico", cantidad: 100, proveedor: "Proveedor 1" },
+        { id: 2, nombre: "Martillo", categoria: "Herramientas", cantidad: 50, proveedor: "Proveedor 2" },
+        { id: 3, nombre: "Papel A4", categoria: "Oficina", cantidad: 200, proveedor: "Proveedor 3" }
+      ];
+
+      return datosInsumos.find(insumo => insumo.id == id) || {};
+    }
+
+    function validarFormulario() {
+      // Obtener los valores de los campos
+      const nombreInsumo = document.getElementById('nombreInsumo').value;
+      const categoriaInsumo = document.getElementById('categoriaInsumo').value;
+      const cantidadInsumo = document.getElementById('cantidadInsumo').value;
+      const proveedorInsumo = document.getElementById('proveedorInsumo').value;
+
+      // Validar los campos
+      if (!nombreInsumo || !categoriaInsumo || !cantidadInsumo || !proveedorInsumo) {
+        alert('Por favor complete todos los campos.');
+        return false;  // Detiene el envío del formulario
+      }
+
+      // Si la validación es correcta, redirigir a la página de Listar Insumos
+      return true;  // Permite la redirección
+    }
+  </script>
 
   <script src="https://cdn.jsdelivr.net/npm/bootstrap@5.3.0/dist/js/bootstrap.bundle.min.js"></script>
-  
-  <script>
-    // Validación de contraseñas antes de enviar el formulario
-    document.getElementById("formCambioContraseña").addEventListener("submit", function(event) {
-        event.preventDefault(); // Evita que el formulario recargue la página
-
-        const nuevaContraseña = document.getElementById("nuevaContraseña").value;
-        const confirmarContraseña = document.getElementById("confirmarContraseña").value;
-
-        // Si las contraseñas no coinciden, se previene el envío y se muestra un mensaje
-        if (nuevaContraseña !== confirmarContraseña) {
-            alert("Las contraseñas no coinciden. Por favor, inténtalo de nuevo.");
-        } else {
-            // Si las contraseñas coinciden, redirige al menú
-            window.location.href = "IniciarSesion.html";
-        }
-    });
-  </script>
 </body>
 </html>
