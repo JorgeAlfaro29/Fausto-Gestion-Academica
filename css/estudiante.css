@@ -4,42 +4,10 @@ body {
     margin: 0;
     padding: 0;
     background-color: #f4f4f4;
-    padding-top: 80px; 
+    padding-top: 80px;
 }
-
-/* Logo nav */
-.logo-container {
-    display: grid;
-    grid-template-columns: auto auto;
-    grid-template-rows: auto auto;
-    align-items: center;
-    gap: 5px;
-}
-.logo img {
-    width: 80px;
-    height: 80px;
-    grid-row: span 2; 
-}
-.text {
-    display: flex;
-    flex-direction: column;
-}
-.title {
-    font-size: 18px;
-    font-weight: bold;
-    color: #8ea50d;
-}
-.subtitle {
-    font-size: 14px;
-    margin-trim: 10PX;
-    color: #D5DE83;
-    padding-bottom: 10PX;
-}
-
-/* End Logo nav */
 
 /* Header */
-/* Estilo del Header */
 header {
     display: flex;
     justify-content: space-between;
@@ -51,23 +19,20 @@ header {
     top: 0;
     left: 0;
     width: 100%;
-    z-index: 1000; 
+    z-index: 1000;
 }
 
-/* Contenedor del logo */
 .logo-container {
     display: flex;
     align-items: center;
 }
 
-/* Logo */
 .logo img {
     width: 70px;
     height: 70px;
     margin-right: 15px;
 }
 
-/* Texto del Logo */
 .text {
     display: flex;
     flex-direction: column;
@@ -77,6 +42,7 @@ header {
 .text .title {
     font-size: 18px;
     font-weight: bold;
+    color: #8ea50d;
 }
 
 .text .subtitle {
@@ -85,19 +51,16 @@ header {
     margin-top: 3px;
 }
 
-/* Estilo de la Navegación */
 nav ul {
     list-style: none;
+    display: flex;
     padding: 0;
     margin: 0;
-    display: flex;
     margin-right: 30px;
-    
 }
 
 nav ul li {
     margin: 0 10px;
-    text-decoration: none;
 }
 
 nav ul li a {
@@ -107,25 +70,15 @@ nav ul li a {
     font-weight: bold;
     padding: 10px 15px;
     transition: 0.3s;
-    border-radius: 5px;
-    
+    border-radius: 30px;
 }
 
-
-nav ul li a {
-    transition: all 0.3s ease;
-    padding: 10px ;
-    border-radius: 30px; 
-}
-
-/* Hover */
 nav ul li a:hover {
     background-color: #7BA249;
-    color: #444A1A; 
-    font-size: 1.1rem; 
+    color: #444A1A;
+    font-size: 1.1rem;
     transform: scale(1.05);
 }
-
 
 nav ul li a.logout {
     background-color: #d32f2f;
@@ -136,16 +89,14 @@ nav ul li a.logout {
 nav ul li a.logout:hover {
     background-color: #b71c1c;
     color: white;
-    font-size: 1.1rem; 
-    transform: scale(1.05); 
+    font-size: 1.1rem;
+    transform: scale(1.05);
 }
 
-/* Responsivo */
 @media (max-width: 768px) {
     header {
         flex-direction: column;
         align-items: center;
-        text-align: center;
     }
 
     .logo-container {
@@ -175,37 +126,43 @@ nav ul li a.logout:hover {
 
 .profile-pic {
     position: absolute;
-    right: 90px; 
-    top: 500px; 
-    transform: translateY(-400px); 
-    width: 250px; 
-    height: auto;
+    right: 40px;
+    top: 100px;
+    width: 300px;
+    height: 250px;
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    background: white;
+    border: 5px solid #818181;
+    box-shadow: 0px 0px 10px rgba(0, 0, 0, 0.2);
 }
 
 .profile-pic img {
     width: 100%;
-    border-radius: 10px; 
+    height: 100%;
+    object-fit: cover;
+    border-radius: 0;
 }
 
 .student-info {
     display: flex;
     flex-direction: column;
-    
 }
+
 .student-info p {
-    margin-bottom: 1px; 
+    margin-bottom: 1px;
     line-height: 1.2;
 }
 
-
 .additional-info {
-    margin-top: 160px; 
+    margin-top: 160px;
 }
-
 
 .section {
     margin-bottom: 10px;
 }
+
 .toggle-button {
     background-color: #7BA249;
     color: white;
@@ -216,11 +173,49 @@ nav ul li a.logout:hover {
     border-radius: 5px;
     margin-bottom: 5px;
 }
-.toggle-button:hover {
-    background-color: #8ea50d;
-    color: black;
-}
+
 .details {
     display: none;
-    
+}
+
+/* BOTONES: Estilo + Animación */
+.button-container {
+    position: absolute;
+    top: 10px;
+    right: 10px;
+    display: flex;
+    gap: 6px;
+    flex-wrap: wrap;
+    z-index: 2;
+}
+
+.custom-button {
+    background-color: #333333;
+    color: rgb(255, 255, 255);
+    border: none;
+    padding: 6px 10px;
+    font-size: 12px;
+    font-weight: 500;
+    cursor: pointer;
+    border-radius: 6px;
+    transition: all 0.2s ease;
+    box-shadow: 1px 1px 4px rgba(0,0,0,0.2);
+}
+
+.custom-button:hover {
+    background-color: #8EA50D;
+    transform: scale(1.05);
+}
+.custom-toggle-button {
+    border: 1px solid #333333; /* verde oliva */
+    color: #8ea50d;
+    background-color: transparent;
+    transition: all 0.2s ease;
+    padding: 4px 10px;
+    border-radius: 5px;
+}
+
+.custom-toggle-button:hover {
+    background-color: #8ea50d;
+    color: white;
 }

@@ -1,0 +1,380 @@
+/* ===========================
+   ESTILOS GENERALES
+=========================== */
+body {
+    font-family: 'Poppins', sans-serif;
+    margin: 0;
+    padding: 0;
+    background: #f4f4f4;
+    color: #333;
+  }
+  
+  /* ===========================
+     HEADER TRANSLÚCIDO
+  =========================== */
+  header {
+    background-color: rgba(0, 0, 0, 0.4);
+    backdrop-filter: blur(12px);
+    -webkit-backdrop-filter: blur(12px);
+    color: white;
+    border-bottom: 1px solid rgba(255, 255, 255, 0.1);
+    transition: background-color 0.3s ease;
+  }
+  
+  .navbar-brand h1 {
+    color: white;
+    letter-spacing: 1px;
+  }
+  
+  .navbar-brand small {
+    color: #bbb;
+  }
+  
+  .nav-link,
+  .dropdown-toggle {
+    color: white !important;
+    position: relative;
+    padding: 8px 12px;
+    font-weight: 500;
+    transition: color 0.3s ease;
+  }
+  
+  .nav-link::after,
+  .dropdown-toggle::after {
+    content: "";
+    position: absolute;
+    bottom: 0;
+    left: 0;
+    width: 0%;
+    height: 2px;
+    background-color: white;
+    transition: width 0.3s ease;
+  }
+  
+  .nav-link:hover::after,
+  .dropdown-toggle:hover::after {
+    width: 100%;
+  }
+  
+  .nav-link:hover,
+  .dropdown-toggle:hover {
+    color: #e0e0e0 !important;
+  }
+  
+  header.scrolled {
+    background-color: rgba(0, 0, 0, 0.75); /* Más opaco */
+    transition: background-color 0.3s ease;
+  }
+  
+  
+  /* ===========================
+     HERO PARALLAX
+  =========================== */
+  .parallax {
+    background-image: url('/images/fausto.jpg');
+    background-size: cover;
+    background-attachment: fixed;
+    background-position: center;
+    height: 100vh;
+    position: relative;
+    display: flex;
+    align-items: center;
+    justify-content: center;
+  }
+  
+  .parallax::before {
+    content: "";
+    position: absolute;
+    top: 0; left: 0;
+    width: 100%; height: 100%;
+    background: rgba(0, 0, 0, 0.4);
+    z-index: 1;
+  }
+  
+  .parallax .overlay {
+    position: relative;
+    z-index: 2;
+    text-align: center;
+    color: white;
+    padding: 20px;
+    max-width: 800px;
+  }
+  
+  .parallax .overlay h1 {
+    font-size: 3.5rem;
+    margin-bottom: 20px;
+    font-weight: bold;
+    text-shadow: 0 2px 6px rgba(0,0,0,0.4);
+  }
+  
+  .parallax .overlay p {
+    font-size: 1.3rem;
+    color: #ddd;
+    text-shadow: 0 2px 4px rgba(0,0,0,0.3);
+  }
+  
+  /* ===========================
+     SECCIONES
+  =========================== */
+  .section {
+    padding: 60px 20px;
+  }
+  
+  .section h2 {
+    font-size: 2rem;
+    font-weight: 600;
+    margin-bottom: 30px;
+    color: #333;
+  }
+  
+  /* ===========================
+     GALERÍA TIPO TARJETA
+  =========================== */
+  .galeria-grid {
+    background-color: #fff;
+    padding: 60px 20px;
+  }
+  
+  .galeria-grid h2 {
+    text-align: center;
+    font-size: 2.5rem;
+    font-weight: 600;
+    margin-bottom: 40px;
+    color: #222;
+  }
+  
+  .grid-container {
+    display: grid;
+    grid-template-columns: repeat(auto-fit, minmax(260px, 1fr));
+    gap: 25px;
+    max-width: 1200px;
+    margin: auto;
+  }
+  
+  .card {
+    background: #ffffff;
+    border-radius: 15px;
+    overflow: hidden;
+    box-shadow: 0 4px 20px rgba(0,0,0,0.1);
+    transition: transform 0.3s ease, box-shadow 0.3s ease;
+    position: relative;
+  }
+  
+  .card:hover {
+    transform: translateY(-6px);
+    box-shadow: 0 10px 30px rgba(0,0,0,0.15);
+  }
+  
+  .card img {
+    width: 100%;
+    height: 200px;
+    object-fit: cover;
+    transition: transform 0.4s ease;
+  }
+  
+  .card:hover img {
+    transform: scale(1.05);
+  }
+  
+  .card .info {
+    padding: 15px;
+    text-align: center;
+  }
+  
+  .card .info h3 {
+    margin: 10px 0;
+    font-size: 1.2rem;
+    color: #333;
+  }
+  
+  .card .info button {
+    background: #007BFF;
+    color: white;
+    padding: 8px 18px;
+    border: none;
+    border-radius: 50px;
+    font-weight: 600;
+    cursor: pointer;
+    transition: background 0.3s ease, transform 0.2s ease;
+  }
+  
+  .card .info button:hover {
+    background: #0056b3;
+    transform: scale(1.05);
+  }
+  
+  /* Imagen expandida */
+  .overlay-expand {
+    position: fixed;
+    top: 0; left: 0;
+    width: 100%; height: 100%;
+    background: rgba(0, 0, 0, 0.85);
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    z-index: 9999;
+  }
+  
+  .overlay-expand img {
+    max-width: 90%;
+    max-height: 90%;
+    border-radius: 12px;
+    box-shadow: 0 0 25px rgba(255, 255, 255, 0.2);
+    animation: zoomIn 0.3s ease;
+  }
+  
+  @keyframes zoomIn {
+    from { transform: scale(0.8); opacity: 0; }
+    to { transform: scale(1); opacity: 1; }
+  }
+  
+  
+  
+  .foto-director {
+    width: 325px;
+    height: 300px;
+    object-fit: cover;
+    border-radius: 50%;
+    box-shadow: 0 8px 25px rgba(0, 0, 0, 0.25);
+    border: 4px solid #fff;
+    margin: 20px auto;
+    display: block;
+    transition: transform 0.3s ease;
+  }
+  
+  .foto-director:hover {
+    transform: scale(1.05);
+  }
+  
+  .section.text-center {
+    background: linear-gradient(135deg, #f8f9fa, #e9ecef);
+    padding: 60px 20px;
+    border-top: 1px solid #ddd;
+  }
+  
+  .section.text-center h2 {
+    font-size: 2.5rem;
+    font-weight: 700;
+    margin-bottom: 20px;
+    color: #222;
+  }
+  
+  .section.text-center p {
+    font-size: 1.1rem;
+    color: #444;
+    max-width: 800px;
+    margin: 10px auto;
+    line-height: 1.6;
+  }
+  
+  /* ===========================
+     FOOTER
+  =========================== */
+/* ===================================
+   FOOTER ESTILO MODERNO GLASSMORPHIC
+=================================== */
+/* ===========================
+   FOOTER ESTILIZADO
+=========================== */
+.footer-beautiful {
+  background: rgba(15, 15, 30, 0.9);
+  border-top: 1px solid rgba(255, 255, 255, 0.05);
+  backdrop-filter: blur(12px);
+  -webkit-backdrop-filter: blur(12px);
+  box-shadow: 0 -2px 30px rgba(0, 0, 0, 0.4);
+  color: #f0f0f0;
+  position: relative;
+  font-family: 'Segoe UI', Tahoma, Geneva, Verdana, sans-serif;
+}
+
+.footer-box {
+  transition: all 0.3s ease;
+  padding: 10px 15px;
+  border-radius: 16px;
+}
+
+.footer-box:hover {
+  background: rgba(255, 255, 255, 0.05);
+  transform: translateY(-3px);
+  box-shadow: 0 8px 20px rgba(0, 0, 0, 0.3);
+}
+
+.footer-title {
+  font-size: 1.3rem;
+  margin-bottom: 15px;
+  border-bottom: 2px solid #0d6efd;
+  display: inline-block;
+  padding-bottom: 5px;
+  color: #ffffff;
+}
+
+.footer-box ul li a {
+  color: #cccccc;
+  text-decoration: none;
+  font-size: 0.95rem;
+  display: block;
+  margin: 6px 0;
+  transition: all 0.3s ease;
+}
+
+.footer-box ul li a:hover {
+  color: #ffffff;
+  transform: translateX(5px);
+}
+
+footer p {
+  transition: all 0.3s ease;
+  cursor: default;
+}
+
+footer p:hover {
+  color: #8EA50D; /* azul Bootstrap */
+  transform: translateY(-4px) scale(1.05);
+  text-shadow: 0 2px 5px rgba(0, 0, 0, 0.2);
+}
+
+
+/* Redes sociales */
+.social-icons a img {
+  width: 34px;
+  height: 34px;
+  margin-right: 12px;
+  border-radius: 8px;
+  transition: all 0.3s ease;
+  filter: brightness(0.85);
+}
+
+.social-icons a img:hover {
+  filter: brightness(1.2) drop-shadow(0 0 6px #ffffff);
+  transform: scale(1.1);
+}
+
+/* Línea separadora y texto final */
+hr.border-light {
+  opacity: 0.15;
+}
+
+.footer-beautiful p.small {
+  font-size: 0.85rem;
+  color: #bbbbbb;
+}
+
+  
+  /* ===========================
+     RESPONSIVE
+  =========================== */
+  @media (max-width: 600px) {
+    .card img {
+      height: 160px;
+    }
+  
+    .card .info h3 {
+      font-size: 1rem;
+    }
+  
+    .card .info button {
+      padding: 6px 14px;
+      font-size: 0.9rem;
+    }
+  }
+  
