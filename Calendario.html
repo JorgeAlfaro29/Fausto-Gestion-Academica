@@ -1,0 +1,176 @@
+<!DOCTYPE html>
+<html lang="es">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Calendario</title>
+    <link rel="stylesheet" href="https://cdn.jsdelivr.net/npm/bootstrap@5.3.0/dist/css/bootstrap.min.css">
+    <link href="https://fonts.googleapis.com/css2?family=Poppins:wght@300;400;500;600&display=swap" rel="stylesheet">
+    <link href="https://cdn.jsdelivr.net/npm/bootstrap@5.3.0/dist/css/bootstrap.min.css" rel="stylesheet" />
+    <link href="https://cdn.jsdelivr.net/npm/fullcalendar@6.1.7/index.global.min.css" rel="stylesheet" />
+    <link rel="stylesheet" href="css/calendario.css" />
+    <link rel="icon" href="icons/logoFausto.png">
+    <link rel="stylesheet" href="css/menu.css">
+</head>
+<body class="bg-light" style="padding-top: 50px;">
+
+    <!-- Header -->
+    <header class="py-3 fixed-top" style="background-color: black; color: white;">
+        <div class="container d-flex justify-content-start align-items-center">
+            <div class="d-flex align-items-center me-auto">
+                <a href="menu.html" class="me-2"><img src="icons/logoFausto.png" alt="Logo Fausto Herrera" width="80" height="80"></a>
+                <div>
+                    <h1 class="h5 m-0" style="color: #8ea50d;">FAUSTO HERRERA</h1>
+                    <span style="color: #D5DE83;">SISTEMA ACADÉMICO</span>
+                </div>
+            </div>
+            <nav>
+                <ul class="nav">
+                    <li class="nav-item"><a class="nav-link" href="menu.html">Académica</a></li>
+                    <li class="nav-item dropdown">
+                        <a class="nav-link dropdown-toggle" href="#" role="button" data-bs-toggle="dropdown">Web</a>
+                        <ul class="dropdown-menu">
+                            <li><a class="dropdown-item" href="IniciarSesion.html">Iniciar Sesión</a></li>
+                            <li><a class="dropdown-item" href="RegistrarUsuario.html">Registrar Usuario</a></li>
+                            <li><a class="dropdown-item" href="RestablecerContrasenia.html">Restablecer Contraseña</a></li>
+                            <li><a class="dropdown-item" href="Calendario.html">Calendario</a></li>
+                        </ul>
+                    </li>
+                    <a class="nav-link dropdown-toggle" href="#" role="button" data-bs-toggle="dropdown">Operaciones</a>
+                    <ul class="dropdown-menu">
+                      <li><a class="dropdown-item" href="Documentos.html">Documentos</a></li>
+                      <li><a class="dropdown-item" href="Gestion_Personal.html">Gestión del Personal</a></li>
+                    </ul>
+                    <a class="nav-link dropdown-toggle" href="#" role="button" data-bs-toggle="dropdown">Administración</a>
+                    <ul class="dropdown-menu">
+                      <li><a class="dropdown-item" href="Registro_Marcas.html">Registro de Marcas</a></li>
+                      <li><a class="dropdown-item" href="Control_Marcas.html">Control de Marcas</a></li>
+                      <li><a class="dropdown-item" href="Solicitud_Vacaciones.html">Solicitud de Vacaciones</a></li>
+                      <li><a class="dropdown-item" href="Control_Vacaciones.html">Control de Vacaciones</a></li>
+                    </ul>
+                </ul>
+            </nav>
+        </div>
+    </header>
+    <main class="container mt-5 pt-5">
+        <section class="card p-4 shadow-sm bg-white mb-4">
+          <h2 class="text-center mb-3">Calendario Escolar 2025</h2>
+    
+          <!-- Descripción de colores -->
+          <div class="text-center mb-3 d-flex justify-content-center align-items-center gap-2 flex-wrap">
+            <strong>Colores:</strong>
+            <span class="badge bg-danger">Feriados</span>
+            <span class="badge bg-warning text-dark">Vacaciones</span>
+            <span class="badge bg-success">Actividades</span>
+          </div>
+    
+          <!-- Calendario -->
+          <div id="calendar"></div>
+    
+          <!-- Botones de acción -->
+          <div class="d-flex justify-content-center gap-3 mt-4 flex-wrap">
+            <button class="btn btn-success" data-bs-toggle="modal" data-bs-target="#modalAgregar">+ Agregar Evento</button>
+            <button class="btn btn-warning" id="editarBtn">✏️ Editar Evento</button>
+            <button class="btn btn-danger" id="eliminarBtn">🗑️ Eliminar Evento</button>
+          </div>
+        </section>
+      </main>
+    
+      <!-- Modal Agregar -->
+      <div class="modal fade" id="modalAgregar" tabindex="-1">
+        <div class="modal-dialog">
+          <form class="modal-content" id="formAgregarEvento">
+            <div class="modal-header">
+              <h5 class="modal-title">Agregar nuevo evento</h5>
+              <button type="button" class="btn-close" data-bs-dismiss="modal"></button>
+            </div>
+            <div class="modal-body">
+              <label class="form-label">Título:</label>
+              <input type="text" class="form-control" id="titulo" required />
+              <label class="form-label mt-2">Fecha:</label>
+              <input type="date" class="form-control" id="fecha" required />
+              <label class="form-label mt-2">Tipo de evento:</label>
+              <select class="form-select" id="tipo" required>
+                <option value="feriado">Feriado</option>
+                <option value="vacaciones">Vacaciones</option>
+                <option value="actividad">Actividad</option>
+              </select>
+              <label class="form-label mt-2">Descripción:</label>
+              <textarea class="form-control" id="descripcion" rows="3" placeholder="Opcional"></textarea>
+            </div>
+            <div class="modal-footer">
+              <button type="submit" class="btn btn-primary">Guardar</button>
+              <button type="button" class="btn btn-secondary" data-bs-dismiss="modal">Cancelar</button>
+            </div>
+          </form>
+        </div>
+      </div>
+    
+      <!-- Modal Editar -->
+      <div class="modal fade" id="modalEditar" tabindex="-1">
+        <div class="modal-dialog">
+          <form class="modal-content" id="formEditarEvento">
+            <div class="modal-header">
+              <h5 class="modal-title">Editar evento</h5>
+              <button type="button" class="btn-close" data-bs-dismiss="modal"></button>
+            </div>
+            <div class="modal-body">
+              <label class="form-label">Título:</label>
+              <input type="text" class="form-control" id="editarTitulo" required />
+              <label class="form-label mt-2">Descripción:</label>
+              <textarea class="form-control" id="editarDescripcion" rows="3"></textarea>
+            </div>
+            <div class="modal-footer">
+              <button type="submit" class="btn btn-warning">Guardar cambios</button>
+              <button type="button" class="btn btn-secondary" data-bs-dismiss="modal">Cancelar</button>
+            </div>
+          </form>
+        </div>
+      </div>
+    
+      <!-- Modal Eliminar -->
+      <div class="modal fade" id="modalEliminar" tabindex="-1">
+        <div class="modal-dialog">
+          <div class="modal-content">
+            <div class="modal-header">
+              <h5 class="modal-title">¿Eliminar evento?</h5>
+              <button type="button" class="btn-close" data-bs-dismiss="modal"></button>
+            </div>
+            <div class="modal-body">
+              <p id="mensajeEliminar">¿Está seguro de que desea eliminar este evento?</p>
+            </div>
+            <div class="modal-footer">
+              <button type="button" class="btn btn-danger" id="confirmarEliminar">Eliminar</button>
+              <button type="button" class="btn btn-secondary" data-bs-dismiss="modal">Cancelar</button>
+            </div>
+          </div>
+        </div>
+      </div>
+    
+      <!-- Modal Detalle -->
+      <div class="modal fade" id="modalDetalle" tabindex="-1">
+        <div class="modal-dialog">
+          <div class="modal-content">
+            <div class="modal-header">
+              <h5 class="modal-title">Detalles del Evento</h5>
+              <button type="button" class="btn-close" data-bs-dismiss="modal"></button>
+            </div>
+            <div class="modal-body">
+              <p><strong>Título:</strong> <span id="detalleTitulo"></span></p>
+              <p><strong>Fecha:</strong> <span id="detalleFecha"></span></p>
+              <p><strong>Descripción:</strong></p>
+              <p id="detalleDescripcion" class="bg-light p-2 rounded border"></p>
+            </div>
+            <div class="modal-footer">
+              <button class="btn btn-secondary" data-bs-dismiss="modal">Cerrar</button>
+            </div>
+          </div>
+        </div>
+      </div>
+    
+      <!-- Scripts -->
+      <script src="https://cdn.jsdelivr.net/npm/bootstrap@5.3.0/dist/js/bootstrap.bundle.min.js"></script>
+      <script src="https://cdn.jsdelivr.net/npm/fullcalendar@6.1.7/index.global.min.js"></script>
+      <script src="js/calendario.js"></script>
+    </body>
+    </html>
