@@ -1,0 +1,84 @@
+body {
+    font-family: 'Poppins', sans-serif;
+    background-color: #f8f9fa;
+    padding-top: 120px;
+  }
+  
+  header {
+    background-color: black;
+    color: white;
+  }
+  
+  .section-title {
+    font-size: 1.4rem;
+    font-weight: 600;
+    display: flex;
+    align-items: center;
+    gap: 10px;
+    color: #333;
+  }
+
+  .section-title i {
+    font-size: 1.5rem;
+    color: #8ea50d;
+  }
+  .card {
+    border-radius: 15px;
+    border: none;
+  }
+  
+  .table th,
+  .table td {
+    vertical-align: middle;
+    text-align: center;
+  }
+  
+  .table th {
+    background-color: #f0f0f0;
+    font-weight: 500;
+  }
+  
+  .table td {
+    background-color: #fff;
+  }
+  
+  .btn {
+    font-size: 0.9rem;
+    font-weight: 500;
+    font-family: 'Poppins', sans-serif;
+  }
+  
+  .btn i {
+    margin-right: 4px;
+  }
+  
+  .acciones-btns {
+    display: flex;
+    flex-direction: column;
+    gap: 0.4rem;
+    align-items: stretch;
+  }
+  
+  .modal-content {
+    border-radius: 10px;
+  }
+  
+  .modal-header {
+    background-color: #f8f9fa;
+    border-bottom: 1px solid #dee2e6;
+  }
+  
+  .modal-title {
+    font-weight: 600;
+  }
+  
+  input.form-control,
+  select.form-select,
+  textarea.form-control {
+    font-size: 0.9rem;
+  }
+  
+  .text-muted {
+    font-size: 0.95rem;
+    margin-bottom: 20px;
+  }

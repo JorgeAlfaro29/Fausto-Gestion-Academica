@@ -1,0 +1,46 @@
+/* calendario.css */
+
+body {
+    font-family: 'Poppins', sans-serif;
+    background-color: #f8f9fa;
+    padding-top: 120px;
+  }
+  
+  header {
+    background-color: black;
+    color: white;
+  }
+  
+  #calendar {
+    max-width: 100%;
+    min-height: 750px;
+    margin: 0 auto;
+    font-size: 16px;
+  }
+  
+  .fc .fc-toolbar-title {
+    text-transform: capitalize;
+  }
+  
+  .fc-col-header-cell-cushion,
+  .fc-daygrid-day-number {
+    color: #444;
+    font-weight: 500;
+  }
+  
+  .fc-event {
+    border-radius: 6px !important;
+    padding: 2px 5px;
+    font-size: 0.9rem;
+    color: white !important;
+  }
+  
+  .fc .fc-button {
+    font-family: 'Poppins', sans-serif;
+    font-weight: 500;
+  }
+  
+  button, .btn {
+    font-family: 'Poppins', sans-serif;
+  }
+  
