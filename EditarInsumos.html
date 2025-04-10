@@ -1,0 +1,145 @@
+<!DOCTYPE html>
+<html lang="es">
+<head>
+  <meta charset="UTF-8"/>
+  <meta name="viewport" content="width=device-width, initial-scale=1.0"/>
+  <title>Editar Insumo</title>
+  <link rel="stylesheet" href="https://cdn.jsdelivr.net/npm/bootstrap@5.3.0/dist/css/bootstrap.min.css"/>
+  <script src="https://code.jquery.com/jquery-3.6.0.min.js"></script>
+  <style>
+    body {
+      font-family: 'Poppins', sans-serif;
+      background-color: #f8f9fa;
+    }
+    .form-container {
+      background-color: #fff;
+      padding: 2rem;
+      border-radius: 1rem;
+      box-shadow: 0 0 10px rgba(0,0,0,0.1);
+      max-width: 600px;
+      margin: 0 auto;
+    }
+  </style>
+</head>
+
+<body>
+  <!-- Navbar -->
+  <header class="py-3 fixed-top" style="background-color: black; color: white;">
+    <div class="container d-flex justify-content-start align-items-center">
+      <div class="d-flex align-items-center me-auto">
+        <a href="menu.html" class="me-2"><img src="icons/logoFausto.png" alt="Logo Fausto Herrera" width="80" height="80"></a>
+        <div>
+          <h1 class="h5 m-0" style="color: #8ea50d;">FAUSTO HERRERA</h1>
+          <span style="color: #D5DE83;">SISTEMA ACADÉMICO</span>
+        </div>
+      </div>
+      <nav>
+        <ul class="nav">
+          <li class="nav-item"><a class="nav-link text-white" href="#">Christopher Briceño Arias</a></li>
+          <li class="nav-item"><a class="nav-link bg-danger text-white rounded-pill px-3" href="#">X</a></li>
+        </ul>
+      </nav>
+    </div>
+  </header>
+
+  <br>
+  <br>
+
+  <div class="container mt-5 pt-5">
+    <h2 class="text-center">Editar Insumo</h2>
+    <div class="form-container">
+      <form id="formEditarInsumo" onsubmit="return validarFormulario()">
+        <div class="mb-3">
+          <label for="nombreInsumo" class="form-label">Nombre del Insumo</label>
+          <input type="text" id="nombreInsumo" class="form-control" required>
+        </div>
+
+        <div class="mb-3">
+          <label for="categoriaInsumo" class="form-label">Categoría</label>
+          <select id="categoriaInsumo" class="form-select" required>
+            <option value="Eléctrico">Eléctrico</option>
+            <option value="Herramientas">Herramientas</option>
+            <option value="Oficina">Oficina</option>
+            <!-- Aquí agregar más categorías -->
+          </select>
+        </div>
+
+        <div class="mb-3">
+          <label for="cantidadInsumo" class="form-label">Cantidad</label>
+          <input type="number" id="cantidadInsumo" class="form-control" required>
+        </div>
+
+        <div class="mb-3">
+          <label for="proveedorInsumo" class="form-label">Proveedor</label>
+          <select id="proveedorInsumo" class="form-select" required>
+            <option value="Proveedor 1">Proveedor 1</option>
+            <option value="Proveedor 2">Proveedor 2</option>
+            <option value="Proveedor 3">Proveedor 3</option>
+            <!-- Agregar más proveedores -->
+          </select>
+        </div>
+
+        <!-- Botón para redirigir y validar -->
+        <a href="ListarInsumos.html" class="btn btn-warning" onclick="return validarFormulario()">Actualizar Insumo</a>
+      </form>
+    </div>
+  </div>
+
+  <script>
+    // Obtener los parámetros de la URL (ID del insumo)
+    function obtenerParametro(url, param) {
+      var urlParams = new URLSearchParams(url.search);
+      return urlParams.get(param);
+    }
+
+    $(document).ready(function() {
+      // Obtener el ID_INSUMO desde la URL
+      const idInsumo = obtenerParametro(window.location, 'id');
+      if (idInsumo) {
+        // Llamar a una función para obtener los datos del insumo por su ID (simulado aquí)
+        // Simulamos los datos con un objeto de ejemplo
+        const insumo = obtenerDatosInsumo(idInsumo);
+
+        // Rellenar el formulario con los datos del insumo
+        $('#nombreInsumo').val(insumo.nombre);
+        $('#categoriaInsumo').val(insumo.categoria);
+        $('#cantidadInsumo').val(insumo.cantidad);
+        $('#proveedorInsumo').val(insumo.proveedor);
+      } else {
+        alert('No se ha especificado un ID de insumo.');
+      }
+    });
+
+    // Simulación de la función que obtiene los datos del insumo
+    function obtenerDatosInsumo(id) {
+      // Este es un objeto de ejemplo, en la práctica, deberías hacer una consulta a la base de datos o a la API
+      const datosInsumos = [
+        { id: 1, nombre: "Foco LED", categoria: "Eléctrico", cantidad: 100, proveedor: "Proveedor 1" },
+        { id: 2, nombre: "Martillo", categoria: "Herramientas", cantidad: 50, proveedor: "Proveedor 2" },
+        { id: 3, nombre: "Papel A4", categoria: "Oficina", cantidad: 200, proveedor: "Proveedor 3" }
+      ];
+
+      return datosInsumos.find(insumo => insumo.id == id) || {};
+    }
+
+    function validarFormulario() {
+      // Obtener los valores de los campos
+      const nombreInsumo = document.getElementById('nombreInsumo').value;
+      const categoriaInsumo = document.getElementById('categoriaInsumo').value;
+      const cantidadInsumo = document.getElementById('cantidadInsumo').value;
+      const proveedorInsumo = document.getElementById('proveedorInsumo').value;
+
+      // Validar los campos
+      if (!nombreInsumo || !categoriaInsumo || !cantidadInsumo || !proveedorInsumo) {
+        alert('Por favor complete todos los campos.');
+        return false;  // Detiene el envío del formulario
+      }
+
+      // Si la validación es correcta, redirigir a la página de Listar Insumos
+      return true;  // Permite la redirección
+    }
+  </script>
+
+  <script src="https://cdn.jsdelivr.net/npm/bootstrap@5.3.0/dist/js/bootstrap.bundle.min.js"></script>
+</body>
+</html>
