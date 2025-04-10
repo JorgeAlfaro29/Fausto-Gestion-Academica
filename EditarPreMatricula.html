@@ -21,59 +21,6 @@
 </head>
 <body>
 
-    <!-- Navbar -->
-<header class="py-3 fixed-top" style="background-color: black; color: white;">
-    <div class="container d-flex justify-content-start align-items-center">
-      <div class="d-flex align-items-center me-auto">
-        <a href="menu.html" class="me-2"><img src="icons/logoFausto.png" alt="Logo Fausto Herrera" width="80" height="80"></a>
-        <div>
-          <h1 class="h5 m-0" style="color: #8ea50d;">FAUSTO HERRERA</h1>
-          <span style="color: #D5DE83;">SISTEMA ACADÉMICO</span>
-        </div>
-      </div>
-      <nav>
-        <ul class="nav">
-          <li class="nav-item dropdown">
-            <a class="nav-link dropdown-toggle text-white" href="#" role="button" data-bs-toggle="dropdown">Académico</a>
-            <ul class="dropdown-menu">
-              <li><a class="dropdown-item" href="listarMatricula.html">Matrícula</a></li>
-              <li><a class="dropdown-item" href="listarCalificaciones.html">Calificaciones</a></li>
-            </ul>
-          </li>
-          
-          <li class="nav-item dropdown">
-            <a class="nav-link dropdown-toggle text-white" href="#" role="button" data-bs-toggle="dropdown">Web</a>
-            <ul class="dropdown-menu">
-              <li><a class="dropdown-item" href="IniciarSesion.html">Iniciar Sesión</a></li>
-              <li><a class="dropdown-item" href="RegistrarUsuario.html">Registrar Usuario</a></li>
-              <li><a class="dropdown-item" href="opcionesConstrasenia.html">Restablecer Contraseña</a></li>
-              <li><a class="dropdown-item" href="VistaProfesoresWeb.html">Vista Profesores</a></li>
-              <li><a class="dropdown-item" href="ListarPreMatricula.html">Vista Prematricula</a></li>
-            </ul>
-          </li>
-          <li class="nav-item dropdown">
-            <a class="nav-link dropdown-toggle text-white" href="#" role="button" data-bs-toggle="dropdown">Operaciones</a>
-            <ul class="dropdown-menu">
-              <li><a class="dropdown-item" href="ListarPermisos.html">Listar Permisos</a></li>
-              
-            </ul>
-          </li>
-          <li class="nav-item dropdown">
-            <a class="nav-link dropdown-toggle text-white" href="#" role="button" data-bs-toggle="dropdown">Administrativo</a>
-            <ul class="dropdown-menu">
-              <li><a class="dropdown-item" href="listarNoticias.html">Noticias</a></li>
-              <li><a class="dropdown-item" href="noticiasClientes.html">Noticias Clientes</a></li>
-              <li><a class="dropdown-item" href="listarVentas.html">Ventas</a></li>
-            </ul>
-          </li>
-          <li class="nav-item"><a class="nav-link text-white" href="#">Christopher Briceño Arias</a></li>
-          <li class="nav-item"><a class="nav-link bg-danger text-white rounded-pill px-3" href="#">X</a></li>
-        </ul>
-      </nav>
-    </div>
-  </header>
-  
-
 <header class="py-3 fixed-top" style="background-color: black; color: white;">
   <div class="container d-flex flex-wrap justify-content-between align-items-center">
     <div class="d-flex align-items-center">
@@ -134,10 +81,31 @@
       <div class="mb-3">
         <label for="puesto" class="form-label">Puesto</label>
         <select class="form-select" id="puesto" required>
+          <option value="">Seleccione un puesto</option>
           <option value="Padre" selected>Padre</option>
           <option value="Madre">Madre</option>
           <option value="Encargado">Encargado</option>
         </select>
+      </div>
+
+      <!-- Datos adicionales del encargado -->
+      <div id="datosEncargado" class="border rounded p-3 mb-3" style="display: none;">
+        <h5 class="mb-3 text-secondary">Información adicional del encargado</h5>
+
+        <div class="mb-3">
+          <label for="profesionEncargado" class="form-label">Profesión</label>
+          <input type="text" class="form-control" id="profesionEncargado" value="Ingeniero">
+        </div>
+
+        <div class="mb-3">
+          <label for="empresaEncargado" class="form-label">Empresa donde labora</label>
+          <input type="text" class="form-control" id="empresaEncargado" value="TechCorp S.A.">
+        </div>
+
+        <div class="mb-3">
+          <label for="telefonoEncargado" class="form-label">Teléfono del trabajo</label>
+          <input type="text" class="form-control" id="telefonoEncargado" value="2299-4455">
+        </div>
       </div>
 
       <div class="mb-3">
@@ -154,10 +122,21 @@
 </main>
 
 <script>
+  const puestoSelect = document.getElementById("puesto");
+  const datosEncargadoDiv = document.getElementById("datosEncargado");
+
+  function mostrarDatosEncargado() {
+    const puesto = puestoSelect.value;
+    datosEncargadoDiv.style.display = (puesto === "Padre" || puesto === "Madre" || puesto === "Encargado") ? "block" : "none";
+  }
+
+  puestoSelect.addEventListener("change", mostrarDatosEncargado);
+  window.addEventListener("DOMContentLoaded", mostrarDatosEncargado);
+
   document.getElementById("formEditarPrematricula").addEventListener("submit", function(e) {
     e.preventDefault();
     alert("Prematrícula actualizada correctamente.");
-    window.location.href = "listarPrematricula.html"; // Redirige a la lista
+    window.location.href = "listarPrematricula.html";
   });
 </script>
 
