@@ -1,85 +1,88 @@
 body {
-    font-family: 'Poppins', sans-serif;
-    background-color: #f8f9fa;
-    padding-top: 120px;
-  }
-  
-  .section-title {
-    font-size: 1.4rem;
-    font-weight: 600;
-    display: flex;
-    align-items: center;
-    gap: 10px;
-    color: #333;
-  }
-  
-  .section-title i {
-    font-size: 1.5rem;
-    color: #8ea50d;
-  }
-  
-  .card {
-    border-radius: 12px;
-    border: none;
-  }
-  
-  .table {
-    border-radius: 8px;
-    overflow: hidden;
-  }
-  
-  .table th, .table td {
-    font-size: 0.95rem;
-    vertical-align: middle;
-    padding: 12px 10px;
-  }
-  
-  .table th {
-    background-color: #f1f3f5;
-    font-weight: 600;
-    color: #333;
-  }
-  
-  .table td:last-child {
-    text-align: center;
-  }
-  
-  .badge {
-    font-size: 0.85rem;
-    padding: 0.4em 0.7em;
-    border-radius: 0.7rem;
-  }
-  
-  .badge-pendiente {
-    background-color: #fce083;
-    color: #7a5b00;
-  }
-  
-  .badge-aprobada {
-    background-color: #b5e6c5;
-    color: #155724;
-  }
-  
-  .badge-rechazada {
-    background-color: #f8c2c2;
-    color: #842029;
-  }
-  
-  .text-muted {
-    font-size: 0.95rem;
-    margin-bottom: 20px;
-  }
-  
-  textarea.form-control {
-    resize: vertical;
-    min-height: 90px;
-  }
-  
-  .btn-group-sm .btn {
-    font-size: 0.85rem;
-    padding: 0.35rem 0.7rem;
-    margin: 2px 0;
-    width: 100%;
-    white-space: nowrap;
-  }
-  
+  font-family: 'Poppins', sans-serif;
+  background-color: #f8f9fa;
+  padding-top: 120px;
+}
+
+.section-title {
+  font-size: 1.4rem;
+  font-weight: 600;
+  display: flex;
+  align-items: center;
+  gap: 10px;
+  color: #333;
+}
+
+.section-title i {
+  font-size: 1.5rem;
+  color: #8ea50d;
+}
+
+.card {
+  border-radius: 12px;
+  border: none;
+}
+
+.table {
+  border-radius: 8px;
+  overflow: hidden;
+}
+
+.table th, .table td {
+  font-size: 0.95rem;
+  vertical-align: middle;
+  padding: 12px 10px;
+}
+
+.table th {
+  background-color: #f1f3f5;
+  font-weight: 600;
+  color: #333;
+}
+
+.table td:last-child {
+  text-align: center;
+}
+
+.badge {
+  font-size: 0.85rem;
+  padding: 0.5em 0.9em;
+  border-radius: 0.7rem;
+  display: inline-block;
+  text-align: center;
+}
+
+.badge-pendiente {
+  background-color: #fff3cd !important;
+  color: #856404 !important;
+  border: 1px solid #ffeeba;
+}
+
+.badge-aprobada {
+  background-color: #d4edda !important;
+  color: #155724 !important;
+  border: 1px solid #c3e6cb;
+}
+
+.badge-rechazada {
+  background-color: #f8d7da !important;
+  color: #721c24 !important;
+  border: 1px solid #f5c6cb;
+}
+
+.text-muted {
+  font-size: 0.95rem;
+  margin-bottom: 20px;
+}
+
+textarea.form-control {
+  resize: vertical;
+  min-height: 90px;
+}
+
+.btn-group-sm .btn {
+  font-size: 0.85rem;
+  padding: 0.4rem 0.8rem;
+  margin: 2px 0;
+  width: 100%;
+}
