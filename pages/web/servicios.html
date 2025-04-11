@@ -1,0 +1,217 @@
+<!DOCTYPE html>
+<html lang="es">
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <title>Escuela Fausto Herrera</title>
+  <link rel="icon" href="/icons/logoFausto.png">
+  <link href="https://cdn.jsdelivr.net/npm/bootstrap@5.3.0/dist/css/bootstrap.min.css" rel="stylesheet">
+  <link href="https://fonts.googleapis.com/css2?family=Poppins:wght@300;400;500;600&display=swap" rel="stylesheet">
+  <link rel="stylesheet" href="https://cdn.jsdelivr.net/npm/bootstrap-icons@1.10.5/font/bootstrap-icons.css">
+  <link rel="stylesheet" href="/css/servicios.css">
+</head>
+<body>
+
+  <header class="fixed-top shadows">
+    <nav class="navbar navbar-expand-lg navbar-dark container">
+      <a class="navbar-brand d-flex align-items-center" href="Inicio.html">
+        <img src="/icons/logoFausto.png" alt="Logo Fausto Herrera" width="70" height="70" class="me-2">
+        <div>
+            <h1 style="color: #8ea50d; font-size: 1.5rem; margin: 0;">ESCUELA FAUSTO</h1>
+            <span style="color: #D5DE83; font-size: 1rem;">HERRERA CORDERO</span>
+        </div>
+      </a>
+      <button class="navbar-toggler" type="button" data-bs-toggle="collapse" data-bs-target="#mainNavbar">
+        <span class="navbar-toggler-icon"></span>
+      </button>
+
+      <div class="collapse navbar-collapse" id="mainNavbar">
+        <ul class="navbar-nav ms-auto mb-2 mb-lg-0">
+          <li class="nav-item"><a class="nav-link" href="/pages/web/Inicio.html">Inicio</a></li>
+          <li class="nav-item"><a class="nav-link" href="quienes.html">Quiénes somos</a></li>
+          <li class="nav-item"><a class="nav-link" href="servicios.html">Servicios y programas</a></li>
+          <li class="nav-item"><a class="nav-link" href="prematricula.html">Prematrícula</a></li>
+          <li class="nav-item"><a class="nav-link" href="contacto.html">Contacto</a></li>
+        </ul>
+      </div>
+    </nav>
+  </header>
+
+  <section class="container mt-5 pt-5">
+    <h2 class="text-center mb-4">Servicios y Programas</h2>
+    <p class="text-center mb-4">Conoce los servicios que ofrecemos a nuestros estudiantes</p>
+    <div class="row">
+      <div class="col-md-6">
+        <ul class="list-group">
+          <li class="list-group-item d-flex justify-content-between align-items-center">
+            <h5><i class="bi bi-check-circle"></i> Comedor Escolar</h5>
+            <button class="btn btn-custom" data-bs-toggle="modal" data-bs-target="#comedorModal">Más información</button>
+          </li>
+          <li class="list-group-item d-flex justify-content-between align-items-center">
+            <h5><i class="bi bi-check-circle"></i> Salón de Cómputo</h5>
+            <button class="btn btn-custom" data-bs-toggle="modal" data-bs-target="#computoModal">Más información</button>
+          </li>
+          <li class="list-group-item d-flex justify-content-between align-items-center">
+            <h5><i class="bi bi-check-circle"></i> Área Recreativa</h5>
+            <button class="btn btn-custom" data-bs-toggle="modal" data-bs-target="#recreativaModal">Más información</button>
+          </li>
+        </ul>
+      </div>
+      
+      <div class="col-md-6">
+        <ul class="list-group">
+          <li class="list-group-item d-flex justify-content-between align-items-center">
+            <h5><i class="bi bi-check-circle"></i> Programas Especiales</h5>
+            <button class="btn btn-custom" data-bs-toggle="modal" data-bs-target="#especialesModal">Más información</button>
+          </li>
+          <li class="list-group-item d-flex justify-content-between align-items-center">
+            <h5><i class="bi bi-check-circle"></i> Eventos</h5>
+            <button class="btn btn-custom" data-bs-toggle="modal" data-bs-target="#eventosModal">Más información</button>
+          </li>
+          <li class="list-group-item d-flex justify-content-between align-items-center">
+            <h5><i class="bi bi-check-circle"></i> Actividades</h5>
+            <button class="btn btn-custom" data-bs-toggle="modal" data-bs-target="#actividadesModal">Más información</button>
+          </li>
+        </ul>
+      </div>
+      
+  </section>
+
+  <section class="container mt-5 pt-5">
+    <h2 class="text-center mb-4">Calendario Escolar</h2>
+    <p class="text-center mb-4">Próximamente agregaremos el calendario con todas las fechas importantes para el ciclo escolar.</p>
+  </section>
+
+  <div class="modal fade" id="comedorModal" tabindex="-1" aria-labelledby="comedorModalLabel" aria-hidden="true">
+    <div class="modal-dialog">
+      <div class="modal-content">
+        <div class="modal-header">
+          <h5 class="modal-title" id="comedorModalLabel">Comedor Escolar</h5>
+          <button type="button" class="btn-close" data-bs-dismiss="modal" aria-label="Close"></button>
+        </div>
+        <div class="modal-body">
+          <img src="/images/comedor.jpg" alt="Comedor Escolar" class="img-fluid mb-3">
+          <p>En nuestro comedor escolar, ofrecemos una variedad de alimentos balanceados y nutritivos para nuestros estudiantes. Aseguramos que tengan la energía necesaria para su jornada escolar.</p>
+        </div>
+      </div>
+    </div>
+  </div>
+
+  <div class="modal fade" id="computoModal" tabindex="-1" aria-labelledby="computoModalLabel" aria-hidden="true">
+    <div class="modal-dialog">
+      <div class="modal-content">
+        <div class="modal-header">
+          <h5 class="modal-title" id="computoModalLabel">Salón de Cómputo</h5>
+          <button type="button" class="btn-close" data-bs-dismiss="modal" aria-label="Close"></button>
+        </div>
+        <div class="modal-body">
+          <img src="/images/salon_computo.jpg" alt="Salón de Cómputo" class="img-fluid mb-3">
+          <p>Contamos con un salón de cómputo totalmente equipado con computadoras y acceso a internet para mejorar la experiencia educativa digital de nuestros estudiantes.</p>
+        </div>
+      </div>
+    </div>
+  </div>
+  <!-- Modal para Actividades -->
+<div class="modal fade" id="actividadesModal" tabindex="-1" aria-labelledby="actividadesModalLabel" aria-hidden="true">
+  <div class="modal-dialog">
+    <div class="modal-content">
+      <div class="modal-header">
+        <h5 class="modal-title" id="actividadesModalLabel">Actividades</h5>
+        <button type="button" class="btn-close" data-bs-dismiss="modal" aria-label="Close"></button>
+      </div>
+      <div class="modal-body">
+        <img src="/images/actividades.jpg" alt="Actividades" class="img-fluid mb-3">
+        <p>La escuela organiza una serie de actividades durante el año, incluyendo competencias deportivas, festivales culturales y otros eventos importantes para fomentar la integración y el desarrollo integral de los estudiantes.</p>
+      </div>
+    </div>
+  </div>
+</div>
+
+
+  <div class="modal fade" id="recreativaModal" tabindex="-1" aria-labelledby="recreativaModalLabel" aria-hidden="true">
+    <div class="modal-dialog">
+      <div class="modal-content">
+        <div class="modal-header">
+          <h5 class="modal-title" id="recreativaModalLabel">Área Recreativa</h5>
+          <button type="button" class="btn-close" data-bs-dismiss="modal" aria-label="Close"></button>
+        </div>
+        <div class="modal-body">
+          <img src="/images/area_recreativa.jpg" alt="Área Recreativa" class="img-fluid mb-3">
+          <p>Contamos con un amplio espacio recreativo donde los estudiantes pueden disfrutar de actividades al aire libre, favoreciendo su desarrollo físico y social.</p>
+        </div>
+      </div>
+    </div>
+  </div>
+
+  <div class="modal fade" id="especialesModal" tabindex="-1" aria-labelledby="especialesModalLabel" aria-hidden="true">
+    <div class="modal-dialog">
+      <div class="modal-content">
+        <div class="modal-header">
+          <h5 class="modal-title" id="especialesModalLabel">Programas Especiales</h5>
+          <button type="button" class="btn-close" data-bs-dismiss="modal" aria-label="Close"></button>
+        </div>
+        <div class="modal-body">
+          <img src="/images/programas_especiales.jpg" alt="Programas Especiales" class="img-fluid mb-3">
+          <p>Contamos con programas educativos especiales que buscan integrar a todos los estudiantes, brindando apoyo a aquellos con necesidades particulares.</p>
+        </div>
+      </div>
+    </div>
+  </div>
+
+  <div class="modal fade" id="eventosModal" tabindex="-1" aria-labelledby="eventosModalLabel" aria-hidden="true">
+    <div class="modal-dialog">
+      <div class="modal-content">
+        <div class="modal-header">
+          <h5 class="modal-title" id="eventosModalLabel">Eventos y Actividades</h5>
+          <button type="button" class="btn-close" data-bs-dismiss="modal" aria-label="Close"></button>
+        </div>
+        <div class="modal-body">
+          <img src="/images/eventos.jpg" alt="Eventos y Actividades" class="img-fluid mb-3">
+          <p>La escuela organiza una serie de eventos durante el año, incluyendo competencias deportivas, festivales culturales y otros eventos importantes.</p>
+        </div>
+      </div>
+    </div>
+  </div>
+
+  <footer class="footer-beautiful mt-5 text-light">
+    <div class="container py-5">
+      <div class="row gy-4 text-center text-md-start">
+        <div class="col-md-4 footer-box">
+          <h4 class="footer-title">Navegación</h4>
+          <ul class="list-unstyled">
+            <li><a href="index.html">Inicio</a></li>
+            <li><a href="quienes.html">Quiénes somos</a></li>
+            <li><a href="servicios.html">Servicios y programas</a></li>
+            <li><a href="prematricula.html">Prematrícula</a></li>
+            <li><a href="contacto.html">Contacto</a></li>
+          </ul>
+        </div>
+
+        <div class="col-md-4 footer-box">
+          <h4 class="footer-title">Contacto</h4>
+          <p><i class="bi bi-geo-alt-fill me-2"></i>San Carlos, Pacuarito, Siquirres</p>
+          <p><i class="bi bi-telephone-fill me-2"></i>+506 2222 3333</p>
+          <p><i class="bi bi-envelope-fill me-2"></i>info@faustoherrera.ed.cr</p>
+        </div>
+
+        <div class="col-md-4 footer-box">
+          <h4 class="footer-title">Síguenos</h4>
+          <div class="social-icons d-flex justify-content-center justify-content-md-start">
+            <a href="https://www.facebook.com/"><img src="/icons/facebook.png" alt="Facebook" /></a>
+            <a href="https://www.instagram.com/?hl=es"><img src="/icons/instagram.png" alt="Instagram" /></a>
+            <a href="https://web.whatsapp.com/send?phone=62918922&text=hola"><img src="/icons/whatsapp.png" alt="Whatsapp" /></a>
+            <a href="https://mail.google.com/mail/u/0/?fs=1&tf=cm&source=mailto&to=bricenoc506@gmail.com"><img src="/icons/email.png" alt="Whatsapp" /></a>
+          </div>
+        </div>
+
+      </div>
+
+      <hr class="border-light mt-5 m">
+      <p class="text-center small mb-0">&copy; 2025 Escuela Fausto Herrera — Todos los derechos reservados</p>
+    </div>
+  </footer>
+
+  <script src="https://cdn.jsdelivr.net/npm/bootstrap@5.3.0/dist/js/bootstrap.bundle.min.js"></script>
+  
+</body>
+</html>

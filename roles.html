@@ -1,0 +1,265 @@
+<!DOCTYPE html>
+<html lang="es">
+<head>
+  <meta charset="UTF-8" />
+  <meta name="viewport" content="width=device-width, initial-scale=1.0"/>
+  <title>Perfil</title>
+  <link rel="stylesheet" href="https://cdn.jsdelivr.net/npm/bootstrap@5.3.0/dist/css/bootstrap.min.css"/>
+  <link href="https://fonts.googleapis.com/css2?family=Poppins:wght@300;400;500;600&display=swap" rel="stylesheet"/>
+  <link rel="icon" href="icons/logoFausto.png"/>
+  <link rel="stylesheet" href="/css/estudiante.css"/>
+</head>
+<body class="bg-light" style="padding-top: 50px;">
+
+  <header class="py-3 fixed-top" style="background-color: black; color: white;">
+    <div class="container d-flex justify-content-start align-items-center">
+      <div class="d-flex align-items-center me-auto">
+        <a href="menu.html" class="me-2"><img src="/icons/logoFausto.png" alt="Logo Fausto Herrera" width="80" height="80"/></a>
+        <div>
+          <h1 class="h5 m-0" style="color: #8ea50d;">FAUSTO HERRERA</h1>
+          <span style="color: #D5DE83;">SISTEMA ACADÉMICO</span>
+        </div>
+      </div>
+      <nav>
+        <ul class="nav">
+          <li class="nav-item"><a class="nav-link" href="/menu.html" style="color: white;">Académica</a></li>
+          <li class="nav-item dropdown">
+            <a class="nav-link dropdown-toggle" href="#" role="button" data-bs-toggle="dropdown" style="color: white;">Web</a>
+            <ul class="dropdown-menu">
+              <li><a class="dropdown-item" href="/pages/IniciarSesion.html">Iniciar Sesión</a></li>
+              <li><a class="dropdown-item" href="/pages/RegistrarUsuario.html">Registrar Usuario</a></li>
+              <li><a class="dropdown-item" href="/pages/RestablecerContrasenia.html">Restablecer Contraseña</a></li>
+            </ul>
+          </li>
+          <li class="nav-item"><a class="nav-link" href="#" style="color: white;">Operaciones</a></li>
+          <li class="nav-item"><a class="nav-link" href="#" style="color: white;">Administración</a></li>
+          <li class="nav-item"><a class="nav-link" href="#" style="color: white;">Christopher Briceño Arias</a></li>
+          <li class="nav-item"><a class="nav-link bg-danger text-white rounded-pill px-3" href="#">X</a></li>
+        </ul>
+      </nav>
+    </div>
+  </header>
+
+  <div class="container mt-5 pt-5">
+    <h3 class="text-center">Gestión de Roles</h3>
+    <div class="container-buttons">
+      <button class="btn btn-primary btn-custom" data-bs-toggle="modal" data-bs-target="#crearRolModal">Crear Rol</button>
+      <button class="btn btn-warning btn-custom" data-bs-toggle="modal" data-bs-target="#actualizarRolModal">Actualizar Rol</button>
+      <button class="btn btn-danger btn-custom" data-bs-toggle="modal" data-bs-target="#eliminarRolModal">Eliminar Rol</button>
+      <button class="btn btn-success btn-custom" data-bs-toggle="modal" data-bs-target="#asignarRolModal">Asignar Rol</button>
+    </div>
+
+    <div class="mt-4">
+      <h4>Usuarios y Roles Asignados</h4>
+      <table class="table table-striped">
+        <thead>
+          <tr>
+            <th scope="col">Usuario</th>
+            <th scope="col">Rol Asignado</th>
+            <th scope="col">Acciones</th>
+          </tr>
+        </thead>
+        <tbody>
+          <tr>
+            <td>Juan Pérez</td>
+            <td>Administrador</td>
+            <td>
+              
+              <button class="btn btn-danger btn-sm" onclick="eliminarAsignacion('Juan Pérez')">Eliminar</button>
+              <button class="btn btn-success btn-sm d-none" id="guardarEditarJuanPérez" onclick="guardarEdicion('Juan Pérez')">Guardar</button>
+            </td>
+          </tr>
+          <tr>
+            <td>María González</td>
+            <td>Profesor</td>
+            <td>
+              
+              <button class="btn btn-danger btn-sm" onclick="eliminarAsignacion('María González')">Eliminar</button>
+              <button class="btn btn-success btn-sm d-none" id="guardarEditarMariaGonzalez" onclick="guardarEdicion('María González')">Guardar</button>
+            </td>
+          </tr>
+          <tr>
+            <td>Pedro López</td>
+            <td>Estudiante</td>
+            <td>
+              
+              <button class="btn btn-danger btn-sm" onclick="eliminarAsignacion('Pedro López')">Eliminar</button>
+              <button class="btn btn-success btn-sm d-none" id="guardarEditarPedroLopez" onclick="guardarEdicion('Pedro López')">Guardar</button>
+            </td>
+          </tr>
+        </tbody>
+      </table>
+    </div>
+  </div>
+
+  <div class="modal fade" id="crearRolModal" tabindex="-1" aria-labelledby="crearRolModalLabel" aria-hidden="true">
+    <div class="modal-dialog">
+      <div class="modal-content">
+        <div class="modal-header">
+          <h5 class="modal-title" id="crearRolModalLabel">Crear Rol</h5>
+          <button type="button" class="btn-close" data-bs-dismiss="modal" aria-label="Close"></button>
+        </div>
+        <div class="modal-body">
+          <form id="crearRolForm">
+            <div class="mb-3">
+              <label for="nombreRol" class="form-label">Nombre del Rol</label>
+              <input type="text" class="form-control" id="nombreRol" required>
+            </div>
+            <div class="mb-3">
+              <label for="descripcionRol" class="form-label">Descripción</label>
+              <textarea class="form-control" id="descripcionRol" rows="3" required></textarea>
+            </div>
+            <div class="mb-3">
+              <label for="permisos" class="form-label">Permisos</label><br/>
+              <div class="form-check">
+                <input type="checkbox" class="form-check-input" id="verEstudiantes">
+                <label class="form-check-label" for="verEstudiantes">Ver Estudiantes</label>
+              </div>
+              <div class="form-check">
+                <input type="checkbox" class="form-check-input" id="asignarNotas">
+                <label class="form-check-label" for="asignarNotas">Asignar Notas</label>
+              </div>
+              <div class="form-check">
+                <input type="checkbox" class="form-check-input" id="matricular">
+                <label class="form-check-label" for="matricular">Matricular</label>
+              </div>
+              <div class="form-check">
+                <input type="checkbox" class="form-check-input" id="gestionarInsumos">
+                <label class="form-check-label" for="gestionarInsumos">Gestionar Insumos</label>
+              </div>
+              <div class="form-check">
+                <input type="checkbox" class="form-check-input" id="gestionarActivos">
+                <label class="form-check-label" for="gestionarActivos">Gestionar Activos</label>
+              </div>
+            </div>
+          </form>
+        </div>
+        <div class="modal-footer">
+          <button type="button" class="btn btn-secondary" data-bs-dismiss="modal">Cerrar</button>
+          <button type="button" class="btn btn-primary" onclick="crearRol()">Crear Rol</button>
+        </div>
+      </div>
+    </div>
+  </div>
+
+  <div class="modal fade" id="actualizarRolModal" tabindex="-1" aria-labelledby="actualizarRolModalLabel" aria-hidden="true">
+    <div class="modal-dialog">
+      <div class="modal-content">
+        <div class="modal-header">
+          <h5 class="modal-title" id="actualizarRolModalLabel">Actualizar Rol</h5>
+          <button type="button" class="btn-close" data-bs-dismiss="modal" aria-label="Close"></button>
+        </div>
+        <div class="modal-body">
+          <form id="actualizarRolForm">
+            <div class="mb-3">
+              <label for="rolSelect" class="form-label">Seleccionar Rol</label>
+              <select class="form-select" id="rolSelect">
+                <option value="admin">Administrador</option>
+                <option value="profesor">Profesor</option>
+                <option value="estudiante">Estudiante</option>
+              </select>
+            </div>
+            <div class="mb-3">
+              <label for="permisosRol" class="form-label">Permisos</label>
+              <textarea class="form-control" id="permisosRol" rows="3"></textarea>
+            </div>
+            <div class="mb-3">
+                <label for="permisos" class="form-label">Permisos</label><br/>
+                <div class="form-check">
+                  <input type="checkbox" class="form-check-input" id="verEstudiantes">
+                  <label class="form-check-label" for="verEstudiantes">Ver Estudiantes</label>
+                </div>
+                <div class="form-check">
+                  <input type="checkbox" class="form-check-input" id="asignarNotas">
+                  <label class="form-check-label" for="asignarNotas">Asignar Notas</label>
+                </div>
+                <div class="form-check">
+                  <input type="checkbox" class="form-check-input" id="matricular">
+                  <label class="form-check-label" for="matricular">Matricular</label>
+                </div>
+                <div class="form-check">
+                  <input type="checkbox" class="form-check-input" id="gestionarInsumos">
+                  <label class="form-check-label" for="gestionarInsumos">Gestionar Insumos</label>
+                </div>
+                <div class="form-check">
+                  <input type="checkbox" class="form-check-input" id="gestionarActivos">
+                  <label class="form-check-label" for="gestionarActivos">Gestionar Activos</label>
+                </div>
+              </div>
+          </form>
+        </div>
+        <div class="modal-footer">
+          <button type="button" class="btn btn-secondary" data-bs-dismiss="modal">Cerrar</button>
+          <button type="button" class="btn btn-primary" onclick="actualizarRol()">Actualizar</button>
+        </div>
+      </div>
+    </div>
+  </div>
+
+  <div class="modal fade" id="eliminarRolModal" tabindex="-1" aria-labelledby="eliminarRolModalLabel" aria-hidden="true">
+    <div class="modal-dialog">
+      <div class="modal-content">
+        <div class="modal-header">
+          <h5 class="modal-title" id="eliminarRolModalLabel">Eliminar Rol</h5>
+          <button type="button" class="btn-close" data-bs-dismiss="modal" aria-label="Close"></button>
+        </div>
+        <div class="modal-body">
+          <form id="eliminarRolForm">
+            <div class="mb-3">
+              <label for="rolEliminarSelect" class="form-label">Seleccionar Rol</label>
+              <select class="form-select" id="rolEliminarSelect">
+                <option value="admin">Administrador</option>
+                <option value="profesor">Profesor</option>
+                <option value="estudiante">Estudiante</option>
+              </select>
+            </div>
+          </form>
+        </div>
+        <div class="modal-footer">
+          <button type="button" class="btn btn-secondary" data-bs-dismiss="modal">Cerrar</button>
+          <button type="button" class="btn btn-danger" onclick="eliminarRol()">Eliminar</button>
+        </div>
+      </div>
+    </div>
+  </div>
+
+  <div class="modal fade" id="asignarRolModal" tabindex="-1" aria-labelledby="asignarRolModalLabel" aria-hidden="true">
+    <div class="modal-dialog">
+      <div class="modal-content">
+        <div class="modal-header">
+          <h5 class="modal-title" id="asignarRolModalLabel">Asignar Rol</h5>
+          <button type="button" class="btn-close" data-bs-dismiss="modal" aria-label="Close"></button>
+        </div>
+        <div class="modal-body">
+          <form id="asignarRolForm">
+            <div class="mb-3">
+              <label for="usuarioSelect" class="form-label">Seleccionar Usuario</label>
+              <select class="form-select" id="usuarioSelect">
+                <option value="juanperez">Juan Pérez</option>
+                <option value="mariagonzalez">María González</option>
+                <option value="pedrolopez">Pedro López</option>
+              </select>
+            </div>
+            <div class="mb-3">
+              <label for="rolAsignarSelect" class="form-label">Seleccionar Rol</label>
+              <select class="form-select" id="rolAsignarSelect">
+                <option value="admin">Administrador</option>
+                <option value="profesor">Profesor</option>
+                <option value="estudiante">Estudiante</option>
+              </select>
+            </div>
+          </form>
+        </div>
+        <div class="modal-footer">
+          <button type="button" class="btn btn-secondary" data-bs-dismiss="modal">Cerrar</button>
+          <button type="button" class="btn btn-success" onclick="asignarRol()">Asignar</button>
+        </div>
+      </div>
+    </div>
+  </div>
+
+  <script src="https://cdn.jsdelivr.net/npm/bootstrap@5.3.0/dist/js/bootstrap.bundle.min.js"></script>
+  
+  
+</body>
+</html>

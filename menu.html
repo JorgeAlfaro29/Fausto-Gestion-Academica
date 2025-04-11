@@ -3,13 +3,15 @@
 <head>
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
-    <title>SISTEMA ACADÉMICO</title>
+    <title>Registrar Usuario</title>
     <link rel="stylesheet" href="https://cdn.jsdelivr.net/npm/bootstrap@5.3.0/dist/css/bootstrap.min.css">
     <link href="https://fonts.googleapis.com/css2?family=Poppins:wght@300;400;500;600&display=swap" rel="stylesheet">
     <link rel="icon" href="icons/logoFausto.png">
-    <link rel="stylesheet" href="css/menu.css">
+    <link rel="stylesheet" href="/css/menu.css">
+    
 </head>
 <body class="bg-light">
+    <!-- Encabezado -->
     <header class="py-3 fixed-top" style="background-color: black; color: white;">
         <div class="container d-flex justify-content-start align-items-center">
             <div class="d-flex align-items-center me-auto">
@@ -22,71 +24,67 @@
             <nav>
                 <ul class="nav">
                     <li class="nav-item dropdown">
-                        <a class="nav-link dropdown-toggle" href="#" role="button" data-bs-toggle="dropdown" style="color: white;">Academico</a>
+                        <a class="nav-link dropdown-toggle" href="#" role="button" data-bs-toggle="dropdown">Académica</a>
                         <ul class="dropdown-menu">
-                            <li><a class="dropdown-item" href="listarMatricula.html">Matricula</a></li>
-                            <li><a class="dropdown-item" href="listarCalificaciones.html">Calificaciones</a></li>
+                            <li class="dropdown-item"><a  href="/matricula.html">Matrícula</a></li>
+                            <li class="dropdown-item"><a  href="/calificaciones.html">Calificaciones</a></li>
+                            <li class="dropdown-item"><a  href="/estudiante.html">Transferencia institución</a></li>
+                            <li class="dropdown-item"><a  href="/estudiante.html">Carnet</a></li>
+                            <li class="dropdown-item"><a  href="/estudiante.html">Envío notas por correo</a></li>
+                        </ul>
+                    </li>
+                    
+                    </li>
 
+                    <li class="nav-item dropdown">
+                        <a class="nav-link dropdown-toggle" href="#" role="button" data-bs-toggle="dropdown">Académica</a>
+                        <ul class="dropdown-menu">
+                            <li><a class="dropdown-item" href="/matricula.html">Matrícula</a></li>
+                            <li><a class="dropdown-item" href="/calificaciones.html">Calificaciones</a></li>
+                            <li><a class="dropdown-item" href="/estudiante.html">Transferencia institución</a></li>
+                            <li><a class="dropdown-item" href="/estudiante.html">Carnet</a></li>
+                            <li><a class="dropdown-item" href="/estudiante.html">Envío notas por correo</a></li>
                         </ul>
                     </li>
                     <li class="nav-item dropdown">
-                        <a class="nav-link dropdown-toggle" href="#" role="button" data-bs-toggle="dropdown">Web</a>
+                        <a class="nav-link dropdown-toggle" href="#" role="button" data-bs-toggle="dropdown">Operaciones</a>
                         <ul class="dropdown-menu">
-                            <li><a class="dropdown-item" href="IniciarSesion.html">Iniciar Sesión</a></li>
-                            <li><a class="dropdown-item" href="RegistrarUsuario.html">Registrar Usuario</a></li>
-                            <li><a class="dropdown-item" href="opcionesConstrasenia.html">Restablecer Contraseña</a></li>
-                            <li><a class="dropdown-item" href="VistaProfesoresWeb.html">Vista Profesores</a></li>
-                            <li><a class="dropdown-item" href="Calendario.html">Calendario</a></li>
-                            <li><a class="dropdown-item" href="ListarPreMatricula.html">Prematricula</a></li>
+                            <li><a class="dropdown-item" href="/roles.html">Módulo del Roles</a></li>
+                            <li><a class="dropdown-item" href="/Documentos.html">Subida Documentos</a></li>
+                            <li><a class="dropdown-item" href="/Gestion_Personal.html">Gestión Personal</a></li>
+                            <li><a class="dropdown-item" href="/CrearPermisos.html">Permisos y Justificaciones</a></li>
+                            <li><a class="dropdown-item" href="#gestion-permisos">Gestión Permisos</a></li>
+                            <li><a class="dropdown-item" href="/pages/web/quienes.html">Visualización de Profesores</a></li>
                         </ul>
                     </li>
-                    <a class="nav-link dropdown-toggle" href="#" role="button" data-bs-toggle="dropdown">Operaciones</a>
-                    <ul class="dropdown-menu">
-                      <li><a class="dropdown-item" href="Documentos.html">Documentos</a></li>
-                      <li><a class="dropdown-item" href="Gestion_Personal.html">Gestión del Personal</a></li>
-                      <li><a class="dropdown-item" href="ListarPermisos.html">Gestión de Permisos</a></li>
-                    </ul>
-                    <li class="nav-item dropdown">
-                        <a class="nav-link dropdown-toggle" href="#" role="button" data-bs-toggle="dropdown" style="color: white;">Administrativo</a>
-                        <ul class="dropdown-menu">
-                            <li><a class="dropdown-item" href="listarNoticias.html">Noticias</a></li>
-                            <li><a class="dropdown-item" href="noticiasClientes.html">Noticias Clientes</a></li>
-                            <li><a class="dropdown-item" href="listarVentas.html">Ventas</a></li>
-                            <li><a class="dropdown-item" href="Registro_Marcas.html">Registro de Marcas</a></li>
-                      <li><a class="dropdown-item" href="Control_Marcas.html">Control de Marcas</a></li>
-                      <li><a class="dropdown-item" href="Solicitud_Vacaciones.html">Solicitud de Vacaciones</a></li>
-                      <li><a class="dropdown-item" href="Control_Vacaciones.html">Control de Vacaciones</a></li>
-                      <li><a class="dropdown-item" href="ListarActivos.html">Activos</a></li>
-                      <li><a class="dropdown-item" href="ListarInsumos.html">Insumos</a></li>
-                      <li><a class="dropdown-item" href="ListarTicketsM.html">Mantenimiento</a></li>
-                        </ul>
-                    </li>
+                    <li class="nav-item"><a class="nav-link" href="#">Administración</a></li>
                     <li class="nav-item"><a class="nav-link" href="#">Christopher Briceño Arias</a></li>
                     <li class="nav-item"><a class="nav-link bg-danger text-white rounded-pill px-3" href="#">X</a></li>
                 </ul>
+                
             </nav>
         </div>
     </header>
 
-    <!-- Main Content -->
+    <!-- Contenido principal -->
     <main class="container mt-5 pt-5">
-       <!-- Sección de búsqueda -->
-    <section class="row mb-6 mt-5"> <!-- Aquí añadí mt-5 para mover más abajo -->
-        <div class="col-md-6 mb-4">
-            <div class="card p-4 shadow-sm">
-                <label for="searchUser" class="form-label" style="color: #333;">Nombre/Código/Correo electrónico</label>
-                <input type="text" id="searchUser" class="form-control" placeholder="Ingrese el término de búsqueda">
-                <button class="btn w-100" style="background-color: #8ea50d; color: white;">Buscar</button>
+        <!-- Sección de búsqueda -->
+        <section class="row mb-4 mt-5">
+            <div class="col-md-6 mb-3">
+                <div class="card p-3 shadow-sm">
+                    <label for="searchUser" class="form-label" style="color: #333;">Nombre/Código/Correo electrónico</label>
+                    <input type="text" id="searchUser" class="form-control" placeholder="Ingrese el término de búsqueda">
+                    <button class="btn w-100 mt-2" style="background-color: #8ea50d; color: white;">Buscar</button>
+                </div>
             </div>
-        </div>
-        <div class="col-md-6 mb-5">
-            <div class="card p-4 shadow-sm">
-                <label for="searchCurp" class="form-label" style="color: #333;">Búsqueda Identificación</label>
-                <input type="text" id="searchCurp" class="form-control" placeholder="Ingrese el término de búsqueda">
-                <button class="btn w-100" style="background-color: #8ea50d; color: white;">Buscar</button>
+            <div class="col-md-6 mb-3">
+                <div class="card p-3 shadow-sm">
+                    <label for="searchCurp" class="form-label" style="color: #333;">Búsqueda Identificación</label>
+                    <input type="text" id="searchCurp" class="form-control" placeholder="Ingrese el término de búsqueda">
+                    <button class="btn w-100 mt-2" style="background-color: #8ea50d; color: white;">Buscar</button>
+                </div>
             </div>
-        </div>
-    </section>
+        </section>
 
         <!-- Tabla de estudiantes -->
         <section>
@@ -103,22 +101,23 @@
                 </thead>
                 <tbody>
                     <tr>
-                        <td><a href="estudiante.html" style="color: #333;">Christopher Briceño Arias</a></td>
+                        <td><a href="/estudiante.html" style="color: #333;">Christopher Briceño Arias</a></td>
                         <td>7</td>
-                        <td class="text-success font-weight-bold">Activo</td>
+                        <td class="text-success fw-bold">Activo</td>
                         <td><a href="#" class="btn btn-info btn-sm">Ver horario</a></td>
                         <td>
-                            <!-- Botón para abrir el modal de foto -->
-                            <button class="btn btn-warning btn-sm" data-bs-toggle="modal" data-bs-target="#photoModal">Ver foto</button>
+                            <div class="foto-hover">
+                                <button class="btn btn-warning btn-sm" data-bs-toggle="modal" data-bs-target="#photoModal">Ver foto</button>
+                                <img src="images/luffy.PNG" alt="Foto Estudiante" class="mini-foto">
+                            </div>
                         </td>
                     </tr>
-                    <!-- Puedes añadir más filas según sea necesario -->
                 </tbody>
             </table>
         </section>
     </main>
 
-    <!-- Modal para la foto del estudiante -->
+    <!-- Modal para ver la imagen en grande -->
     <div class="modal fade" id="photoModal" tabindex="-1" aria-labelledby="photoModalLabel" aria-hidden="true">
         <div class="modal-dialog">
             <div class="modal-content">

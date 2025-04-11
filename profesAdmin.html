@@ -1,0 +1,242 @@
+<!DOCTYPE html>
+<html lang="es">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>SISTEMA ACADÉMICO</title>
+    <link rel="stylesheet" href="https://cdn.jsdelivr.net/npm/bootstrap@5.3.0/dist/css/bootstrap.min.css">
+    <link href="https://fonts.googleapis.com/css2?family=Poppins:wght@300;400;500;600&display=swap" rel="stylesheet">
+    <link rel="icon" href="/icons/logoFausto.png">
+    <link href="https://cdn.jsdelivr.net/npm/bootstrap-icons/font/bootstrap-icons.css" rel="stylesheet">
+
+    <link rel="stylesheet" href="/css/menu.css">
+    <style>
+        .btn-custom {
+            transition: transform 0.3s ease, box-shadow 0.3s ease;
+            border-radius: 50px;
+            padding: 12px 30px;
+            font-size: 16px;
+            box-shadow: 0 4px 8px rgba(0, 0, 0, 0.2);
+        }
+
+        .btn-custom:hover {
+            transform: translateY(-5px);
+            box-shadow: 0 8px 15px rgba(0, 0, 0, 0.3);
+        }
+
+        .btn-primary-custom {
+            background-color: #48ff00;
+            border: none;
+        }
+
+        .btn-primary-custom:hover {
+            background-color: #a1b300;
+        }
+
+        .btn-warning-custom {
+            background-color: #ffc107;
+            border: none;
+        }
+
+        .btn-warning-custom:hover {
+            background-color: #e0a800;
+        }
+
+        .btn-danger-custom {
+            background-color: #dc3545;
+            border: none;
+        }
+
+        .btn-danger-custom:hover {
+            background-color: #c82333;
+        }
+
+        .container-buttons {
+            display: flex;
+            justify-content: space-between;
+            gap: 15px;
+        }
+    </style>
+</head>
+<body class="bg-light">
+    <header class="py-3 fixed-top" style="background-color: black; color: white;">
+        <div class="container d-flex justify-content-start align-items-center">
+            <div class="d-flex align-items-center me-auto">
+                <a href="menu.html" class="me-2"><img src="/icons/logoFausto.png" alt="Logo Fausto Herrera" width="80" height="80"></a>
+                <div>
+                    <h1 class="h5 m-0" style="color: #8ea50d;">FAUSTO HERRERA</h1>
+                    <span style="color: #D5DE83;">SISTEMA ACADÉMICO</span>
+                </div>
+            </div>
+            <nav>
+                <ul class="nav">
+                    <li class="nav-item dropdown">
+                        <a class="nav-link dropdown-toggle" href="#" role="button" data-bs-toggle="dropdown" style="color: white;">Academico</a>
+                        <ul class="dropdown-menu">
+                            <li><a class="dropdown-item" href="listarMatricula.html">Matricula</a></li>
+                            <li><a class="dropdown-item" href="listarCalificaciones.html">Calificaciones</a></li>
+                        </ul>
+                    </li>
+                    <li class="nav-item dropdown">
+                        <a class="nav-link dropdown-toggle" href="#" role="button" data-bs-toggle="dropdown">Web</a>
+                        <ul class="dropdown-menu">
+                            <li><a class="dropdown-item" href="IniciarSesion.html">Iniciar Sesión</a></li>
+                            <li><a class="dropdown-item" href="RegistrarUsuario.html">Registrar Usuario</a></li>
+                            <li><a class="dropdown-item" href="opcionesConstrasenia.html">Restablecer Contraseña</a></li>
+                            <li><a class="dropdown-item" href="VistaProfesoresWeb.html">Vista Profesores</a></li>
+                            <li><a class="dropdown-item" href="Calendario.html">Calendario</a></li>
+                            <li><a class="dropdown-item" href="ListarPreMatricula.html">Prematricula</a></li>
+                        </ul>
+                    </li>
+                    <a class="nav-link dropdown-toggle" href="#" role="button" data-bs-toggle="dropdown">Operaciones</a>
+                    <ul class="dropdown-menu">
+                      <li><a class="dropdown-item" href="Documentos.html">Documentos</a></li>
+                      <li><a class="dropdown-item" href="Gestion_Personal.html">Gestión del Personal</a></li>
+                      <li><a class="dropdown-item" href="ListarPermisos.html">Gestión de Permisos</a></li>
+                    </ul>
+                    <li class="nav-item dropdown">
+                        <a class="nav-link dropdown-toggle" href="#" role="button" data-bs-toggle="dropdown" style="color: white;">Administrativo</a>
+                        <ul class="dropdown-menu">
+                            <li><a class="dropdown-item" href="listarNoticias.html">Noticias</a></li>
+                            <li><a class="dropdown-item" href="noticiasClientes.html">Noticias Clientes</a></li>
+                            <li><a class="dropdown-item" href="listarVentas.html">Ventas</a></li>
+                            <li><a class="dropdown-item" href="Registro_Marcas.html">Registro de Marcas</a></li>
+                            <li><a class="dropdown-item" href="Control_Marcas.html">Control de Marcas</a></li>
+                            <li><a class="dropdown-item" href="Solicitud_Vacaciones.html">Solicitud de Vacaciones</a></li>
+                            <li><a class="dropdown-item" href="Control_Vacaciones.html">Control de Vacaciones</a></li>
+                            <li><a class="dropdown-item" href="ListarActivos.html">Activos</a></li>
+                            <li><a class="dropdown-item" href="ListarInsumos.html">Insumos</a></li>
+                            <li><a class="dropdown-item" href="ListarTicketsM.html">Mantenimiento</a></li>
+                        </ul>
+                    </li>
+                    <li class="nav-item"><a class="nav-link" href="#">Christopher Briceño Arias</a></li>
+                    <li class="nav-item"><a class="nav-link bg-danger text-white rounded-pill px-3" href="#">X</a></li>
+                </ul>
+            </nav>
+        </div>
+    </header>
+    <br><br><br>
+    <div class="container mt-5 pt-5">
+        <div class="container-buttons">
+            <button class="btn btn-primary-custom btn-custom" data-bs-toggle="modal" data-bs-target="#crearProfesorModal">
+                <i class="bi bi-person-plus"></i> Crear Profesor
+            </button>
+            <button class="btn btn-warning-custom btn-custom" data-bs-toggle="modal" data-bs-target="#editarProfesorModal">
+                <i class="bi bi-pencil-square"></i> Editar Profesor
+            </button>
+            <button class="btn btn-danger-custom btn-custom" data-bs-toggle="modal" data-bs-target="#eliminarProfesorModal">
+                <i class="bi bi-person-x"></i> Eliminar Profesor
+            </button>
+        </div>
+    </div>
+
+    <!-- Modal Crear Profesor -->
+    <div class="modal fade" id="crearProfesorModal" tabindex="-1" aria-labelledby="crearProfesorModalLabel" aria-hidden="true">
+        <div class="modal-dialog">
+            <div class="modal-content">
+                <div class="modal-header">
+                    <h5 class="modal-title" id="crearProfesorModalLabel">Crear Profesor</h5>
+                    <button type="button" class="btn-close" data-bs-dismiss="modal" aria-label="Close"></button>
+                </div>
+                <div class="modal-body">
+                    <form id="crearProfesorForm" enctype="multipart/form-data">
+                        <div class="mb-3">
+                            <label for="nombreProfesor" class="form-label">Nombre del Profesor</label>
+                            <input type="text" class="form-control" id="nombreProfesor" required>
+                        </div>
+                        <div class="mb-3">
+                            <label for="materiaProfesor" class="form-label">Materia</label>
+                            <input type="text" class="form-control" id="materiaProfesor" required>
+                        </div>
+                        <div class="mb-3">
+                            <label for="descripcionProfesor" class="form-label">Descripción</label>
+                            <textarea class="form-control" id="descripcionProfesor" rows="3" required></textarea>
+                        </div>
+                        <div class="mb-3">
+                            <label for="aniosExperiencia" class="form-label">Años de Experiencia</label>
+                            <input type="number" class="form-control" id="aniosExperiencia" required>
+                        </div>
+                        <div class="mb-3">
+                            <label for="fotoProfesor" class="form-label">Fotografía del Profesor (opcional)</label>
+                            <input type="file" class="form-control" id="fotoProfesor" accept="image/jpeg, image/png">
+                        </div>
+                    </form>
+                </div>
+                <div class="modal-footer">
+                    <button type="button" class="btn btn-secondary" data-bs-dismiss="modal">Cerrar</button>
+                    <button type="button" class="btn btn-primary" onclick="crearProfesor()">Guardar Profesor</button>
+                </div>
+            </div>
+        </div>
+    </div>
+
+    <!-- Modal Editar Profesor -->
+    <div class="modal fade" id="editarProfesorModal" tabindex="-1" aria-labelledby="editarProfesorModalLabel" aria-hidden="true">
+        <div class="modal-dialog">
+            <div class="modal-content">
+                <div class="modal-header">
+                    <h5 class="modal-title" id="editarProfesorModalLabel">Editar Profesor</h5>
+                    <button type="button" class="btn-close" data-bs-dismiss="modal" aria-label="Close"></button>
+                </div>
+                <div class="modal-body">
+                    <form id="editarProfesorForm">
+                        <div class="mb-3">
+                            <label for="nombreProfesorEdit" class="form-label">Nombre del Profesor</label>
+                            <select class="form-select" id="nombreProfesorEdit" required>
+                                <option value="" disabled selected>Seleccionar Profesor</option>
+                                <option value="profesor1">Profesor 1</option>
+                                <option value="profesor2">Profesor 2</option>
+                                <option value="profesor3">Profesor 3</option>
+                            </select>
+                        </div>
+                        <div class="mb-3">
+                            <label for="materiaProfesorEdit" class="form-label">Materia</label>
+                            <input type="text" class="form-control" id="materiaProfesorEdit" required>
+                        </div>
+                        <div class="mb-3">
+                            <label for="descripcionProfesorEdit" class="form-label">Descripción</label>
+                            <textarea class="form-control" id="descripcionProfesorEdit" rows="3" required></textarea>
+                        </div>
+                        <div class="mb-3">
+                            <label for="aniosExperienciaEdit" class="form-label">Años de Experiencia</label>
+                            <input type="number" class="form-control" id="aniosExperienciaEdit" required>
+                        </div>
+                    </form>
+                </div>
+                <div class="modal-footer">
+                    <button type="button" class="btn btn-secondary" data-bs-dismiss="modal">Cerrar</button>
+                    <button type="button" class="btn btn-warning" onclick="editarProfesor()">Guardar Cambios</button>
+                </div>
+            </div>
+        </div>
+    </div>
+
+    <!-- Modal Eliminar Profesor -->
+    <div class="modal fade" id="eliminarProfesorModal" tabindex="-1" aria-labelledby="eliminarProfesorModalLabel" aria-hidden="true">
+        <div class="modal-dialog">
+            <div class="modal-content">
+                <div class="modal-header">
+                    <h5 class="modal-title" id="eliminarProfesorModalLabel">Eliminar Profesor</h5>
+                    <button type="button" class="btn-close" data-bs-dismiss="modal" aria-label="Close"></button>
+                </div>
+                <div class="modal-body">
+                    <label for="nombreProfesorEliminar" class="form-label">Selecciona el Profesor a Eliminar</label>
+                    <select class="form-select" id="nombreProfesorEliminar" required>
+                        <option value="" disabled selected>Seleccionar Profesor</option>
+                        <option value="profesor1">Profesor 1</option>
+                        <option value="profesor2">Profesor 2</option>
+                        <option value="profesor3">Profesor 3</option>
+                    </select>
+                    <p class="mt-3 text-danger">¡Atención! Esta acción eliminará al profesor de forma permanente.</p>
+                </div>
+                <div class="modal-footer">
+                    <button type="button" class="btn btn-secondary" data-bs-dismiss="modal">Cancelar</button>
+                    <button type="button" class="btn btn-danger" onclick="eliminarProfesor()">Eliminar</button>
+                </div>
+            </div>
+        </div>
+    </div>
+
+    <script src="https://cdn.jsdelivr.net/npm/bootstrap@5.3.0/dist/js/bootstrap.bundle.min.js"></script>
+</body>
+</html>

@@ -1,160 +1,353 @@
 <!DOCTYPE html>
 <html lang="es">
 <head>
-    <meta charset="UTF-8">
-    <meta name="viewport" content="width=device-width, initial-scale=1.0">
-    <title>Perfil</title>
-    <link rel="stylesheet" href="https://cdn.jsdelivr.net/npm/bootstrap@5.3.0/dist/css/bootstrap.min.css">
-    <link href="https://fonts.googleapis.com/css2?family=Poppins:wght@300;400;500;600&display=swap" rel="stylesheet">
-    <link rel="icon" href="icons/logoFausto.png">
-    <link rel="stylesheet" href="css/menu.css">
+  <meta charset="UTF-8" />
+  <meta name="viewport" content="width=device-width, initial-scale=1.0"/>
+  <title>Perfil</title>
+  <link rel="stylesheet" href="https://cdn.jsdelivr.net/npm/bootstrap@5.3.0/dist/css/bootstrap.min.css"/>
+  <link href="https://fonts.googleapis.com/css2?family=Poppins:wght@300;400;500;600&display=swap" rel="stylesheet"/>
+  <link rel="icon" href="icons/logoFausto.png"/>
+  <link rel="stylesheet" href="/css/estudiante.css"/>
+  
 </head>
 <body class="bg-light" style="padding-top: 50px;">
 
-    <!-- Header -->
-    <header class="py-3 fixed-top" style="background-color: black; color: white;">
-        <div class="container d-flex justify-content-start align-items-center">
-            <div class="d-flex align-items-center me-auto">
-                <a href="menu.html" class="me-2"><img src="icons/logoFausto.png" alt="Logo Fausto Herrera" width="80" height="80"></a>
-                <div>
-                    <h1 class="h5 m-0" style="color: #8ea50d;">FAUSTO HERRERA</h1>
-                    <span style="color: #D5DE83;">SISTEMA ACADÉMICO</span>
-                </div>
-            </div>
-            <nav>
-                <ul class="nav">
-                    <li class="nav-item dropdown">
-                        <a class="nav-link dropdown-toggle" href="#" role="button" data-bs-toggle="dropdown" style="color: white;">Academico</a>
-                        <ul class="dropdown-menu">
-                            <li><a class="dropdown-item" href="listarMatricula.html">Matricula</a></li>
-                            <li><a class="dropdown-item" href="listarCalificaciones.html">Calificaciones</a></li>
-    
-                        </ul>
-                    </li>
-                    <li class="nav-item dropdown">
-                        <a class="nav-link dropdown-toggle" href="#" role="button" data-bs-toggle="dropdown">Web</a>
-                        <ul class="dropdown-menu">
-                            <li><a class="dropdown-item" href="IniciarSesion.html">Iniciar Sesión</a></li>
-                            <li><a class="dropdown-item" href="RegistrarUsuario.html">Registrar Usuario</a></li>
-                            <li><a class="dropdown-item" href="opcionesConstrasenia.html">Restablecer Contraseña</a></li>
-                            <li><a class="dropdown-item" href="VistaProfesoresWeb.html">Vista Profesores</a></li>
-                            <li><a class="dropdown-item" href="Calendario.html">Calendario</a></li>
-                            <li><a class="dropdown-item" href="ListarPreMatricula.html">Prematricula</a></li>
-                        </ul>
-                    </li>
-                    <a class="nav-link dropdown-toggle" href="#" role="button" data-bs-toggle="dropdown">Operaciones</a>
-                    <ul class="dropdown-menu">
-                      <li><a class="dropdown-item" href="Documentos.html">Documentos</a></li>
-                      <li><a class="dropdown-item" href="Gestion_Personal.html">Gestión del Personal</a></li>
-                      <li><a class="dropdown-item" href="ListarPermisos.html">Gestión de Permisos</a></li>
-                    </ul>
-                    <li class="nav-item dropdown">
-                        <a class="nav-link dropdown-toggle" href="#" role="button" data-bs-toggle="dropdown" style="color: white;">Administrativo</a>
-                        <ul class="dropdown-menu">
-                            <li><a class="dropdown-item" href="listarNoticias.html">Noticias</a></li>
-                            <li><a class="dropdown-item" href="noticiasClientes.html">Noticias Clientes</a></li>
-                            <li><a class="dropdown-item" href="listarVentas.html">Ventas</a></li>
-                            <li><a class="dropdown-item" href="Registro_Marcas.html">Registro de Marcas</a></li>
-                      <li><a class="dropdown-item" href="Control_Marcas.html">Control de Marcas</a></li>
-                      <li><a class="dropdown-item" href="Solicitud_Vacaciones.html">Solicitud de Vacaciones</a></li>
-                      <li><a class="dropdown-item" href="Control_Vacaciones.html">Control de Vacaciones</a></li>
-                      <li><a class="dropdown-item" href="ListarActivos.html">Activos</a></li>
-                      <li><a class="dropdown-item" href="ListarInsumos.html">Insumos</a></li>
-                      <li><a class="dropdown-item" href="ListarTicketsM.html">Mantenimiento</a></li>
-                        </ul>
-                    </li>
-                    <li class="nav-item"><a class="nav-link" href="#">Christopher Briceño Arias</a></li>
-                    <li class="nav-item"><a class="nav-link bg-danger text-white rounded-pill px-3" href="#">X</a></li>
-                </ul>
-            </nav>
+  <!-- Header -->
+  <header class="py-3 fixed-top" style="background-color: black; color: white;">
+    <div class="container d-flex justify-content-start align-items-center">
+      <div class="d-flex align-items-center me-auto">
+        <a href="menu.html" class="me-2"><img src="/icons/logoFausto.png" alt="Logo Fausto Herrera" width="80" height="80"/></a>
+        <div>
+          <h1 class="h5 m-0" style="color: #8ea50d;">FAUSTO HERRERA</h1>
+          <span style="color: #D5DE83;">SISTEMA ACADÉMICO</span>
         </div>
-    </header>
+      </div>
+      <nav>
+        <ul class="nav">
+          <li class="nav-item"><a class="nav-link" href="/menu.html" style="color: white;">Académica</a></li>
+          <li class="nav-item dropdown">
+            <a class="nav-link dropdown-toggle" href="#" role="button" data-bs-toggle="dropdown" style="color: white;">Web</a>
+            <ul class="dropdown-menu">
+              <li><a class="dropdown-item" href="/pages/IniciarSesion.html">Iniciar Sesión</a></li>
+              <li><a class="dropdown-item" href="/pages/RegistrarUsuario.html">Registrar Usuario</a></li>
+              <li><a class="dropdown-item" href="/pages/RestablecerContrasenia.html">Restablecer Contraseña</a></li>
+          </ul>
+          </li>
+          <li class="nav-item"><a class="nav-link" href="#" style="color: white;">Operaciones</a></li>
+          <li class="nav-item"><a class="nav-link" href="#" style="color: white;">Administración</a></li>
+          <li class="nav-item"><a class="nav-link" href="#" style="color: white;">Christopher Briceño Arias</a></li>
+          <li class="nav-item"><a class="nav-link bg-danger text-white rounded-pill px-3" href="#">X</a></li>
+        </ul>
+      </nav>
+    </div>
+  </header>
 
-    <!-- Main Content -->
-    <main class="container mt-5 pt-5">
-        <!-- Información General -->
-        <section class="card p-4 shadow-sm bg-white">
-            <h2 class="text-center mb-4" style="color: #333;">Información General</h2>
+  <!-- Main Content -->
+  <main class="container mt-5 pt-5 position-relative">
+    <section class="card p-4 shadow-sm bg-white">
+      <div class="button-container">
+        <button class="custom-button">Editar</button>
+        <button class="custom-button">Transferencia</button>
+        <button class="custom-button">Carnet</button>
+        <button class="custom-button">Calificaciones</button>
+        <button type="button" class="custom-button" data-bs-toggle="modal" data-bs-target="#enviarNotasModal">Confirmar Envío</button>
 
-            <div class="d-flex justify-content-between">
-                <!-- Datos del Estudiante -->
-                <div class="student-info w-75">
-                    <h3>Datos del Estudiante</h3>
-                    <ul class="list-unstyled">
-                        <li><strong>Matrícula:</strong> 1010</li>
-                        <li><strong>Nombre:</strong> Christopher Briceno Arias</li>
-                        <li><strong>Identificación:</strong> 118760495</li>
-                        <li><strong>Fecha de Nacimiento:</strong> 04/06/2003</li>
-                        <li><strong>Edad:</strong> 20 años</li>
-                        <li><strong>Grado:</strong> 7</li>
-                        <li><strong>Sexo:</strong> Masculino</li>
-                        <li><strong>Nacionalidad:</strong> Costarricense</li>
-                        <li><strong>Medicamentos:</strong> No</li>
-                        <li><strong>Enfermedades:</strong> Ninguna</li>
-                        <li><strong>Adecuación Curricular:</strong> No</li>
-                        <li><strong>Dirección:</strong> San Antonio</li>
-                        <li><strong>Provincia:</strong> San José</li>
-                        <li><strong>Cantón:</strong> Vázquez de Coronado</li>
-                        <li><strong>Distrito:</strong> San Antonio</li>
-                    </ul>
-                </div>
 
-                <!-- Foto de perfil -->
-                <div class="profile-pic">
-                    <img src="images/luffy.PNG" alt="Foto de perfil" class="img-fluid rounded-circle" width="150" height="150">
-                </div>
+      </div>
+      <!-- Modal Enviar Notas -->
+<div class="modal fade" id="enviarNotasModal" tabindex="-1" aria-labelledby="enviarNotasModalLabel" aria-hidden="true">
+  <div class="modal-dialog">
+    <div class="modal-content">
+      <div class="modal-header">
+        <h5 class="modal-title" id="enviarNotasModalLabel">Confirmación de Envío</h5>
+        <button type="button" class="btn-close" data-bs-dismiss="modal" aria-label="Cerrar"></button>
+      </div>
+      <div class="modal-body">
+        <p>Las notas se enviarán al correo electrónico asociado al estudiante.</p>
+      </div>
+      <div class="modal-footer">
+        <button type="button" class="btn btn-secondary" data-bs-dismiss="modal">Cerrar</button>
+        <!-- Aquí llamas la función enviarNotas() -->
+        <button type="button" class="btn btn-primary" onclick="enviarNotas()">Confirmar Envío</button>
+      </div>
+    </div>
+  </div>
+</div>
+
+
+
+
+      <h2>Información General</h2><br>
+
+      <div class="d-flex justify-content-between">
+        <div class="student-info w-75">
+          <h3>Datos del Estudiante</h3>
+          <ul class="list-unstyled" id="info-list">
+            <div id="edit-form" style="display: none; max-width: 90%; margin-top: 20px;"></div>
+            <li><strong>Matrícula:</strong> 1010</li>
+            <li><strong>Nombre:</strong> Christopher Briceno Arias</li>
+            <li><strong>Identificación:</strong> 118760495</li>
+            <li><strong>Fecha de Nacimiento:</strong> 04/06/2003</li>
+            <li><strong>Edad:</strong> 20 años</li>
+            <li><strong>Grado:</strong> 7</li>
+            <li><strong>Sexo:</strong> Masculino</li>
+            <li><strong>Nacionalidad:</strong> Costarricense</li>
+            <li><strong>Medicamentos:</strong> No</li>
+            <li><strong>Enfermedades:</strong> Ninguna</li>
+            <li><strong>Adecuación Curricular:</strong> No</li>
+            <li><strong>Dirección:</strong> San Antonio</li>
+            <li><strong>Provincia:</strong> San José</li>
+            <li><strong>Cantón:</strong> Vázquez de Coronado</li>
+            <li><strong>Distrito:</strong> San Antonio</li>
+          </ul>
+        </div>
+        <div class="profile-pic">
+          <img src="/images/luffy.PNG" alt="Foto de perfil" width="150" height="150"/>
+        </div>
+      </div>
+
+      <div class="section mt-4">
+        <h3>Datos de los Responsables</h3>
+        <button class="btn custom-toggle-button btn-sm" onclick="toggleSection('parent-details')">Mostrar</button>
+        <div id="parent-details" class="details" style="display: none;">
+          <ul class="list-unstyled">
+            <li><strong>Nombre de la Madre:</strong> Marielos</li>
+            <li><strong>Identificación:</strong> 123456789</li>
+            <li><strong>Teléfono:</strong> +506 86659333</li>
+            <li><strong>Lugar de Trabajo:</strong> Empresa X</li><br>
+            <li><strong>Nombre del Padre:</strong> Juan Pérez</li>
+            <li><strong>Identificación:</strong> 987654321</li>
+            <li><strong>Teléfono:</strong> +506 62918922</li>
+            <li><strong>Lugar de Trabajo:</strong> Empresa Y</li>
+          </ul>
+        </div>
+      </div>
+
+      <div class="section mt-4">
+        <h3>Otros</h3>
+        <button class="btn custom-toggle-button btn-sm" onclick="toggleSection('other-details')">Mostrar</button>
+        <div id="other-details" class="details" style="display: none;">
+          <ul class="list-unstyled">
+            <li><strong>Encargado de Retirar:</strong> María Gómez</li>
+            <li><strong>¿Puede retirarse solo?:</strong> No</li>
+            <li><strong>Contacto de Emergencia:</strong> Carlos Ramírez</li>
+            <li><strong>Teléfono de Emergencia:</strong> +506 88887777</li>
+            <li><strong>¿Hermanos en la escuela?:</strong> Sí - Ana Pérez (Grado 5)</li>
+            <li><strong>¿Autorización para fotos?:</strong> Sí</li>
+            <li><strong>¿Posee póliza?:</strong> No</li>
+          </ul>
+        </div>
+      </div>
+    </section>
+
+
+
+  <!-- Sección de Expedientes -->
+  <section class="card p-4 shadow-sm bg-white mt-4">
+    <div class="d-flex justify-content-between align-items-center mb-3">
+      <div>
+        <h3>Expedientes</h3>
+        <p class="text-muted">Consulta y gestiona el expediente académico completo del estudiante.</p>
+      </div>
+      <div>
+        <button class="btn btn-success me-2" data-bs-toggle="modal" data-bs-target="#modalIniciar">Iniciar Curso</button>
+        <button class="btn btn-danger" data-bs-toggle="modal" data-bs-target="#modalFinalizar">Finalizar Curso</button>
+      </div>
+    </div>
+  
+    <div class="accordion" id="expedienteAccordion">
+  
+      <!-- Información General -->
+      <div class="accordion-item">
+        <h2 class="accordion-header" id="headingInfo">
+          <button class="accordion-button" type="button" data-bs-toggle="collapse" data-bs-target="#collapseInfo" aria-expanded="true">
+            Información Personal y Académica
+          </button>
+        </h2>
+        <div id="collapseInfo" class="accordion-collapse collapse show" data-bs-parent="#expedienteAccordion">
+          <div class="accordion-body">
+            <ul>
+              <li><strong>Matrícula:</strong> 1010</li>
+              <li><strong>Nombre:</strong> Christopher Briceno Arias</li>
+              <li><strong>Grado:</strong> 7</li>
+              <li><strong>Estado Académico:</strong> Activo</li>
+              <li><strong>Edad:</strong> 20 años</li>
+              <li><strong>Identificación:</strong> 118760495</li>
+            </ul>
+          </div>
+        </div>
+      </div>
+  
+      <!-- Historial Académico -->
+      <div class="accordion-item">
+        <h2 class="accordion-header" id="headingHistorial">
+          <button class="accordion-button collapsed" type="button" data-bs-toggle="collapse" data-bs-target="#collapseHistorial" aria-expanded="false">
+            Historial Académico
+          </button>
+        </h2>
+        <div id="collapseHistorial" class="accordion-collapse collapse" data-bs-parent="#expedienteAccordion">
+          <div class="accordion-body">
+  
+            <!-- Año 2024 -->
+            <div class="mb-4">
+              <h5 class="text-primary">📘 Año 2024</h5>
+              <ul>
+                <li><strong>Materias Aprobadas:</strong> Matemáticas, Español, Estudios Sociales</li>
+                <li><strong>Materias Reprobadas:</strong> Ciencias</li>
+                <li><strong>Promedio General:</strong> 87.5</li>
+                <li><strong>Asistencia:</strong> 95%</li>
+                <li><strong>Estado Actual:</strong> En curso</li>
+              </ul>
             </div>
-
-            <!-- Datos del Padre/Encargado -->
-            <div class="section mt-4">
-                <h3>Datos del Padre/Encargado <button class="btn btn-outline-primary btn-sm" onclick="toggleSection('parent-details')">Mostrar</button></h3>
-                <div id="parent-details" class="details" style="display: none;">
-                    <ul class="list-unstyled">
-                        <li><strong>Nombre de la Madre:</strong> Marielos</li>
-                        <li><strong>Identificación:</strong> 123456789</li>
-                        <li><strong>Teléfono:</strong> +506 86659333</li>
-                        <li><strong>Lugar de Trabajo:</strong> Empresa X</li>
-                        <li><strong>Nombre del Padre:</strong> Juan Pérez</li>
-                        <li><strong>Identificación:</strong> 987654321</li>
-                        <li><strong>Teléfono:</strong> +506 62918922</li>
-                        <li><strong>Lugar de Trabajo:</strong> Empresa Y</li>
-                    </ul>
-                </div>
+  
+            <!-- Año 2023 -->
+            <div class="mb-4">
+              <h5 class="text-primary">📗 Año 2023</h5>
+              <ul>
+                <li><strong>Materias Aprobadas:</strong> Matemáticas, Inglés, Cívica</li>
+                <li><strong>Materias Reprobadas:</strong> Ninguna</li>
+                <li><strong>Promedio General:</strong> 89.4</li>
+                <li><strong>Asistencia:</strong> 97%</li>
+                <li><strong>Estado:</strong> Finalizado</li>
+              </ul>
             </div>
-
-            <!-- Otros Datos -->
-            <div class="section mt-4">
-                <h3>Otros Datos <button class="btn btn-outline-primary btn-sm" onclick="toggleSection('other-details')">Mostrar</button></h3>
-                <div id="other-details" class="details" style="display: none;">
-                    <ul class="list-unstyled">
-                        <li><strong>Encargado de Retirar:</strong> María Gómez</li>
-                        <li><strong>¿Puede retirarse solo?:</strong> No</li>
-                        <li><strong>Contacto de Emergencia:</strong> Carlos Ramírez</li>
-                        <li><strong>Teléfono de Emergencia:</strong> +506 88887777</li>
-                        <li><strong>¿Hermanos en la escuela?:</strong> Sí - Ana Pérez (Grado 5)</li>
-                        <li><strong>¿Autorización para fotos?:</strong> Sí</li>
-                        <li><strong>¿Posee póliza?:</strong> No</li>
-                    </ul>
-                </div>
+  
+            <!-- Año 2022 -->
+            <div>
+              <h5 class="text-primary">📕 Año 2022</h5>
+              <ul>
+                <li><strong>Materias Aprobadas:</strong> Estudios Sociales, Ciencias, Matemáticas</li>
+                <li><strong>Materias Reprobadas:</strong> Español</li>
+                <li><strong>Promedio General:</strong> 80.2</li>
+                <li><strong>Asistencia:</strong> 90%</li>
+                <li><strong>Estado:</strong> Finalizado</li>
+              </ul>
             </div>
-        </section>
-    </main>
+  
+          </div>
+        </div>
+      </div>
+  
+      <!-- Modificaciones en tiempo real -->
+      <div class="accordion-item">
+        <h2 class="accordion-header" id="headingHistorialCambios">
+          <button class="accordion-button collapsed" type="button" data-bs-toggle="collapse" data-bs-target="#collapseHistorialCambios" aria-expanded="false">
+            Historial de Modificaciones
+          </button>
+        </h2>
+        <div id="collapseHistorialCambios" class="accordion-collapse collapse" data-bs-parent="#expedienteAccordion">
+          <div class="accordion-body">
+            <p>El sistema guarda los siguientes cambios en tiempo real:</p>
+            <ul>
+              <li>📅 2025-04-02 - Editado el grado por el administrador.</li>
+              <li>📅 2025-03-18 - Se agregó una observación docente.</li>
+              <li>📅 2025-02-05 - Se actualizó la información de contacto.</li>
+            </ul>
+          </div>
+        </div>
+      </div>
+  
+      <!-- Informe detallado -->
+      <div class="accordion-item">
+        <h2 class="accordion-header" id="headingInforme">
+          <button class="accordion-button collapsed" type="button" data-bs-toggle="collapse" data-bs-target="#collapseInforme" aria-expanded="false">
+            Informe Detallado del Estudiante
+          </button>
+        </h2>
+        <div id="collapseInforme" class="accordion-collapse collapse" data-bs-parent="#expedienteAccordion">
+          <div class="accordion-body">
+            <p><strong>Grado y Sección:</strong> 7° A</p>
+            <p><strong>Estado Académico:</strong> Activo</p>
+            <p><strong>Promedio General:</strong> 87.5</p>
+            <p><strong>Asistencia:</strong> 95%</p>
+            <p><strong>Materias Aprobadas:</strong> 8</p>
+            <p><strong>Materias Reprobadas:</strong> 1</p>
+            <p><strong>Comportamiento:</strong> Excelente</p>
+            <p><strong>Observaciones:</strong> Muy participativo y respetuoso en clase.</p>
+          </div>
+        </div>
+      </div>
+  
+    </div>
+  </section>
+  
+  <!-- Modal Iniciar Curso -->
+  <div class="modal fade" id="modalIniciar" tabindex="-1" aria-labelledby="modalIniciarLabel" aria-hidden="true">
+    <div class="modal-dialog">
+      <form class="modal-content">
+        <div class="modal-header">
+          <h5 class="modal-title" id="modalIniciarLabel">Iniciar Curso</h5>
+          <button type="button" class="btn-close" data-bs-dismiss="modal" aria-label="Cerrar"></button>
+        </div>
+        <div class="modal-body">
+          <div class="mb-3">
+            <label class="form-label">Grado</label>
+            <input type="number" class="form-control" placeholder="Ej. 7" required>
+          </div>
+          <div class="mb-3">
+            <label class="form-label">Año</label>
+            <input type="number" class="form-control" placeholder="Ej. 2025" required>
+          </div>
+          <div class="mb-3">
+            <label class="form-label">Estado del Curso</label>
+            <select class="form-select">
+              <option>En curso</option>
+              <option>En nivelación</option>
+            </select>
+          </div>
+        </div>
+        <div class="modal-footer">
+          <button type="submit" class="btn btn-success">Guardar</button>
+          <button type="button" class="btn btn-secondary" data-bs-dismiss="modal">Cancelar</button>
+        </div>
+      </form>
+    </div>
+  </div>
+  
+  <!-- Modal Finalizar Curso -->
+  <div class="modal fade" id="modalFinalizar" tabindex="-1" aria-labelledby="modalFinalizarLabel" aria-hidden="true">
+    <div class="modal-dialog">
+      <form class="modal-content">
+        <div class="modal-header">
+          <h5 class="modal-title" id="modalFinalizarLabel">Finalizar Curso</h5>
+          <button type="button" class="btn-close" data-bs-dismiss="modal" aria-label="Cerrar"></button>
+        </div>
+        <div class="modal-body">
+          <p>Ingrese las calificaciones finales del estudiante:</p>
+          <div class="mb-3">
+            <label class="form-label">Matemáticas</label>
+            <input type="number" class="form-control" placeholder="Nota final" required>
+          </div>
+          <div class="mb-3">
+            <label class="form-label">Español</label>
+            <input type="number" class="form-control" placeholder="Nota final" required>
+          </div>
+          <div class="mb-3">
+            <label class="form-label">Estudios Sociales</label>
+            <input type="number" class="form-control" placeholder="Nota final" required>
+          </div>
+          <div class="mb-3">
+            <label class="form-label">Ciencias</label>
+            <input type="number" class="form-control" placeholder="Nota final" required>
+          </div>
+        </div>
+        <div class="modal-footer">
+          <button type="submit" class="btn btn-danger">Finalizar Curso</button>
+          <button type="button" class="btn btn-secondary" data-bs-dismiss="modal">Cancelar</button>
+        </div>
+      </form>
+    </div>
+  </div>
+  
+  </main>
 
-    <script>
-        function toggleSection(id) {
-            var section = document.getElementById(id);
-            var button = section.previousElementSibling.querySelector("button");
-            
-            if (section.style.display === "none" || section.style.display === "") {
-                section.style.display = "block";
-                button.textContent = "Ocultar";
-            } else {
-                section.style.display = "none";
-                button.textContent = "Mostrar";
-            }
-        }
-    </script>
+  <!-- Scripts -->
+  <script src="https://cdnjs.cloudflare.com/ajax/libs/jspdf/2.5.1/jspdf.umd.min.js"></script>
 
-    <script src="https://cdn.jsdelivr.net/npm/bootstrap@5.3.0/dist/js/bootstrap.bundle.min.js"></script>
+  <script src="https://cdn.jsdelivr.net/npm/bootstrap@5.3.0/dist/js/bootstrap.bundle.min.js"></script>
+  
+
+  <script src="/js/estudiantes.js"></script>
+ 
 </body>
 </html>

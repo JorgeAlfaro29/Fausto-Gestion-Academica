@@ -1,41 +1,57 @@
+/* Fuente global */
 * {
     font-family: 'Poppins', sans-serif;
 }
 
-/* Estilo personalizado para el hover en la barra de navegación */
+/* Barra de navegación */
 .nav-link {
     color: white;
 }
 
-.nav-link:hover {
-    background-color: #8ea50d;
-    color: white;
-}
-
+.nav-link:hover,
 .nav-item:hover .nav-link {
     background-color: #8ea50d;
     color: white;
 }
 
-/* Asegúrate de que los botones 'Ver Foto' también tengan un estilo similar */
-.btn-warning:hover {
-    background-color: #8ea50d;
-    color: white;
-}
-
-.nav-link:hover, .dropdown-item:hover {
+.dropdown-item:hover {
     background-color: #8ea50d;
     color: white !important;
     border-radius: 5px;
 }
 
+/* Botón 'Ver foto' */
+.btn-warning:hover {
+    background-color: #8ea50d;
+    color: white;
+}
 
+/* Estilo para mostrar mini-foto en hover */
+.foto-hover {
+    position: relative;
+    display: inline-block;
+}
 
+.foto-hover .mini-foto {
+    display: none;
+    position: absolute;
+    bottom: 120%; /* Posición arriba del botón */
+    left: 50%;
+    transform: translateX(-50%);
+    width: 170px;
+    height: 150px;
+    border-radius: 8px;
+    object-fit: cover;
+    border: 2px solid #353535;
+    box-shadow: 0 4px 8px rgba(0, 0, 0, 0.2);
+    background-color: white;
+    z-index: 999;
+    transition: opacity 0.3s ease;
+}
 
-
-
-
-
+.foto-hover:hover .mini-foto {
+    display: block;
+}
 
 
 

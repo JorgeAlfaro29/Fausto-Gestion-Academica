@@ -1,0 +1,221 @@
+/* ===========================
+   ESTILOS GENERALES
+=========================== */
+body {
+  font-family: 'Poppins', sans-serif;
+  background-color: #f4f4f4;
+  margin: 0;
+  padding: 0;
+}
+
+h1, h2 {
+  font-weight: 600;
+}
+
+/* ===========================
+   HEADER TRANSLÚCIDO
+=========================== */
+header {
+  background-color: rgba(0, 0, 0, 0.4);
+  backdrop-filter: blur(12px);
+  -webkit-backdrop-filter: blur(12px);
+  color: white;
+  border-bottom: 1px solid rgba(255, 255, 255, 0.1);
+  transition: background-color 0.3s ease;
+}
+
+.navbar-brand h1 {
+  color: white;
+  letter-spacing: 1px;
+}
+
+.navbar-brand small {
+  color: #bbb;
+}
+
+.nav-link,
+.dropdown-toggle {
+  color: white !important;
+  position: relative;
+  padding: 8px 12px;
+  font-weight: 500;
+  transition: color 0.3s ease;
+}
+
+.nav-link::after,
+.dropdown-toggle::after {
+  content: "";
+  position: absolute;
+  bottom: 0;
+  left: 0;
+  width: 0%;
+  height: 2px;
+  background-color: white;
+  transition: width 0.3s ease;
+}
+
+.nav-link:hover::after,
+.dropdown-toggle:hover::after {
+  width: 100%;
+}
+
+.nav-link:hover,
+.dropdown-toggle:hover {
+  color: #e0e0e0 !important;
+}
+
+header.scrolled {
+  background-color: rgba(0, 0, 0, 0.75); /* Más opaco */
+  transition: background-color 0.3s ease;
+}
+
+/* ===========================
+   SECCIÓN HISTORIA DE LA ESCUELA
+=========================== */
+section.container.mt-5.pt-5 {
+  margin-top: 120px;
+}
+
+h2 {
+  color: #8ea50d;
+}
+
+.row.align-items-center {
+  margin-bottom: 40px;
+}
+
+img.img-imagen {
+  width: 100%;
+  height: auto;
+  border-radius: 8px;
+}
+
+section.container.mt-5.pt-5 .col-md-6 {
+  padding: 20px;
+}
+
+section.container.mt-5.pt-5 p {
+  font-size: 1rem;
+  line-height: 1.6;
+  color: #333;
+}
+
+/* ===========================
+   SECCIÓN PROFESORES 
+=========================== */
+section.container.mt-5 {
+  background-color: #ffffff;
+  padding: 60px 15px;
+  border-radius: 8px;
+}
+
+h2.text-center.mb-4 {
+  color: #8ea50d;
+}
+
+/* ===========================
+   FOOTER
+=========================== */
+.footer-beautiful {
+  background: rgba(15, 15, 30, 0.9);
+  border-top: 1px solid rgba(255, 255, 255, 0.05);
+  backdrop-filter: blur(12px);
+  -webkit-backdrop-filter: blur(12px);
+  box-shadow: 0 -2px 30px rgba(0, 0, 0, 0.4);
+  color: #f0f0f0;
+  position: relative;
+  font-family: 'Segoe UI', Tahoma, Geneva, Verdana, sans-serif;
+}
+
+.footer-box {
+  transition: all 0.3s ease;
+  padding: 10px 15px;
+  border-radius: 16px;
+}
+
+.footer-box:hover {
+  background: rgba(255, 255, 255, 0.05);
+  transform: translateY(-3px);
+  box-shadow: 0 8px 20px rgba(0, 0, 0, 0.3);
+}
+
+.footer-title {
+  font-size: 1.3rem;
+  margin-bottom: 15px;
+  border-bottom: 2px solid #0d6efd;
+  display: inline-block;
+  padding-bottom: 5px;
+  color: #ffffff;
+}
+
+.footer-box ul li a {
+  color: #cccccc;
+  text-decoration: none;
+  font-size: 0.95rem;
+  display: block;
+  margin: 6px 0;
+  transition: all 0.3s ease;
+}
+
+.footer-box ul li a:hover {
+  color: #ffffff;
+  transform: translateX(5px);
+}
+
+footer p {
+  transition: all 0.3s ease;
+  cursor: default;
+}
+
+footer p:hover {
+  color: #8EA50D; /* verde */
+  transform: translateY(-4px) scale(1.05);
+  text-shadow: 0 2px 5px rgba(0, 0, 0, 0.2);
+}
+
+/* ===========================
+   REDES SOCIALES
+=========================== */
+.social-icons a img {
+  width: 34px;
+  height: 34px;
+  margin-right: 12px;
+  border-radius: 8px;
+  transition: all 0.3s ease;
+  filter: brightness(0.85);
+}
+
+.social-icons a img:hover {
+  filter: brightness(1.2) drop-shadow(0 0 6px #ffffff);
+  transform: scale(1.1);
+}
+
+/* ===========================
+   LÍNEA SEPARADORA Y TEXTO FINAL
+=========================== */
+hr.border-light {
+  opacity: 0.15;
+}
+
+.footer-beautiful p.small {
+  font-size: 0.85rem;
+  color: #bbbbbb;
+}
+
+/* ===========================
+   MEDIA QUERIES
+=========================== */
+@media (max-width: 768px) {
+  .row.align-items-center {
+    text-align: center;
+  }
+
+  .row.align-items-center .col-md-6 {
+    margin-bottom: 20px;
+  }
+
+  .footer-beautiful .container {
+    padding-left: 10px;
+    padding-right: 10px;
+  }
+}
